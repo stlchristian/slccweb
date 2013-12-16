@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Ministry Opportunity feature.
+ */
+
+include_once 'ministry_opportunity.features.inc';
