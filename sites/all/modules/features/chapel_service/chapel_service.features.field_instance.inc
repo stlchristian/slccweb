@@ -109,6 +109,7 @@ function chapel_service_field_default_field_instances() {
   // Exported field_instance: 'node-chapel_service-field_date'
   $field_instances['node-chapel_service-field_date'] = array(
     'bundle' => 'chapel_service',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -156,7 +157,7 @@ function chapel_service_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-1:+3',
       ),
-      'type' => 'date_popup',
+      'type' => 'date_select',
       'weight' => 4,
     ),
   );
