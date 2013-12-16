@@ -17,6 +17,14 @@ function class_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
     ),
+    'academic_program' => array(
+      'name' => 'Academic Program',
+      'machine_name' => 'academic_program',
+      'description' => 'Day and AIM programs',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'class_section' => array(
       'name' => 'Class Section',
       'machine_name' => 'class_section',

@@ -97,7 +97,11 @@ function class_field_default_field_instances() {
   // Exported field_instance: 'node-class-field_academic_program'
   $field_instances['node-class-field_academic_program'] = array(
     'bundle' => 'class',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 45,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -127,9 +131,8 @@ function class_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 32,
     ),
-    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-class-field_class_number'
