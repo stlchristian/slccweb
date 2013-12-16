@@ -15,7 +15,7 @@ function copyright_notice_block_default_fe_block_boxes() {
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'copyright_notice';
   $fe_block_boxes->body = '<div class="tb-copyright">
-Copyright © 2013 St. Louis Christian College. All Rights Reserved.
+Copyright © 2014 St. Louis Christian College. All Rights Reserved.
 </div>';
 
   $export['copyright_notice'] = $fe_block_boxes;
