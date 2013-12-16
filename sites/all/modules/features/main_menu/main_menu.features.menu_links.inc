@@ -36,16 +36,16 @@ function main_menu_menu_default_menu_links() {
     'router_path' => 'node/%',
     'link_title' => 'Academics',
     'options' => array(
-      'attributes' => array(),
       'identifier' => 'main-menu_academics:node/117',
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
+    'weight' => 4,
+    'customized' => 1,
   );
   // Exported menu link: main-menu_admissions:node/116
   $menu_links['main-menu_admissions:node/116'] = array(
@@ -54,16 +54,16 @@ function main_menu_menu_default_menu_links() {
     'router_path' => 'node/%',
     'link_title' => 'Admissions',
     'options' => array(
-      'attributes' => array(),
       'identifier' => 'main-menu_admissions:node/116',
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
+    'weight' => 2,
+    'customized' => 1,
   );
   // Exported menu link: main-menu_articles:articles
   $menu_links['main-menu_articles:articles'] = array(
