@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Chapel Service feature.
+ */
+
+include_once 'chapel_service.features.inc';

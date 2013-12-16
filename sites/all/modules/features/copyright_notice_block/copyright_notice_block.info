@@ -1,0 +1,10 @@
+name = Copyright Notice Block
+description = Create a copyright notice to place in the footer.
+core = 7.x
+package = Block Features
+version = 7.x-1.1
+project = copyright_notice_block
+dependencies[] = fe_block
+features[fe_block_boxes][] = copyright_notice
+features[fe_block_settings][] = block-copyright_notice
+features[features_api][] = api:2
