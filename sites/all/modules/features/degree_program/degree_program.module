@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Degree Program feature.
+ */
+
+include_once 'degree_program.features.inc';
