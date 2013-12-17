@@ -1,0 +1,12 @@
+name = Contact Form
+description = A module that allows the creation of multiple contact forms
+core = 7.x
+package = Content Types
+version = 7.x-1.0
+project = contact_form
+dependencies[] = features
+dependencies[] = text
+features[features_api][] = api:2
+features[field_instance][] = node-contact_form-body
+features[node][] = contact_form
+features_exclude[field_base][body] = body
