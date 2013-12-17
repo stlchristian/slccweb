@@ -1,0 +1,29 @@
+<?php
+/**
+ * @file
+ * student_profile.features.inc
+ */
+
+/**
+ * Implements hook_views_api().
+ */
+function student_profile_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
+ * Implements hook_node_info().
+ */
+function student_profile_node_info() {
+  $items = array(
+    'student_profile' => array(
+      'name' => t('Student Profile'),
+      'base' => 'node_content',
+      'description' => t('Student Profile'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+  );
+  return $items;
+}
