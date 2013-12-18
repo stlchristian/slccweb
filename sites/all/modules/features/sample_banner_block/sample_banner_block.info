@@ -1,0 +1,10 @@
+name = Sample Banner Block
+description = A sample banner; that is, a picture that links to somewhere else
+core = 7.x
+package = Block Features
+version = 7.x-1.0
+project = sample_banner_block
+dependencies[] = fe_block
+features[fe_block_boxes][] = sample_banner_block
+features[fe_block_settings][] = block-sample_banner_block
+features[features_api][] = api:2
