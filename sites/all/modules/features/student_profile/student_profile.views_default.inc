@@ -114,7 +114,7 @@ function student_profile_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Students page';
+  $handler->display->display_options['title'] = 'Featured Students';
   $handler->display->display_options['css_class'] = 'students_page';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -192,10 +192,16 @@ function student_profile_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'students-page';
+  $handler->display->display_options['path'] = 'student-resources/prospective-students/featured-students';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Featured Students';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['students_page'] = array(
     t('Master'),
-    t('Students page'),
+    t('Featured Students'),
     t('more'),
     t('Apply'),
     t('Reset'),
