@@ -47,6 +47,7 @@ function events_views_default_views() {
   $handler->display->display_options['fields']['field_time']['field'] = 'field_time';
   $handler->display->display_options['fields']['field_time']['label'] = '';
   $handler->display->display_options['fields']['field_time']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_time']['type'] = 'text_default';
   /* Field: Content: Location */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
