@@ -14,6 +14,7 @@ function events_default_fe_block_settings() {
 
   $export['views-weather_alert-block'] = array(
     'cache' => -1,
+    'custom' => 0,
     'delta' => 'weather_alert-block',
     'module' => 'views',
     'node_types' => array(),
@@ -39,6 +40,8 @@ function events_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   return $export;
