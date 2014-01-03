@@ -1,0 +1,15 @@
+name = Basic Page
+description = A (fairly) static, informational page for site visitors
+core = 7.x
+package = Content Types
+version = 7.x-1.0
+project = basic_page
+dependencies[] = features
+dependencies[] = image
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = body
+features[field_base][] = field_img
+features[field_instance][] = node-page-body
+features[field_instance][] = node-page-field_img
+features[node][] = page
