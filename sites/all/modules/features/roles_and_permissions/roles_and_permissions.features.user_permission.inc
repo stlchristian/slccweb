@@ -203,6 +203,24 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'access workbench'.
+  $permissions['access workbench'] = array(
+    'name' => 'access workbench',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'workbench',
+  );
+
+  // Exported permission: 'access workbench access by role'.
+  $permissions['access workbench access by role'] = array(
+    'name' => 'access workbench access by role',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'workbench_access',
+  );
+
   // Exported permission: 'administer actions'.
   $permissions['administer actions'] = array(
     'name' => 'administer actions',
@@ -542,6 +560,34 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'views',
   );
 
+  // Exported permission: 'administer workbench'.
+  $permissions['administer workbench'] = array(
+    'name' => 'administer workbench',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'workbench',
+  );
+
+  // Exported permission: 'administer workbench access'.
+  $permissions['administer workbench access'] = array(
+    'name' => 'administer workbench access',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'workbench_access',
+  );
+
+  // Exported permission: 'administer workbench moderation'.
+  $permissions['administer workbench moderation'] = array(
+    'name' => 'administer workbench moderation',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
   // Exported permission: 'administer youtube'.
   $permissions['administer youtube'] = array(
     'name' => 'administer youtube',
@@ -550,6 +596,24 @@ function roles_and_permissions_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'youtube',
+  );
+
+  // Exported permission: 'assign workbench access'.
+  $permissions['assign workbench access'] = array(
+    'name' => 'assign workbench access',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'workbench_access',
+  );
+
+  // Exported permission: 'batch update workbench access'.
+  $permissions['batch update workbench access'] = array(
+    'name' => 'batch update workbench access',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'workbench_access',
   );
 
   // Exported permission: 'block IP addresses'.
@@ -568,6 +632,15 @@ function roles_and_permissions_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'bypass workbench moderation'.
+  $permissions['bypass workbench moderation'] = array(
+    'name' => 'bypass workbench moderation',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'workbench_moderation',
   );
 
   // Exported permission: 'cancel account'.
@@ -994,6 +1067,13 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'delete terms in departments'.
+  $permissions['delete terms in departments'] = array(
+    'name' => 'delete terms in departments',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'delete terms in event_categories'.
   $permissions['delete terms in event_categories'] = array(
     'name' => 'delete terms in event_categories',
@@ -1318,6 +1398,13 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'edit terms in departments'.
+  $permissions['edit terms in departments'] = array(
+    'name' => 'edit terms in departments',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit terms in event_categories'.
   $permissions['edit terms in event_categories'] = array(
     'name' => 'edit terms in event_categories',
@@ -1381,6 +1468,76 @@ function roles_and_permissions_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'features',
+  );
+
+  // Exported permission: 'moderate content from content_review to draft'.
+  $permissions['moderate content from content_review to draft'] = array(
+    'name' => 'moderate content from content_review to draft',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate content from content_review to style_review'.
+  $permissions['moderate content from content_review to style_review'] = array(
+    'name' => 'moderate content from content_review to style_review',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate content from draft to content_review'.
+  $permissions['moderate content from draft to content_review'] = array(
+    'name' => 'moderate content from draft to content_review',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate content from published to draft'.
+  $permissions['moderate content from published to draft'] = array(
+    'name' => 'moderate content from published to draft',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate content from style_review to content_review'.
+  $permissions['moderate content from style_review to content_review'] = array(
+    'name' => 'moderate content from style_review to content_review',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate content from style_review to draft'.
+  $permissions['moderate content from style_review to draft'] = array(
+    'name' => 'moderate content from style_review to draft',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate content from style_review to published'.
+  $permissions['moderate content from style_review to published'] = array(
+    'name' => 'moderate content from style_review to published',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'workbench_moderation',
   );
 
   // Exported permission: 'notify of path changes'.
@@ -1560,6 +1717,26 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'filter',
   );
 
+  // Exported permission: 'use workbench_moderation my drafts tab'.
+  $permissions['use workbench_moderation my drafts tab'] = array(
+    'name' => 'use workbench_moderation my drafts tab',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'use workbench_moderation needs review tab'.
+  $permissions['use workbench_moderation needs review tab'] = array(
+    'name' => 'use workbench_moderation needs review tab',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
   // Exported permission: 'view advanced help index'.
   $permissions['view advanced help index'] = array(
     'name' => 'view advanced help index',
@@ -1590,6 +1767,16 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'advanced_help',
   );
 
+  // Exported permission: 'view all unpublished content'.
+  $permissions['view all unpublished content'] = array(
+    'name' => 'view all unpublished content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
   // Exported permission: 'view media'.
   $permissions['view media'] = array(
     'name' => 'view media',
@@ -1599,6 +1786,26 @@ function roles_and_permissions_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'media',
+  );
+
+  // Exported permission: 'view moderation history'.
+  $permissions['view moderation history'] = array(
+    'name' => 'view moderation history',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'view moderation messages'.
+  $permissions['view moderation messages'] = array(
+    'name' => 'view moderation messages',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'workbench_moderation',
   );
 
   // Exported permission: 'view own unpublished content'.
@@ -1639,6 +1846,24 @@ function roles_and_permissions_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'system',
+  );
+
+  // Exported permission: 'view workbench access information'.
+  $permissions['view workbench access information'] = array(
+    'name' => 'view workbench access information',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'workbench_access',
+  );
+
+  // Exported permission: 'view workbench taxonomy pages'.
+  $permissions['view workbench taxonomy pages'] = array(
+    'name' => 'view workbench taxonomy pages',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'workbench_access',
   );
 
   return $permissions;
