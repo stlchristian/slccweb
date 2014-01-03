@@ -208,6 +208,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'access workbench',
     'roles' => array(
       'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'workbench',
   );
@@ -217,6 +218,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'access workbench access by role',
     'roles' => array(
       'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_access',
   );
@@ -574,6 +576,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'administer workbench access',
     'roles' => array(
       'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_access',
   );
@@ -603,6 +606,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'assign workbench access',
     'roles' => array(
       'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_access',
   );
@@ -612,6 +616,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'batch update workbench access',
     'roles' => array(
       'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_access',
   );
@@ -1853,6 +1858,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'view workbench access information',
     'roles' => array(
       'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_access',
   );
@@ -1862,6 +1868,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'view workbench taxonomy pages',
     'roles' => array(
       'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_access',
   );
