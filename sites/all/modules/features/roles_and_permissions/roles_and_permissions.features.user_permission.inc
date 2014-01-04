@@ -1700,8 +1700,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'use text format filtered_html',
     'roles' => array(
       'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'filter',
   );
