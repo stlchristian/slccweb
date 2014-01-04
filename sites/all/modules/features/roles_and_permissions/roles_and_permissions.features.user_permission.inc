@@ -696,16 +696,6 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create contact_form content'.
-  $permissions['create contact_form content'] = array(
-    'name' => 'create contact_form content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create degree_program content'.
   $permissions['create degree_program content'] = array(
     'name' => 'create degree_program content',
@@ -834,16 +824,6 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any contact_form content'.
-  $permissions['delete any contact_form content'] = array(
-    'name' => 'delete any contact_form content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete any degree_program content'.
   $permissions['delete any degree_program content'] = array(
     'name' => 'delete any degree_program content',
@@ -937,16 +917,6 @@ function roles_and_permissions_user_default_permissions() {
   // Exported permission: 'delete own class content'.
   $permissions['delete own class content'] = array(
     'name' => 'delete own class content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own contact_form content'.
-  $permissions['delete own contact_form content'] = array(
-    'name' => 'delete own contact_form content',
     'roles' => array(
       'administrator' => 'administrator',
       'webmaster' => 'webmaster',
@@ -1155,16 +1125,6 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit any contact_form content'.
-  $permissions['edit any contact_form content'] = array(
-    'name' => 'edit any contact_form content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit any degree_program content'.
   $permissions['edit any degree_program content'] = array(
     'name' => 'edit any degree_program content',
@@ -1283,16 +1243,6 @@ function roles_and_permissions_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'comment',
-  );
-
-  // Exported permission: 'edit own contact_form content'.
-  $permissions['edit own contact_form content'] = array(
-    'name' => 'edit own contact_form content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'node',
   );
 
   // Exported permission: 'edit own degree_program content'.
