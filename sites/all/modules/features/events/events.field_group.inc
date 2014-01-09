@@ -23,8 +23,8 @@ function events_field_group_info() {
     'label' => 'Event Time',
     'weight' => '0',
     'children' => array(
-      0 => 'field_time',
-      1 => 'field_location',
+      0 => 'field_location',
+      1 => 'field_time',
     ),
     'format_type' => 'div',
     'format_settings' => array(

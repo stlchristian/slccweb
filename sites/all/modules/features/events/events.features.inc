@@ -11,6 +11,9 @@ function events_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
 }
 
 /**
@@ -28,7 +31,7 @@ function events_node_info() {
     'events' => array(
       'name' => t('Events'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('A new event that will be taking place'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

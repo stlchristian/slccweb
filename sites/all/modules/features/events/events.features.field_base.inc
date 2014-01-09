@@ -135,7 +135,7 @@ function events_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
-          'contact_form' => 'contact_form',
+          'webform' => 'webform',
         ),
       ),
       'target_type' => 'node',
