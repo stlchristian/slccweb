@@ -95,6 +95,9 @@ function events_strongarm() {
         'path' => array(
           'weight' => '1',
         ),
+        'workbench_access' => array(
+          'weight' => '0',
+        ),
       ),
       'display' => array(),
     ),
@@ -129,9 +132,8 @@ function events_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_events';
   $strongarm->value = array(
-    0 => 'promote',
-    1 => 'moderation',
-    2 => 'revision',
+    0 => 'moderation',
+    1 => 'revision',
   );
   $export['node_options_events'] = $strongarm;
 

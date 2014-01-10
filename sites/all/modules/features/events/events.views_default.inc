@@ -71,11 +71,14 @@ function events_views_default_views() {
     'view_mode' => 'teaser',
     'links' => 1,
   );
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Time -  start date (field_time) */
+  $handler->display->display_options['sorts']['field_time_value']['id'] = 'field_time_value';
+  $handler->display->display_options['sorts']['field_time_value']['table'] = 'field_data_field_time';
+  $handler->display->display_options['sorts']['field_time_value']['field'] = 'field_time_value';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -90,6 +93,32 @@ function events_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'events' => 'events',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    50 => '50',
+  );
+  $handler->display->display_options['filters']['tid']['group'] = 1;
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'event_categories';
+  /* Filter criterion: Content: Time -  start date (field_time) */
+  $handler->display->display_options['filters']['field_time_value']['id'] = 'field_time_value';
+  $handler->display->display_options['filters']['field_time_value']['table'] = 'field_data_field_time';
+  $handler->display->display_options['filters']['field_time_value']['field'] = 'field_time_value';
+  $handler->display->display_options['filters']['field_time_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_time_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_time_value']['default_date'] = 'now';
+  /* Filter criterion: Content: Time - end date (field_time:value2) */
+  $handler->display->display_options['filters']['field_time_value2']['id'] = 'field_time_value2';
+  $handler->display->display_options['filters']['field_time_value2']['table'] = 'field_data_field_time';
+  $handler->display->display_options['filters']['field_time_value2']['field'] = 'field_time_value2';
+  $handler->display->display_options['filters']['field_time_value2']['operator'] = '>';
+  $handler->display->display_options['filters']['field_time_value2']['group'] = 2;
+  $handler->display->display_options['filters']['field_time_value2']['default_date'] = 'now';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');

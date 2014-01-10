@@ -31,7 +31,7 @@ function events_field_default_field_instances() {
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 3,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -67,13 +67,13 @@ function events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -107,13 +107,13 @@ function events_field_default_field_instances() {
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -146,13 +146,13 @@ function events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -183,16 +183,15 @@ function events_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 11,
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -223,14 +222,14 @@ function events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'inline',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -245,11 +244,12 @@ function events_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 3,
       ),
       'type' => 'text_textarea',
       'weight' => 5,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-events-field_registration_deadline'
@@ -259,7 +259,7 @@ function events_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -269,13 +269,13 @@ function events_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 10,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -300,48 +300,65 @@ function events_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_text',
+      'type' => 'date_select',
       'weight' => 10,
     ),
   );
 
-  // Exported field_instance: 'node-events-field_registration_form'
-  $field_instances['node-events-field_registration_form'] = array(
+  // Exported field_instance: 'node-events-field_registration_link'
+  $field_instances['node-events-field_registration_link'] = array(
     'bundle' => 'events',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => 1,
-        ),
-        'type' => 'entityreference_label',
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
         'weight' => 9,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'link_default',
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_registration_form',
-    'label' => 'Registration Form',
+    'field_name' => 'field_registration_link',
+    'label' => 'Registration Link',
     'required' => 0,
     'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'value',
+      'title_maxlength' => 128,
+      'title_value' => 'Click here to register',
+      'url' => 0,
       'user_register_form' => FALSE,
+      'validate_url' => 1,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'active' => 0,
+      'module' => 'link',
       'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 9,
+      'type' => 'link_field',
+      'weight' => 11,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-events-field_time'
@@ -351,10 +368,10 @@ function events_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'events',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -364,9 +381,16 @@ function events_field_default_field_instances() {
         'weight' => 5,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'events',
+          'fromto' => 'value',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
         'weight' => 0,
       ),
     ),
@@ -392,7 +416,7 @@ function events_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_text',
+      'type' => 'date_select',
       'weight' => 4,
     ),
   );
@@ -406,7 +430,7 @@ function events_field_default_field_instances() {
   t('Location');
   t('Phone');
   t('Registration Deadline');
-  t('Registration Form');
+  t('Registration Link');
   t('Time');
 
   return $field_instances;
