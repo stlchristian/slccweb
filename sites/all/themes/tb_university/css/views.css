@@ -1,4 +1,4 @@
-/**
+W/**
  * Common View Elements
  */
 
@@ -437,6 +437,16 @@ ul.social-links li.email a {
 
 /*Events*/
 .views-field-field-speaker {
+  border-left: 1px dotted #ccc;
+  float: right;
+  margin-left: 20px;
+  padding-left: 20px;
+  position: relative;
+  text-align: center;
+  width: 210px;
+}
+
+.views-field-field-details {
   border-left: 1px dotted #ccc;
   float: right;
   margin-left: 20px;
