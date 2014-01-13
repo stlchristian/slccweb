@@ -15,6 +15,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'access administration pages',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'system',
@@ -34,6 +36,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'access all webform results',
     'roles' => array(
       'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'webform',
   );
@@ -106,6 +109,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'access overlay',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'overlay',
@@ -116,6 +121,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'access own webform results',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'webform',
@@ -126,6 +133,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'access own webform submissions',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'webform',
@@ -136,6 +145,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'access site in maintenance mode',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'system',
@@ -177,6 +188,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'access toolbar',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'toolbar',
@@ -208,6 +221,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'access workbench',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'workbench',
@@ -218,6 +233,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'access workbench access by role',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_access',
@@ -401,6 +418,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'administer newsletters',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
     ),
     'module' => 'newsletter',
   );
@@ -410,6 +428,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'administer nodes',
     'roles' => array(
       'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -457,8 +476,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'administer search',
     'roles' => array(
       'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'search',
   );
@@ -671,6 +689,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'create article content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -711,6 +731,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'create events content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -731,6 +753,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'create ministry_opportunity content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -741,6 +765,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'create page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -761,6 +787,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'create student_profile content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -771,6 +799,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'create url aliases',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'path',
@@ -1073,7 +1103,10 @@ function roles_and_permissions_user_default_permissions() {
   // Exported permission: 'delete terms in newsletter_categories'.
   $permissions['delete terms in newsletter_categories'] = array(
     'name' => 'delete terms in newsletter_categories',
-    'roles' => array(),
+    'roles' => array(
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -1082,6 +1115,9 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'delete terms in tags',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'taxonomy',
   );
@@ -1100,6 +1136,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit any article content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1140,6 +1178,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit any events content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1160,6 +1200,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit any ministry_opportunity content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1170,6 +1212,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit any page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1190,6 +1234,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit any student_profile content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1210,6 +1256,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit own article content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1240,6 +1288,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit own comments',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'comment',
@@ -1260,6 +1309,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit own events content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1280,6 +1331,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit own ministry_opportunity content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1290,6 +1343,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit own page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1310,6 +1365,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit own student_profile content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1320,6 +1377,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit own webform submissions',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'webform',
@@ -1384,7 +1443,10 @@ function roles_and_permissions_user_default_permissions() {
   // Exported permission: 'edit terms in newsletter_categories'.
   $permissions['edit terms in newsletter_categories'] = array(
     'name' => 'edit terms in newsletter_categories',
-    'roles' => array(),
+    'roles' => array(
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -1393,6 +1455,9 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit terms in tags',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'taxonomy',
   );
@@ -1411,6 +1476,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'import media',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'media',
@@ -1430,6 +1496,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'moderate content from content_review to draft',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_moderation',
@@ -1440,6 +1508,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'moderate content from content_review to style_review',
     'roles' => array(
       'administrator' => 'administrator',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_moderation',
@@ -1450,6 +1519,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'moderate content from draft to content_review',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_moderation',
@@ -1470,6 +1541,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'moderate content from style_review to content_review',
     'roles' => array(
       'administrator' => 'administrator',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_moderation',
@@ -1480,6 +1552,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'moderate content from style_review to draft',
     'roles' => array(
       'administrator' => 'administrator',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_moderation',
@@ -1500,6 +1573,9 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'notify of path changes',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'pathauto',
   );
@@ -1519,6 +1595,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'revert revisions',
     'roles' => array(
       'administrator' => 'administrator',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1677,6 +1754,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'use workbench_moderation my drafts tab',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_moderation',
@@ -1687,6 +1766,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'use workbench_moderation needs review tab',
     'roles' => array(
       'administrator' => 'administrator',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_moderation',
@@ -1707,6 +1787,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'view advanced help popup',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'advanced_help',
@@ -1717,6 +1799,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'view advanced help topic',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'advanced_help',
@@ -1727,6 +1811,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'view all unpublished content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_moderation',
@@ -1748,6 +1833,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'view moderation history',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_moderation',
@@ -1758,6 +1845,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'view moderation messages',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'workbench_moderation',
@@ -1768,6 +1857,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'view own unpublished content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1788,6 +1879,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'view revisions',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1798,6 +1891,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'view the administration theme',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'system',
