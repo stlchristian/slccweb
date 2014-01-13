@@ -93,6 +93,15 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'dashboard',
   );
 
+  // Exported permission: 'access mollom statistics'.
+  $permissions['access mollom statistics'] = array(
+    'name' => 'access mollom statistics',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mollom',
+  );
+
   // Exported permission: 'access newsletter statistics'.
   $permissions['access newsletter statistics'] = array(
     'name' => 'access newsletter statistics',
@@ -293,8 +302,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'administer custom search',
     'roles' => array(
       'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'custom_search',
   );
@@ -371,6 +379,8 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'administer media',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'media',
@@ -411,6 +421,15 @@ function roles_and_permissions_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'system',
+  );
+
+  // Exported permission: 'administer mollom'.
+  $permissions['administer mollom'] = array(
+    'name' => 'administer mollom',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mollom',
   );
 
   // Exported permission: 'administer newsletters'.
@@ -648,6 +667,15 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'system',
   );
 
+  // Exported permission: 'bypass mollom protection'.
+  $permissions['bypass mollom protection'] = array(
+    'name' => 'bypass mollom protection',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mollom',
+  );
+
   // Exported permission: 'bypass node access'.
   $permissions['bypass node access'] = array(
     'name' => 'bypass node access',
@@ -806,6 +834,18 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'path',
   );
 
+  // Exported permission: 'create webform content'.
+  $permissions['create webform content'] = array(
+    'name' => 'create webform content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'customize shortcut links'.
   $permissions['customize shortcut links'] = array(
     'name' => 'customize shortcut links',
@@ -924,6 +964,16 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any webform content'.
+  $permissions['delete any webform content'] = array(
+    'name' => 'delete any webform content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete own article content'.
   $permissions['delete own article content'] = array(
     'name' => 'delete own article content',
@@ -1017,6 +1067,16 @@ function roles_and_permissions_user_default_permissions() {
   // Exported permission: 'delete own student_profile content'.
   $permissions['delete own student_profile content'] = array(
     'name' => 'delete own student_profile content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own webform content'.
+  $permissions['delete own webform content'] = array(
+    'name' => 'delete own webform content',
     'roles' => array(
       'administrator' => 'administrator',
       'webmaster' => 'webmaster',
@@ -1241,6 +1301,18 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any webform content'.
+  $permissions['edit any webform content'] = array(
+    'name' => 'edit any webform content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit media'.
   $permissions['edit media'] = array(
     'name' => 'edit media',
@@ -1372,6 +1444,18 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit own webform content'.
+  $permissions['edit own webform content'] = array(
+    'name' => 'edit own webform content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit own webform submissions'.
   $permissions['edit own webform submissions'] = array(
     'name' => 'edit own webform submissions',
@@ -1477,6 +1561,7 @@ function roles_and_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'media',

@@ -13,25 +13,25 @@ function roles_and_permissions_user_default_roles() {
   // Exported role: administrator.
   $roles['administrator'] = array(
     'name' => 'administrator',
-    'weight' => 2,
+    'weight' => 5,
   );
 
   // Exported role: development contributor.
   $roles['development contributor'] = array(
     'name' => 'development contributor',
-    'weight' => 5,
+    'weight' => 2,
   );
 
   // Exported role: development editor.
   $roles['development editor'] = array(
     'name' => 'development editor',
-    'weight' => 4,
+    'weight' => 3,
   );
 
   // Exported role: webmaster.
   $roles['webmaster'] = array(
     'name' => 'webmaster',
-    'weight' => 3,
+    'weight' => 4,
   );
 
   return $roles;
