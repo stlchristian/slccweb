@@ -122,7 +122,6 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'access newsletter statistics',
     'roles' => array(
       'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'newsletter',
@@ -270,15 +269,23 @@ function roles_and_permissions_user_default_permissions() {
   $permissions['access toolbar'] = array(
     'name' => 'access toolbar',
     'roles' => array(
+      'academics contributor' => 'academics contributor',
       'academics editor' => 'academics editor',
       'administrator' => 'administrator',
+      'admissions contributor' => 'admissions contributor',
       'admissions editor' => 'admissions editor',
+      'athletics contributor' => 'athletics contributor',
       'athletics editor' => 'athletics editor',
+      'bookstore contributor' => 'bookstore contributor',
       'bookstore editor' => 'bookstore editor',
       'development contributor' => 'development contributor',
       'development editor' => 'development editor',
+      'faculty' => 'faculty',
+      'financial aid contributor' => 'financial aid contributor',
       'financial aid editor' => 'financial aid editor',
+      'library contributor' => 'library contributor',
       'library editor' => 'library editor',
+      'operations contributor' => 'operations contributor',
       'operations editor' => 'operations editor',
       'webmaster' => 'webmaster',
     ),
@@ -300,7 +307,24 @@ function roles_and_permissions_user_default_permissions() {
   $permissions['access user profiles'] = array(
     'name' => 'access user profiles',
     'roles' => array(
+      'academics contributor' => 'academics contributor',
+      'academics editor' => 'academics editor',
       'administrator' => 'administrator',
+      'admissions contributor' => 'admissions contributor',
+      'admissions editor' => 'admissions editor',
+      'athletics contributor' => 'athletics contributor',
+      'athletics editor' => 'athletics editor',
+      'bookstore contributor' => 'bookstore contributor',
+      'bookstore editor' => 'bookstore editor',
+      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
+      'faculty' => 'faculty',
+      'financial aid contributor' => 'financial aid contributor',
+      'financial aid editor' => 'financial aid editor',
+      'library contributor' => 'library contributor',
+      'library editor' => 'library editor',
+      'operations contributor' => 'operations contributor',
+      'operations editor' => 'operations editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'user',
@@ -423,8 +447,6 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'administer custom search blocks',
     'roles' => array(
       'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'custom_search_blocks',
   );
@@ -471,6 +493,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'administer image styles',
     'roles' => array(
       'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'image',
   );
@@ -563,6 +586,7 @@ function roles_and_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
     ),
     'module' => 'newsletter',
   );
@@ -909,8 +933,11 @@ function roles_and_permissions_user_default_permissions() {
       'admissions contributor' => 'admissions contributor',
       'admissions editor' => 'admissions editor',
       'bookstore contributor' => 'bookstore contributor',
+      'bookstore editor' => 'bookstore editor',
       'development contributor' => 'development contributor',
       'development editor' => 'development editor',
+      'library contributor' => 'library contributor',
+      'library editor' => 'library editor',
       'operations contributor' => 'operations contributor',
       'operations editor' => 'operations editor',
       'webmaster' => 'webmaster',
@@ -922,14 +949,21 @@ function roles_and_permissions_user_default_permissions() {
   $permissions['create forum content'] = array(
     'name' => 'create forum content',
     'roles' => array(
+      'academics contributor' => 'academics contributor',
       'academics editor' => 'academics editor',
       'administrator' => 'administrator',
+      'admissions contributor' => 'admissions contributor',
       'admissions editor' => 'admissions editor',
+      'athletics contributor' => 'athletics contributor',
       'athletics editor' => 'athletics editor',
+      'bookstore contributor' => 'bookstore contributor',
       'bookstore editor' => 'bookstore editor',
       'development contributor' => 'development contributor',
       'development editor' => 'development editor',
+      'faculty' => 'faculty',
+      'financial aid contributor' => 'financial aid contributor',
       'financial aid editor' => 'financial aid editor',
+      'library contributor' => 'library contributor',
       'library editor' => 'library editor',
       'operations contributor' => 'operations contributor',
       'operations editor' => 'operations editor',
@@ -945,7 +979,6 @@ function roles_and_permissions_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
-      'development contributor' => 'development contributor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -982,6 +1015,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'create professor_profile content',
     'roles' => array(
       'academics contributor' => 'academics contributor',
+      'academics editor' => 'academics editor',
       'administrator' => 'administrator',
       'faculty' => 'faculty',
       'webmaster' => 'webmaster',
@@ -1389,9 +1423,6 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'delete terms in tags',
     'roles' => array(
       'administrator' => 'administrator',
-      'development contributor' => 'development contributor',
-      'development editor' => 'development editor',
-      'webmaster' => 'webmaster',
     ),
     'module' => 'taxonomy',
   );
@@ -1476,8 +1507,11 @@ function roles_and_permissions_user_default_permissions() {
       'admissions contributor' => 'admissions contributor',
       'admissions editor' => 'admissions editor',
       'bookstore contributor' => 'bookstore contributor',
+      'bookstore editor' => 'bookstore editor',
       'development contributor' => 'development contributor',
       'development editor' => 'development editor',
+      'library contributor' => 'library contributor',
+      'library editor' => 'library editor',
       'operations contributor' => 'operations contributor',
       'operations editor' => 'operations editor',
       'webmaster' => 'webmaster',
@@ -1489,17 +1523,7 @@ function roles_and_permissions_user_default_permissions() {
   $permissions['edit any forum content'] = array(
     'name' => 'edit any forum content',
     'roles' => array(
-      'academics editor' => 'academics editor',
       'administrator' => 'administrator',
-      'admissions editor' => 'admissions editor',
-      'athletics editor' => 'athletics editor',
-      'bookstore editor' => 'bookstore editor',
-      'development contributor' => 'development contributor',
-      'development editor' => 'development editor',
-      'financial aid editor' => 'financial aid editor',
-      'library editor' => 'library editor',
-      'operations contributor' => 'operations contributor',
-      'operations editor' => 'operations editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1548,6 +1572,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit any professor_profile content',
     'roles' => array(
       'academics contributor' => 'academics contributor',
+      'academics editor' => 'academics editor',
       'administrator' => 'administrator',
       'webmaster' => 'webmaster',
     ),
@@ -1663,15 +1688,23 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit own comments',
     'roles' => array(
       'academics contributor' => 'academics contributor',
+      'academics editor' => 'academics editor',
       'administrator' => 'administrator',
       'admissions contributor' => 'admissions contributor',
+      'admissions editor' => 'admissions editor',
       'athletics contributor' => 'athletics contributor',
+      'athletics editor' => 'athletics editor',
       'bookstore contributor' => 'bookstore contributor',
+      'bookstore editor' => 'bookstore editor',
       'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'faculty' => 'faculty',
       'financial aid contributor' => 'financial aid contributor',
+      'financial aid editor' => 'financial aid editor',
       'library contributor' => 'library contributor',
+      'library editor' => 'library editor',
       'operations contributor' => 'operations contributor',
+      'operations editor' => 'operations editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'comment',
@@ -1697,8 +1730,11 @@ function roles_and_permissions_user_default_permissions() {
       'admissions contributor' => 'admissions contributor',
       'admissions editor' => 'admissions editor',
       'bookstore contributor' => 'bookstore contributor',
+      'bookstore editor' => 'bookstore editor',
       'development contributor' => 'development contributor',
       'development editor' => 'development editor',
+      'library contributor' => 'library contributor',
+      'library editor' => 'library editor',
       'operations contributor' => 'operations contributor',
       'operations editor' => 'operations editor',
       'webmaster' => 'webmaster',
@@ -1710,14 +1746,21 @@ function roles_and_permissions_user_default_permissions() {
   $permissions['edit own forum content'] = array(
     'name' => 'edit own forum content',
     'roles' => array(
+      'academics contributor' => 'academics contributor',
       'academics editor' => 'academics editor',
       'administrator' => 'administrator',
+      'admissions contributor' => 'admissions contributor',
       'admissions editor' => 'admissions editor',
+      'athletics contributor' => 'athletics contributor',
       'athletics editor' => 'athletics editor',
+      'bookstore contributor' => 'bookstore contributor',
       'bookstore editor' => 'bookstore editor',
       'development contributor' => 'development contributor',
       'development editor' => 'development editor',
+      'faculty' => 'faculty',
+      'financial aid contributor' => 'financial aid contributor',
       'financial aid editor' => 'financial aid editor',
+      'library contributor' => 'library contributor',
       'library editor' => 'library editor',
       'operations contributor' => 'operations contributor',
       'operations editor' => 'operations editor',
@@ -1732,7 +1775,6 @@ function roles_and_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
-      'development contributor' => 'development contributor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1769,6 +1811,7 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit own professor_profile content',
     'roles' => array(
       'academics contributor' => 'academics contributor',
+      'academics editor' => 'academics editor',
       'administrator' => 'administrator',
       'faculty' => 'faculty',
       'webmaster' => 'webmaster',
@@ -1834,6 +1877,7 @@ function roles_and_permissions_user_default_permissions() {
       'bookstore editor' => 'bookstore editor',
       'development contributor' => 'development contributor',
       'development editor' => 'development editor',
+      'faculty' => 'faculty',
       'financial aid contributor' => 'financial aid contributor',
       'financial aid editor' => 'financial aid editor',
       'library contributor' => 'library contributor',
@@ -1916,9 +1960,6 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'edit terms in tags',
     'roles' => array(
       'administrator' => 'administrator',
-      'development contributor' => 'development contributor',
-      'development editor' => 'development editor',
-      'webmaster' => 'webmaster',
     ),
     'module' => 'taxonomy',
   );
@@ -2039,46 +2080,27 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'workbench_moderation',
   );
 
-  // Exported permission: 'moderate content from published to draft'.
-  $permissions['moderate content from published to draft'] = array(
-    'name' => 'moderate content from published to draft',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: 'moderate content from style_review to content_review'.
-  $permissions['moderate content from style_review to content_review'] = array(
-    'name' => 'moderate content from style_review to content_review',
-    'roles' => array(
-      'academics editor' => 'academics editor',
-      'administrator' => 'administrator',
-      'admissions editor' => 'admissions editor',
-      'athletics editor' => 'athletics editor',
-      'bookstore editor' => 'bookstore editor',
-      'development editor' => 'development editor',
-      'financial aid editor' => 'financial aid editor',
-      'library editor' => 'library editor',
-      'operations editor' => 'operations editor',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
   // Exported permission: 'moderate content from style_review to draft'.
   $permissions['moderate content from style_review to draft'] = array(
     'name' => 'moderate content from style_review to draft',
     'roles' => array(
+      'academics contributor' => 'academics contributor',
       'academics editor' => 'academics editor',
       'administrator' => 'administrator',
+      'admissions contributor' => 'admissions contributor',
       'admissions editor' => 'admissions editor',
+      'athletics contributor' => 'athletics contributor',
       'athletics editor' => 'athletics editor',
+      'bookstore contributor' => 'bookstore contributor',
       'bookstore editor' => 'bookstore editor',
+      'development contributor' => 'development contributor',
       'development editor' => 'development editor',
+      'faculty' => 'faculty',
+      'financial aid contributor' => 'financial aid contributor',
       'financial aid editor' => 'financial aid editor',
+      'library contributor' => 'library contributor',
       'library editor' => 'library editor',
+      'operations contributor' => 'operations contributor',
       'operations editor' => 'operations editor',
       'webmaster' => 'webmaster',
     ),
@@ -2100,9 +2122,6 @@ function roles_and_permissions_user_default_permissions() {
     'name' => 'notify of path changes',
     'roles' => array(
       'administrator' => 'administrator',
-      'development contributor' => 'development contributor',
-      'development editor' => 'development editor',
-      'webmaster' => 'webmaster',
     ),
     'module' => 'pathauto',
   );
@@ -2279,7 +2298,6 @@ function roles_and_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
-      'webmaster' => 'webmaster',
     ),
     'module' => 'filter',
   );
@@ -2296,7 +2314,9 @@ function roles_and_permissions_user_default_permissions() {
   // Exported permission: 'use text format php_code'.
   $permissions['use text format php_code'] = array(
     'name' => 'use text format php_code',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'filter',
   );
 
