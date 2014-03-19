@@ -143,3 +143,18 @@ function tb_university_confirm_form(&$vars) {
     return drupal_render_children($form);
   }
 }
+
+/*
+* Implementation of hook_form_alter().
+* Modify the node title for my "New Ministry Opportunity" form
+* that will be seen by anonymous users
+*/
+function tb_university_form_ministry_opportunity_node_form_alter(&$form, &$form_state) {
+  /* Set the title */
+  drupal_set_title('Submit a Ministry Opportunity');
+  /* Remove the "Node Revision" Section */
+  $form['revision_information']['#access'] = FALSE;
+  /* Change the name of the "Save" button and hide the "Preview" button altogether */
+  $form['actions']['submit']['#value'] = t('Submit');
+  $form['actions']['preview']['#access'] = FALSE;
+}
