@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Ministry Opportunities Listing View feature.
+ */
+
+include_once 'ministry_opportunities_listing_view.features.inc';
