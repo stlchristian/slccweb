@@ -3,14 +3,14 @@
 */
 
 a {
-  color: #4c4c4c;
+  color: #205f93;
 }
 
 a:hover,
 a:focus,
 a:active,
 li a.active {
-  color: #205f93;
+  color: #4c4c4c;
 }
 
 .node-title a:hover, 
