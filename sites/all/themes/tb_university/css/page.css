@@ -648,8 +648,24 @@ span.search-info-upload {
   float: left;
 }
 
+.views-exposed-widget {
+  width: 50%;
+  float: left;
+}
+
+.views-submit-button {
+  position: relative;
+  height: 74px;
+}
+
+.edit-submit-ministry-opportunities {
+  position: absolute;
+  top: 50%;
+}
+
 .list-search.view-filters .views-exposed-widget label{
   margin: 0 0 5px 0;
+  float: left;
 }
 
 .list-search .view-filters .views-widget-filter-title {

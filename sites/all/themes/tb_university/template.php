@@ -161,5 +161,7 @@ function tb_university_form_ministry_opportunity_node_form_alter(&$form, &$form_
 }
 
 function mysubmit_ministry_opportunity_node_submit($form, &$form_state) {
-  $form_state['redirect'] = 'admissions';
+  drupal_get_message();
+  drupal_set_message("Your ministry opportunity has been successfully submitted. We'll have it posted as soon as we can.");
+  $form_state['redirect'] = 'ministry-opportunities';
 }
