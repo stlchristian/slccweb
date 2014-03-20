@@ -156,4 +156,10 @@ function tb_university_form_ministry_opportunity_node_form_alter(&$form, &$form_
   $form['revision_information']['#access'] = FALSE;
   /* Change the name of the "Save" button */
   $form['actions']['submit']['#value'] = t('Submit');
+  /* Redirect the user back to the admissions (for now) page, after submitting the node */
+  $form['actions']['submit']['#submit'][] = 'mysubmit_ministry_opportunity_node_submit';
+}
+
+function mysubmit_ministry_opportunity_node_submit($form, &$form_state) {
+  $form_state['redirect'] = 'admissions';
 }
