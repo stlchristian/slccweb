@@ -154,7 +154,6 @@ function tb_university_form_ministry_opportunity_node_form_alter(&$form, &$form_
   drupal_set_title('Submit a Ministry Opportunity');
   /* Remove the "Node Revision" Section */
   $form['revision_information']['#access'] = FALSE;
-  /* Change the name of the "Save" button and hide the "Preview" button altogether */
+  /* Change the name of the "Save" button */
   $form['actions']['submit']['#value'] = t('Submit');
-  $form['actions']['preview']['#access'] = FALSE;
 }
