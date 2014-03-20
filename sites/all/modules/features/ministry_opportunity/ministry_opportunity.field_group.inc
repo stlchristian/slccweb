@@ -24,8 +24,8 @@ function ministry_opportunity_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'field_contact',
-      1 => 'field_contact_phone',
-      2 => 'field_contact_email',
+      1 => 'field_contact_email',
+      2 => 'field_contact_phone',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -54,32 +54,33 @@ function ministry_opportunity_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Ministry Opportunity Information',
+    'label' => 'Ministry Opportunity Details',
     'weight' => '1',
     'children' => array(
       0 => 'body',
-      1 => 'field_pay_type',
-      2 => 'field_church_website',
-      3 => 'field_church_name',
-      4 => 'field_address',
-      5 => 'field_city',
+      1 => 'field_address',
+      2 => 'field_church_name',
+      3 => 'field_church_website',
+      4 => 'field_city',
+      5 => 'field_pay_type',
       6 => 'field_state',
       7 => 'field_zip_code',
       8 => 'title',
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => 'open',
+      'label' => 'Ministry Opportunity Details',
       'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-minopp-information field-group-div',
         'description' => '',
-        'show_label' => 1,
+        'show_label' => '1',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
-        'classes' => 'group-minopp-information field-group-div',
-        'required_fields' => 1,
-        'id' => '',
       ),
+      'formatter' => 'open',
     ),
   );
   $export['group_minopp_information|node|ministry_opportunity|form'] = $field_group;
