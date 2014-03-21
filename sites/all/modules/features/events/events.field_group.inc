@@ -34,7 +34,7 @@ function events_field_group_info() {
       'label' => 'Event Details',
       'instance_settings' => array(
         'classes' => 'group-event-details field-group-div field-name-field-details',
-        'description' => '',
+        'description' => 'Contact Information',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',

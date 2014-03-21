@@ -78,7 +78,7 @@ function events_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_contact',
-    'label' => 'Contact Name',
+    'label' => 'Name',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -93,6 +93,7 @@ function events_field_default_field_instances() {
       'type' => 'text_textfield',
       'weight' => 6,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-events-field_contact_email'
@@ -423,11 +424,11 @@ function events_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Contact Name');
   t('Description');
   t('Email');
   t('Event Category');
   t('Location');
+  t('Name');
   t('Phone');
   t('Registration Deadline');
   t('Registration Link');

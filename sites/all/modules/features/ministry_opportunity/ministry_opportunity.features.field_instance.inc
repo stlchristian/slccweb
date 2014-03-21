@@ -22,7 +22,7 @@ function ministry_opportunity_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -63,11 +63,11 @@ function ministry_opportunity_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 14,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -104,7 +104,7 @@ function ministry_opportunity_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -145,11 +145,13 @@ function ministry_opportunity_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 10,
+        'settings' => array(
+          'strip_www' => 1,
+        ),
+        'type' => 'link_domain',
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -199,11 +201,11 @@ function ministry_opportunity_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 15,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -240,7 +242,7 @@ function ministry_opportunity_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -255,7 +257,7 @@ function ministry_opportunity_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_contact',
-    'label' => 'Contact Name',
+    'label' => 'Name',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -270,6 +272,7 @@ function ministry_opportunity_field_default_field_instances() {
       'type' => 'text_textfield',
       'weight' => 10,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-ministry_opportunity-field_contact_email'
@@ -280,7 +283,7 @@ function ministry_opportunity_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
@@ -319,7 +322,7 @@ function ministry_opportunity_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -363,11 +366,11 @@ function ministry_opportunity_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 6,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -400,11 +403,11 @@ function ministry_opportunity_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 16,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -439,10 +442,9 @@ function ministry_opportunity_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'inline',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 17,
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -477,8 +479,8 @@ function ministry_opportunity_field_default_field_instances() {
   t('Church Name');
   t('Church Website');
   t('City');
-  t('Contact Name');
   t('Email');
+  t('Name');
   t('Pay Type');
   t('Phone');
   t('Position Description');
