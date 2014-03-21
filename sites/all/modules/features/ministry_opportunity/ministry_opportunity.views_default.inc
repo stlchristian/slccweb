@@ -23,6 +23,7 @@ function ministry_opportunity_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Ministry Opportunities';
+  $handler->display->display_options['css_class'] = 'list-search';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -34,6 +35,8 @@ function ministry_opportunity_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '10, 20, 40, 60';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'changed' => 'changed',
@@ -146,80 +149,18 @@ Submitting an open position is easy and free! Please <a href="ministry-opportuni
   $handler->display->display_options['filters']['type']['value'] = array(
     'ministry_opportunity' => 'ministry_opportunity',
   );
-  /* Filter criterion: Content: Church Name (field_church_name) */
-  $handler->display->display_options['filters']['field_church_name_value']['id'] = 'field_church_name_value';
-  $handler->display->display_options['filters']['field_church_name_value']['table'] = 'field_data_field_church_name';
-  $handler->display->display_options['filters']['field_church_name_value']['field'] = 'field_church_name_value';
-  $handler->display->display_options['filters']['field_church_name_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_church_name_value']['expose']['operator_id'] = 'field_church_name_value_op';
-  $handler->display->display_options['filters']['field_church_name_value']['expose']['label'] = 'Church Name';
-  $handler->display->display_options['filters']['field_church_name_value']['expose']['operator'] = 'field_church_name_value_op';
-  $handler->display->display_options['filters']['field_church_name_value']['expose']['identifier'] = 'field_church_name_value';
-  $handler->display->display_options['filters']['field_church_name_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    11 => 0,
-    20 => 0,
-    18 => 0,
-    16 => 0,
-    14 => 0,
-    12 => 0,
-    9 => 0,
-    7 => 0,
-    6 => 0,
-    21 => 0,
-    19 => 0,
-    17 => 0,
-    15 => 0,
-    13 => 0,
-    10 => 0,
-    8 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
-  );
-  /* Filter criterion: Content: City (field_city) */
-  $handler->display->display_options['filters']['field_city_value']['id'] = 'field_city_value';
-  $handler->display->display_options['filters']['field_city_value']['table'] = 'field_data_field_city';
-  $handler->display->display_options['filters']['field_city_value']['field'] = 'field_city_value';
-  $handler->display->display_options['filters']['field_city_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_city_value']['expose']['operator_id'] = 'field_city_value_op';
-  $handler->display->display_options['filters']['field_city_value']['expose']['label'] = 'City';
-  $handler->display->display_options['filters']['field_city_value']['expose']['operator'] = 'field_city_value_op';
-  $handler->display->display_options['filters']['field_city_value']['expose']['identifier'] = 'field_city_value';
-  $handler->display->display_options['filters']['field_city_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    11 => 0,
-    20 => 0,
-    18 => 0,
-    16 => 0,
-    14 => 0,
-    12 => 0,
-    9 => 0,
-    7 => 0,
-    6 => 0,
-    21 => 0,
-    19 => 0,
-    17 => 0,
-    15 => 0,
-    13 => 0,
-    10 => 0,
-    8 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
-  );
-  /* Filter criterion: Content: Pay Type (field_pay_type) */
-  $handler->display->display_options['filters']['field_pay_type_value']['id'] = 'field_pay_type_value';
-  $handler->display->display_options['filters']['field_pay_type_value']['table'] = 'field_data_field_pay_type';
-  $handler->display->display_options['filters']['field_pay_type_value']['field'] = 'field_pay_type_value';
-  $handler->display->display_options['filters']['field_pay_type_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_pay_type_value']['expose']['operator_id'] = 'field_pay_type_value_op';
-  $handler->display->display_options['filters']['field_pay_type_value']['expose']['label'] = 'Pay Type';
-  $handler->display->display_options['filters']['field_pay_type_value']['expose']['operator'] = 'field_pay_type_value_op';
-  $handler->display->display_options['filters']['field_pay_type_value']['expose']['identifier'] = 'field_pay_type_value';
-  $handler->display->display_options['filters']['field_pay_type_value']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Position';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     11 => 0,
@@ -246,6 +187,7 @@ Submitting an open position is easy and free! Please <a href="ministry-opportuni
   $handler->display->display_options['filters']['field_state_value']['id'] = 'field_state_value';
   $handler->display->display_options['filters']['field_state_value']['table'] = 'field_data_field_state';
   $handler->display->display_options['filters']['field_state_value']['field'] = 'field_state_value';
+  $handler->display->display_options['filters']['field_state_value']['group'] = 1;
   $handler->display->display_options['filters']['field_state_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_state_value']['expose']['operator_id'] = 'field_state_value_op';
   $handler->display->display_options['filters']['field_state_value']['expose']['label'] = 'State';
@@ -274,16 +216,17 @@ Submitting an open position is easy and free! Please <a href="ministry-opportuni
     4 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Position';
-  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Pay Type (field_pay_type) */
+  $handler->display->display_options['filters']['field_pay_type_value']['id'] = 'field_pay_type_value';
+  $handler->display->display_options['filters']['field_pay_type_value']['table'] = 'field_data_field_pay_type';
+  $handler->display->display_options['filters']['field_pay_type_value']['field'] = 'field_pay_type_value';
+  $handler->display->display_options['filters']['field_pay_type_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_pay_type_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_pay_type_value']['expose']['operator_id'] = 'field_pay_type_value_op';
+  $handler->display->display_options['filters']['field_pay_type_value']['expose']['label'] = 'Pay Type';
+  $handler->display->display_options['filters']['field_pay_type_value']['expose']['operator'] = 'field_pay_type_value_op';
+  $handler->display->display_options['filters']['field_pay_type_value']['expose']['identifier'] = 'field_pay_type_value';
+  $handler->display->display_options['filters']['field_pay_type_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     11 => 0,
@@ -335,7 +278,6 @@ Submitting an open position is easy and free! Please <a href="ministry-opportuni
     t('Location'),
     t('State'),
     t('Pay Type'),
-    t('City'),
     t('Page'),
   );
   $export['ministry_opportunities'] = $view;
