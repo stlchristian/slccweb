@@ -648,24 +648,8 @@ span.search-info-upload {
   float: left;
 }
 
-.views-exposed-widget {
-  width: 50%;
-  float: left;
-}
-
-.views-submit-button {
-  position: relative;
-  height: 74px;
-}
-
-.edit-submit-ministry-opportunities {
-  position: absolute;
-  top: 50%;
-}
-
 .list-search.view-filters .views-exposed-widget label{
   margin: 0 0 5px 0;
-  float: left;
 }
 
 .list-search .view-filters .views-widget-filter-title {
@@ -676,11 +660,11 @@ span.search-info-upload {
   width: 90%;
 }
 
-.view-all-courses .view-filters .views-widget-sort-by {
-  width: 17%;
+.list-search .view-filters .views-widget-filter-field_state_value {
+  width: 20%;
 }
 
-.list-search .view-filters .views-widget-sort-order {
+.list-search .view-filters .views-widget-filter-field_pay_type_value {
   width: 14%;
 }
 
@@ -692,7 +676,7 @@ span.search-info-upload {
 
 .list-search .view-filters .views-submit-button {
   float: right;
-  margin: 25px 0 0 ;
+  margin: 23px 0 0 ;
   width: 11%;
 }
 
