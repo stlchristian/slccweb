@@ -144,11 +144,11 @@ function tb_university_confirm_form(&$vars) {
   }
 }
 
-/*
-* Implementation of hook_form_alter().
-* Modify the node title for my "New Ministry Opportunity" form
-* that will be seen by anonymous users
-*/
+/**
+ * Implementation of hook_form_alter().
+ * Modify the node title for my "New Ministry Opportunity" form
+ * that will be seen by anonymous users
+ */
 function tb_university_form_ministry_opportunity_node_form_alter(&$form, &$form_state) {
   /* Set the title */
   drupal_set_title('Submit a Ministry Opportunity');
@@ -164,4 +164,19 @@ function mysubmit_ministry_opportunity_node_submit($form, &$form_state) {
   drupal_get_messages();
   drupal_set_message("Your ministry opportunity has been successfully submitted. We'll have it posted as soon as we can.");
   $form_state['redirect'] = 'ministry-opportunities';
+}
+
+/**
+ * Implementation of template_preprocess_field().
+ */
+function tb_university_preprocess_field(&$vars, $hook) {
+  /* Add line breaks to plain text textareas. */
+  if (
+    /* Make sure this is a text_long or text_with_summary field type. */
+    ($vars['element']['#field_type'] == 'text_with_summary' || $vars['element']['#field_type'] == 'text_long')
+    /* Check that the field's format is set to null, which equates to plain_text. */
+    && $vars['element']['#items'][0]['format'] == null
+  ) {
+    $vars['items'][0]['#markup'] = nl2br($vars['items'][0]['#markup']);
+  }
 }
