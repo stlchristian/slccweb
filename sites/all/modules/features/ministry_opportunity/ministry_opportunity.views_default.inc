@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * ministry_opportunities_listing_view.views_default.inc
+ * ministry_opportunity.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function ministry_opportunities_listing_view_views_default_views() {
+function ministry_opportunity_views_default_views() {
   $export = array();
 
   $view = new view();
