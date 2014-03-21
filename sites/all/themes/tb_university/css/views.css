@@ -496,7 +496,7 @@ ul.social-links li.email a {
 .view-events .group-event-time .field-type-datetime {
   display: block;
   font-size: 1.25em;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   background: url("../images/icon-clock.png") no-repeat 0 3px;
   padding-left: 22px;
 }
@@ -513,26 +513,6 @@ ul.social-links li.email a {
   float: left;
   position: relative;
   width: 52%;
-}
-
-.field-name-field-speaker {
-  border-left: 1px dotted #CCCCCC;
-  float: right;
-  text-align: center;
-  width: 23%;
-  padding: 0 0 0 20px;
-  margin: 0 0 0 20px;
-}
-
-.field-name-field-speaker .node-title {
-  color: #333333;
-  font-size: 1em;
-  font-weight: 500;
-  margin: 0 0 10px;
-}
-
-.field-name-field-speaker .field-type-image img {
-  margin: 10px auto 20px;
 }
 
 .field-name-field-details {
@@ -590,7 +570,7 @@ ul.social-links li.email a {
 .node-type-events .group-event-time .field-type-datetime {
   display: block;
   font-size: 1.25em;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   background: url("../images/icon-clock.png") no-repeat 0 3px;
   padding-left: 22px;
 }
@@ -609,16 +589,82 @@ ul.social-links li.email a {
   width: 52%;
 }
 
-.field-name-field-speaker {
+.node-type-events .group-event-details .description {
+  display: block;
+  font-size: 1.25em;
+  margin-bottom: 10px;
+}
+
+/* Ministry Opportunities */
+.node-type-ministry-opportunity .node-title {
+  margin: 0 0 10px 0;
+}
+
+.node-type-ministry-opportunity .views-row {
+  border-bottom: 1px solid #DDDDDD;
+  float: left;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.node-type-ministry-opportunity .views-row .article { 
+  margin: 0;
+  padding: 0;
+}
+
+.node-type-ministry-opportunity .views-row-first {
+  padding: 0 0 20px 0;
+}
+
+.node-type-ministry-opportunity .node-content{
+  position: relative;
+}
+
+.node-type-ministry-opportunity .group-church-information {
+  float: left;
+  width: 19%;
+  font-size: 1.167em;
+}
+
+.node-type-ministry-opportunity .group-church-information .field-name-field-church-name,
+.node-type-ministry-opportunity .group-contact-information .description {
+  margin-bottom: 10px;
+  display: block;
+  font-size: 1.25em;
+}
+
+.node-type-ministry-opportunity .group-church-information .field-name-field-address {
+  margin-bottom: 0px;
+}
+
+.node-type-ministry-opportunity .group-church-information .field-name-field-city .field-item:after {
+  content: ", ";
+}
+.node-type-ministry-opportunity .group-church-information .field-name-field-city,
+.node-type-ministry-opportunity .group-church-information .field-name-field-state,
+.node-type-ministry-opportunity .group-church-information .field-name-field-zip-code {
+  display: inline-block;
+  margin-right: 0.3em;
+  margin-bottom: 0px;
+}
+
+.node-type-ministry-opportunity .field-name-body {
+  float: left;
+  position: relative;
+  width: 52%;
+}
+
+.node-type-ministry-opportunity .group-contact-information {
   border-left: 1px dotted #CCCCCC;
   float: right;
-  text-align: center;
+  text-align: left;
   width: 23%;
   padding: 0 0 0 20px;
   margin: 0 0 0 20px;
 }
 
-.field-name-field-speaker .node-content {
+.node-type-ministry-opportunity .group-name-contact-information .node-content {
   color: #666666;
   font-family: Georgia,serif;
   font-style: italic;
@@ -657,6 +703,7 @@ ul.social-links li.email a {
 .field-name-field-speaker .node-content .field-name-field-job-title {
   display: none;
 }
+
 
 /* articles */
 .article .field-type-image {

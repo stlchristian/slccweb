@@ -77,14 +77,19 @@ function tb_university_preprocess_node(&$vars) {
 
 function tb_university_preprocess_page(&$vars) {
   /*
-  if (isset($vars['node']) && !in_array($vars['node']->type, array('page', 'webform')) && !in_array('page__node__delete', $vars['theme_hook_suggestions'])) {
-    $result = db_select('node_type', NULL, array('fetch' => PDO::FETCH_ASSOC))
-    ->fields('node_type', array('name'))
-    ->condition('type', $vars['node']->type)
-    ->execute()->fetchField();
-    $vars['title'] = t($result);
-  }
-  */
+   * This function is stupid, and should not be uncommented
+   * If a node is being rendered, which is not a page or webform,
+   * this function figures out what the content type is and sets
+   * the nodes title to that.
+   * I told you it was stupid.
+   *if (isset($vars['node']) && !in_array($vars['node']->type, array('page', 'webform')) && !in_array('page__node__delete', $vars['theme_hook_suggestions'])) {
+   *  $result = db_select('node_type', NULL, array('fetch' => PDO::FETCH_ASSOC))
+   *  ->fields('node_type', array('name'))
+   *  ->condition('type', $vars['node']->type)
+   *  ->execute()->fetchField();
+   *  $vars['title'] = t($result);
+   *}
+   */
   if ($vars['theme_hook_suggestions'][0] == 'page__comment') {
     if (in_array('page__comment__delete', $vars['theme_hook_suggestions'])) {
       $vars['title'] = t("Delete comment");

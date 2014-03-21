@@ -104,11 +104,12 @@
       <?php if ($title): ?>
         <h2<?php print $title_attributes; ?>>
           <?php
-            if($teaser){
+            if ($teaser) {
               print '<a href="'.$node_url.'">'.$title.'</a>';
-            }/*else{
+            }
+            /*else {
               print $title;
-            }*/
+            } */
           ?>
         </h2>
       <?php endif; ?>
