@@ -4,6 +4,12 @@
   color: #666;
 }
 
+.front a:hover,
+.front a:focus,
+.front a:active {
+  color: #205f93;
+}
+
 p a:visited,
 p a,
 table tbody a:visited,
