@@ -21,22 +21,16 @@ function events_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'seven',
         'weight' => 0,
       ),
-      'tb_university' => array(
+      'slcc_subtheme' => array(
         'region' => 'panel_first_1',
         'status' => 1,
-        'theme' => 'tb_university',
+        'theme' => 'slcc_subtheme',
         'weight' => 0,
       ),
     ),
