@@ -179,3 +179,14 @@ li a.active {
   margin: 10px 0 0;
   padding: 0 !important;
 }
+
+.page-ministry-opportunities .views-table th.views-field-changed,
+.page-ministry-opportunities .views-table th.views-field-field-pay-type {
+  width: 15%;
+}
+
+.page-ministry-opportunities .views-table th.views-field-title,
+.page-ministry-opportunities .views-table th.views-field-field-church-name,
+.page-ministry-opportunities .views-table th.views-field-field-city {
+  width: 23%;
+}
