@@ -1,55 +1,16 @@
 ; Theme info
-name = 'Tb University'
-description = TB University is a light weight Drupal theme that is based on <a href="http://themebrain.com/about-nucleus">Nucleus</a> and shows a slick styling of some basic Drupal content types such as blog, poll, forum and a contact form. Requires <a href="http://drupal.org/project/nucleus">Nucleus</a> base theme.
+name = 'SLCC Subtheme'
+description = A customization of the TB University theme, a subtheme of Nucleus. Customized by Elliot Voris for use as a theme for SLCC.
 core = '7.x'
 engine = 'phptemplate'
-base theme = 'tb_university
+base theme = 'tb_university'
 screenshot = 'screenshot.png'
 
 ; Stylesheets
-stylesheets[all][] = 'css/html-elements.css'
-stylesheets[all][] = 'css/forms.css'
-stylesheets[all][] = 'css/page.css'
-stylesheets[all][] = 'css/articles.css'
-stylesheets[all][] = 'css/comments.css'
-stylesheets[all][] = 'css/views.css'
-stylesheets[all][] = 'css/forum.css'
-stylesheets[all][] = 'css/fields.css'
-stylesheets[all][] = 'css/blocks.css'
-stylesheets[all][] = 'css/navigation.css'
-stylesheets[all][] = 'css/fonts.css'
-stylesheets[all][] = 'css/typo.css'
-
-; Seperate CSS3 to css3.css
-stylesheets[all][] = 'css/css3.css'
-
-; Stylesheets for Print Media
-stylesheets[print][] = 'css/print.css'
-
-; Conditional Stylesheets for IE
-stylesheets-conditional[IE][all][] = css/ie.css
-stylesheets-conditional[lt IE 9][all][] = css/ie8.css
-
-; Scripts in this theme
-scripts[] = 'js/jquery.matchHeights.min.js'
-scripts[] = 'js/tb_university.js'
-scripts[] = 'js/tb_responsive.js'
-scripts[] = 'js/tb.plugins.js'
-
-; Responsive
-stylesheets[only screen and (min-width: 959px) and (max-width: 1049px)][] = 'css/screens/tablet.css'
-stylesheets[only screen and (min-width: 720px) and (max-width: 959px)][] = 'css/screens/tablet-vertical.css'
-stylesheets[only screen and (max-width:719px)][] = 'css/screens/mobile.css'
-stylesheets[only screen and (max-width:479px)][] = 'css/screens/mobile-vertical.css'
+stylesheets[all][] = 'css/slcc.css'
 
 ; Supported Skins
 skins[blue] = 'Blue'
-skins[brown] = 'Brown'
-skins[green] = 'Green'
-skins[grey] = 'Grey'
-skins[iron] = 'Iron'
-skins[teal] = 'Teal'
-skins[violet] = 'Violet'
 
 ; Core regions
 regions[content] = 'Main content'
@@ -136,8 +97,8 @@ settings[panel_fifth_6_width] = 4
 settings[base_font] = 'bf-a'
 settings[site_name_font] = ''
 settings[site_slogan_font] = ''
-settings[page_title_font] = ''
-settings[node_title_font] = ''
+settings[page_title_font] = 'Lobster'
+settings[node_title_font] = 'Lobster'
 settings[comment_title_font] = ''
 settings[block_title_font] = ''
 settings[font_size] = 'fs-medium'
@@ -160,7 +121,7 @@ block_styles[rounded] = 'Rounded'
 block_styles[xhtml] = 'XHTML'
 
 ; Superfish Styles
-superfish_styles[university] = 'University Style for Superfish'
+superfish_styles[university] = 'SLCC Style for Superfish'
 settings[superfish_extend_style_1] = 'university'
 settings[superfish_extend_style_2] = 'university'
 

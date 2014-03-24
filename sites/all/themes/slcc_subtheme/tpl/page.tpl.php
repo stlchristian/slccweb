@@ -151,6 +151,18 @@
     </div>
     <!-- /#SLIDESHOW -->
   <?php endif; ?>
+  
+  <?php if($breadcrumb): ?>
+  <!-- BREADCRUMB -->
+	<div id="breadcrumb-wrapper" class="wrapper clearfix">
+	  <div class="container">
+		<div class="grid-inner clearfix">
+	      <?php print $breadcrumb; ?>
+	    </div>
+	  </div>
+	</div>
+  <!-- /#BREACRUMB -->
+  <?php endif; ?>
 
   <?php if($panel_first): ?>
     <!-- PANEL FIRST -->
@@ -273,15 +285,6 @@
 	<div class="container <?php print $panel_fifth_cols;?> <?php print $grid;?> clearfix"> <?php print $panel_fifth;?> </div>
   </div>
   <!-- //PANEL FIFTH -->
-  <?php endif; ?>
-  <?php if($breadcrumb): ?>
-	<div id="breadcrumb-wrapper" class="wrapper clearfix">
-	  <div class="container">
-		<div class="grid-inner clearfix">
-	      <?php print $breadcrumb; ?>
-	    </div>
-	  </div>
-	</div>
   <?php endif; ?>
   <?php if ($footer = render($page['footer'])): ?>
     <!-- FOOTER -->
