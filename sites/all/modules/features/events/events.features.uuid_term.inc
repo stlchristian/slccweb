@@ -14,23 +14,15 @@ function events_uuid_features_default_terms() {
     'name' => 'Weather Alert',
     'description' => '',
     'format' => 'filtered_html',
-    'weight' => 0,
+    'weight' => 2,
     'uuid' => '4388752c-c6ee-4984-b581-ca510abd3e82',
-    'vocabulary_machine_name' => 'event_categories',
-  );
-  $terms[] = array(
-    'name' => 'Athletics',
-    'description' => '',
-    'format' => 'filtered_html',
-    'weight' => 0,
-    'uuid' => '98aaadd1-6638-4181-8426-95e905b018ef',
     'vocabulary_machine_name' => 'event_categories',
   );
   $terms[] = array(
     'name' => 'Admissions',
     'description' => '',
     'format' => 'filtered_html',
-    'weight' => 0,
+    'weight' => 3,
     'uuid' => 'd246b476-dac5-4b7c-8297-8172114ae106',
     'vocabulary_machine_name' => 'event_categories',
   );
@@ -38,7 +30,7 @@ function events_uuid_features_default_terms() {
     'name' => 'Student Life',
     'description' => '',
     'format' => 'filtered_html',
-    'weight' => 0,
+    'weight' => 1,
     'uuid' => 'f0efd726-789e-43bf-8d4a-fbfbbc547565',
     'vocabulary_machine_name' => 'event_categories',
   );
