@@ -55,6 +55,44 @@ function chapel_service_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-chapel_service-field_academic_semester'
+  $field_instances['node-chapel_service-field_academic_semester'] = array(
+    'bundle' => 'chapel_service',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_academic_semester',
+    'label' => 'Semester',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 33,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-chapel_service-field_audio_file'
   $field_instances['node-chapel_service-field_audio_file'] = array(
     'bundle' => 'chapel_service',
@@ -63,9 +101,15 @@ function chapel_service_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
+        'module' => 'mediaelement',
+        'settings' => array(
+          'controls' => TRUE,
+          'download_link' => FALSE,
+          'download_text' => 'Download',
+          'height' => 30,
+          'width' => 300,
+        ),
+        'type' => 'mediaelement_audio',
         'weight' => 5,
       ),
       'teaser' => array(
@@ -122,7 +166,6 @@ function chapel_service_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -160,6 +203,44 @@ function chapel_service_field_default_field_instances() {
       'type' => 'date_select',
       'weight' => 4,
     ),
+  );
+
+  // Exported field_instance: 'node-chapel_service-field_school_year'
+  $field_instances['node-chapel_service-field_school_year'] = array(
+    'bundle' => 'chapel_service',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_school_year',
+    'label' => 'School Year',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 35,
+    ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-chapel_service-field_sermon_topic'
@@ -211,10 +292,10 @@ function chapel_service_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -228,18 +309,19 @@ function chapel_service_field_default_field_instances() {
     'label' => 'Speaker',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'text',
+      'active' => 0,
+      'module' => 'taxonomy',
       'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'text_textfield',
-      'weight' => 3,
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 31,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Translatables
@@ -247,6 +329,8 @@ function chapel_service_field_default_field_instances() {
   t('Audio');
   t('Date');
   t('Description');
+  t('School Year');
+  t('Semester');
   t('Sermon Topic');
   t('Speaker');
 

@@ -10,6 +10,40 @@
 function chapel_service_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_academic_semester'
+  $field_bases['field_academic_semester'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_academic_semester',
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'academic_semester',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
   // Exported field_base: 'field_audio_file'
   $field_bases['field_audio_file'] = array(
     'active' => 1,
@@ -72,6 +106,40 @@ function chapel_service_field_default_field_bases() {
     'type' => 'datetime',
   );
 
+  // Exported field_base: 'field_school_year'
+  $field_bases['field_school_year'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_school_year',
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'school_year',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
   // Exported field_base: 'field_sermon_topic'
   $field_bases['field_sermon_topic'] = array(
     'active' => 1,
@@ -109,42 +177,30 @@ function chapel_service_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_speaker',
     'foreign keys' => array(
-      'node' => array(
+      'tid' => array(
         'columns' => array(
-          'target_id' => 'nid',
+          'tid' => 'tid',
         ),
-        'table' => 'node',
+        'table' => 'taxonomy_term_data',
       ),
     ),
     'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
+      'tid' => array(
+        0 => 'tid',
       ),
     ),
     'locked' => 0,
-    'module' => 'entityreference',
+    'module' => 'taxonomy',
     'settings' => array(
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'test_field_behavior' => array(
-            'status' => 0,
-          ),
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'professor' => 'professor',
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'chapel_speaker',
+          'parent' => 0,
         ),
       ),
-      'target_type' => 'node',
     ),
     'translatable' => 0,
-    'type' => 'entityreference',
+    'type' => 'taxonomy_term_reference',
   );
 
   return $field_bases;
