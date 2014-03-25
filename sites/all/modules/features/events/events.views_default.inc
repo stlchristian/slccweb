@@ -66,11 +66,13 @@ function events_views_default_views() {
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['label'] = 'Speaker(s)';
+  $handler->display->display_options['fields']['field_speaker']['click_sort_column'] = 'target_id';
   $handler->display->display_options['fields']['field_speaker']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_speaker']['settings'] = array(
     'view_mode' => 'teaser',
     'links' => 1,
   );
+  $handler->display->display_options['fields']['field_speaker']['group_column'] = 'target_id';
   /* Sort criterion: Content: Time -  start date (field_time) */
   $handler->display->display_options['sorts']['field_time_value']['id'] = 'field_time_value';
   $handler->display->display_options['sorts']['field_time_value']['table'] = 'field_data_field_time';
