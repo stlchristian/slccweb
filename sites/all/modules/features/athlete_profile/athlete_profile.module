@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Athlete Profile feature.
+ */
+
+include_once 'athlete_profile.features.inc';
