@@ -194,3 +194,6 @@ li a.active {
 /* Chapel Services*/
 
 /* chapel services listing */
+.page-chapel-services .views-table .views-field-field-speaker {
+  width: 25%;
+}

@@ -436,7 +436,7 @@ ul.social-links li.email a {
 }
 
 /*Events*/
-.views-field-field-speaker {
+/*.views-field-field-speaker {
   border-left: 1px dotted #ccc;
   float: right;
   margin-left: 20px;
@@ -444,7 +444,7 @@ ul.social-links li.email a {
   position: relative;
   text-align: center;
   width: 210px;
-}
+}*/
 
 /*event page*/
 .view-events .node-title {
