@@ -31,7 +31,7 @@ function professor_profile_default_fe_block_settings() {
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'slcc_subtheme',
-        'weight' => -28,
+        'weight' => -37,
       ),
     ),
     'title' => '',

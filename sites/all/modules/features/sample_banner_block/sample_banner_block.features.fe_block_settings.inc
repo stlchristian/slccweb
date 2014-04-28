@@ -31,7 +31,7 @@ function sample_banner_block_default_fe_block_settings() {
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'slcc_subtheme',
-        'weight' => -26,
+        'weight' => -35,
       ),
     ),
     'title' => '<none>',
