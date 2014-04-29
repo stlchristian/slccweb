@@ -197,3 +197,9 @@ li a.active {
 .page-chapel-services .views-table .views-field-field-speaker {
   width: 25%;
 }
+
+/* Webform Pages */
+/* alumni information update */
+.webform-client-form {
+	margin: 0;
+}
