@@ -198,8 +198,17 @@ li a.active {
   width: 25%;
 }
 
-/* Webform Pages */
+/* Webform Pages and Blocks */
 /* alumni information update */
 .webform-client-form {
 	margin: 0;
+}
+
+/* info request on <frontpage> */
+div#block-views-features-block--2 .view-features .webform-client-form .form-item input {
+  float: right;
+}
+
+div#block-views-features-block--2 .view-features .view-content .views-row .col-last .views-field-view-node {
+  display: none;
 }
