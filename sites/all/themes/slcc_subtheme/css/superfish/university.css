@@ -1,7 +1,12 @@
 .menu.sf-menu.sf-style-university {
-  float: left;
+  display: inline-block;
+  float: none;
   margin: 0;
   padding: 0;
+}
+
+#block-superfish-1 {
+  text-align: center;
 }
 
 .menu.sf-menu.sf-style-university li {
