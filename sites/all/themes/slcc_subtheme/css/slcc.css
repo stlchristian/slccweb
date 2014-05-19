@@ -212,3 +212,19 @@ div#block-views-features-block--2 .view-features .webform-client-form .form-item
 div#block-views-features-block--2 .view-features .view-content .views-row .col-last .views-field-view-node {
   display: none;
 }
+
+/* 404 Page Image */
+.page-404 {
+  background: url("../images/error-bg.png") no-repeat left top;
+  margin: 100px auto 0;
+  width: 597px;
+/*
+  font-size: 12px;
+  height: 231px;
+  overflow: hidden;
+*/
+}
+
+.page-404 #outline {
+  margin-left: 40px;
+}
