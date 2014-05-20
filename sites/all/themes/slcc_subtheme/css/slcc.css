@@ -248,6 +248,11 @@ div#block-views-features-block--2 .view-features .webform-client-form .form-acti
   border-color: #0c426f;
 }
 
+.front .webform-client-form {
+  border-top: 0;
+  padding: 0;
+}
+
 /* info request on its own page */
 div#webform-component-information-about-your-interests--prospective-term {
   float: left;
