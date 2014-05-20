@@ -64,9 +64,14 @@
           <h1>404</h1>
           <div class="page-404-message"><?php print t('Page not found')?></div>
           <div id="errorboxbody">
-            <?php print t('You should head back to the <a title="@title" href="@url">Home Page</a>',array(
+            <?php print t('You could head back to the <a title="@title" href="@url">Home Page</a>',array(
               '@url' => base_path(),
               '@title' => t('Go to Home Page')
+            ))?>
+            <br />
+            <?php print t('Or you could try our <a title="@title" href="@url">Search Page</a>', array(
+              '@url' => base_path() . 'search',
+              '@title' => t('Go to Search Page')
             ))?>
           </div>
         </div>
