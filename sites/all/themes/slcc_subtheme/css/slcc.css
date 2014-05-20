@@ -248,13 +248,31 @@ div#block-views-features-block--2 .view-features .webform-client-form .form-acti
   border-color: #0c426f;
 }
 
-/* 404 Page Image */
+/* info request on its own page */
+div#webform-component-information-about-your-interests--prospective-term {
+  float: left;
+  margin-right: 1em;
+  margin-top: 0;
+}
+
+/* fieldset titles */
+fieldset legend {
+  color: #666;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 0 10px 0 10px;
+}
+
+/* 404 Page */
+/* specify our image */
 .page-404 {
   background: url("../images/error-bg.png") no-repeat left top;
   margin: 100px auto 0;
   width: 597px;
 }
 
+/* center the image */
 .page-404 #outline {
   margin-left: 40px;
 }
