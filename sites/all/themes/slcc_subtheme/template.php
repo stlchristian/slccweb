@@ -66,3 +66,13 @@ function slcc_subtheme_preprocess_field(&$vars, $hook) {
     $vars['items'][0]['#markup'] = nl2br($vars['items'][0]['#markup']);
   }
 }
+
+/**
+ * Implementation of theme_webform_mail_headers().
+ */
+function slcc_subtheme_webform_mail_headers($variables) {
+  $headers = array(
+    'Content-Type'  => 'text/html; charset=UTF-8; format=flowed; delsp=yes',
+    'X-Mailer'      => 'Drupal Webform (PHP/' . phpversion() . ')',
+  );
+}
