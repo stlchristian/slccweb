@@ -75,4 +75,5 @@ function slcc_subtheme_webform_mail_headers($variables) {
     'Content-Type'  => 'text/html; charset=UTF-8; format=flowed; delsp=yes',
     'X-Mailer'      => 'Drupal Webform (PHP/' . phpversion() . ')',
   );
+  return $headers;
 }
