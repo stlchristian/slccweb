@@ -305,18 +305,12 @@ fieldset legend {
 #header .contact-us a,
 #header .contact-us a:visited,
 #header .contact-us span {
-/*
-  color: #6991b7;
-*/
   color: #dcdfdf;
 }
 
 #header .contact-us a:focus,
 #header .contact-us a:hover,
 #header .contact-us a:active {
-/*
-  color: #FFFFFF;
-*/
   color: #6991b7;
 }
 
