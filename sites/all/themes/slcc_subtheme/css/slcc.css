@@ -1,4 +1,5 @@
 /* Link Colors */
+/*
 .front a:visited,
 .front a {
   color: #666;
@@ -9,6 +10,7 @@
 .front a:active {
   color: #205f93;
 }
+*/
 
 p a:visited,
 p a,
@@ -285,4 +287,55 @@ fieldset legend {
 /* center the image */
 .page-404 #outline {
   margin-left: 40px;
+}
+
+/* Additions to the Header */
+/* search form margin */
+#header #search-block-form .container-inline {
+  float: right;
+  margin-top: 10px;
+}
+
+/* header buttons */
+#header .contact-us {
+  float: right;
+  margin-top: 10px;
+}
+
+#header .contact-us a,
+#header .contact-us a:visited,
+#header .contact-us span {
+/*
+  color: #6991b7;
+*/
+  color: #dcdfdf;
+}
+
+#header .contact-us a:focus,
+#header .contact-us a:hover,
+#header .contact-us a:active {
+/*
+  color: #FFFFFF;
+*/
+  color: #6991b7;
+}
+
+/* site slogan */
+#name-and-slogan {
+  clear: left;
+}
+
+#name-and-slogan p {
+  background: none;
+  color: #dcdfdf;
+  font-family: Lobster;
+  font-size: 2em;
+}
+
+div.header-and-slogan {
+  display: inline-block;
+}
+
+#logo {
+  margin-bottom: 10px;
 }

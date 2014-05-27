@@ -80,6 +80,7 @@
       <div class="grid-inner clearfix">
         <div id="header" class="clearfix">
 
+          <div class="header-and-slogan">
           <?php if ($logo): ?>
             <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" id="logo">
               <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
@@ -100,6 +101,7 @@
               <?php endif; ?>
             </div>
           <?php endif; ?>
+          </div>
 
           <?php if ($header = render($page['header'])):?>
             <?php print $header; ?>
