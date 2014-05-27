@@ -314,7 +314,10 @@ fieldset legend {
 
 #header .contact-us a:focus,
 #header .contact-us a:hover,
-#header .contact-us a:active {
+#header .contact-us a:active,
+#header .contact-us a:focus span,
+#header .contact-us a:hover span,
+#header .contact-us a:active span {
   color: #6991b7;
 }
 
