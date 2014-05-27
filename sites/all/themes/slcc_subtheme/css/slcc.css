@@ -240,24 +240,28 @@ div#block-views-features-block--2 .view-features .view-content .col-last .col-in
 
 div#block-views-features-block--2 .view-features .view-content .col-last .col-inner .views-field-body,
 div#block-views-features-block--2 .view-features .view-content .col-last .col-inner .views-field-body p {
-  margin-bottom: 0;
+  margin: 0;
 }
 
 div#block-views-features-block--2 .view-features .webform-client-form .form-actions .form-submit {
-  background-color: #e09b0f;
-  border-color: #e09b0f;
+  background-color: #009900;
   width: 100%;
 }
 
 div#block-views-features-block--2 .view-features .webform-client-form .form-actions .form-submit:focus,
+div#block-views-features-block--2 .view-features .webform-client-form .form-actions .form-submit:active,
 div#block-views-features-block--2 .view-features .webform-client-form .form-actions .form-submit:hover {
-  background-color: #0c426f;
-  border-color: #0c426f;
+  background-color: #006600;
 }
 
 .front .webform-client-form {
   border-top: 0;
   padding: 0;
+}
+
+div#block-views-features-block--2 .view-features .view-content .col-last .col-inner .views-field-title {
+  font-size: 24px;
+  margin: 0;
 }
 
 /* info request on its own page */
