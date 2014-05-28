@@ -159,6 +159,11 @@ li a.active {
   margin-bottom: 0px;
 }
 
+.node-type-ministry-opportunity .group-church-information .field-name-field-pay-type {
+  margin: 10px 0px 10px 0px;
+}
+
+
 .node-type-ministry-opportunity .field-name-body {
   float: left;
   position: relative;

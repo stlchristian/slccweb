@@ -119,7 +119,7 @@ function ministry_opportunity_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_ministry_opportunity';
-  $strongarm->value = 'main-menu:0';
+  $strongarm->value = 'main-menu:1232';
   $export['menu_parent_ministry_opportunity'] = $strongarm;
 
   $strongarm = new stdClass();
