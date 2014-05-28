@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 
 <head>
-  <title>Site under maintenance | St. Louis Christian College</title>
+  <title>Database Error | St. Louis Christian College</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="shortcut icon" href="http://localhost/stlchristian.edu/sites/default/files/SLCCFavicon.jpg" type="image/jpeg" />
 <meta name="Generator" content="Drupal 7 (http://drupal.org)" />
