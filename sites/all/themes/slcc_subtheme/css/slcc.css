@@ -345,7 +345,7 @@ div.header-and-slogan {
 /* maintenance mode header */
 .in-maintenance div#header {
   display: inline-block;
-  background: url('images/pattern-bg.png') repeat scroll left top #0A3966;
+  background: url('../skins/blue/images/pattern-bg.png') repeat scroll left top #0A3966;
   color: #dcdfdf;
   width: 100%;
 }
@@ -364,7 +364,7 @@ div.header-and-slogan {
 .in-maintenance div#main div#content-content {
   margin: 0px 0px 21px 10px;
   padding: 10px;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 /* maintenance mode footer */
