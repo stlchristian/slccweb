@@ -295,8 +295,9 @@ fieldset legend {
 
 /* Additions to the Header */
 /* search form margin */
-#header #search-block-form .container-inline {
+#header #search-block-form {
   float: right;
+  clear: right;
   margin-top: 10px;
 }
 
