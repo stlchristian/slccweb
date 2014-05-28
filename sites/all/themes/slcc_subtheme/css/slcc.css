@@ -64,6 +64,7 @@ li a.active {
   margin: 23px 0 0 ;
 }
 
+/* Events Pages */
 .views-field-field-details {
   border-left: 1px dotted #ccc;
   float: right;
@@ -97,6 +98,13 @@ li a.active {
   margin-bottom: 10px;
   background: url("../images/icon-clock.png") no-repeat 0 3px;
   padding-left: 22px;
+}
+
+.node-type-events .group-event-registration {
+  float: left;
+  position: relative;
+  width: 52%;
+  margin-left: 19%
 }
 
 .node-type-events .group-event-details .description {

@@ -126,10 +126,11 @@ function events_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'events';
   $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Events Page';
+  $handler->display->display_options['menu']['title'] = 'Events';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['events'] = array(
     t('Master'),
     t('Events'),
@@ -198,7 +199,7 @@ function events_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'events' => 'events',
   );
-  /* Filter criterion: Field: Event Categories (field_event_categories) */
+  /* Filter criterion: Content: Event Category (field_event_categories) */
   $handler->display->display_options['filters']['field_event_categories_tid']['id'] = 'field_event_categories_tid';
   $handler->display->display_options['filters']['field_event_categories_tid']['table'] = 'field_data_field_event_categories';
   $handler->display->display_options['filters']['field_event_categories_tid']['field'] = 'field_event_categories_tid';

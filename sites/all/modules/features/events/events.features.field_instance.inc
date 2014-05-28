@@ -60,7 +60,7 @@ function events_field_default_field_instances() {
     'bundle' => 'events',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'The contact person for the event',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -71,14 +71,15 @@ function events_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
+        'type' => 'text_default',
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_contact',
-    'label' => 'Name',
+    'label' => 'Contact',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -112,9 +113,10 @@ function events_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
+        'module' => 'email',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
+        'type' => 'email_default',
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -153,7 +155,7 @@ function events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -186,13 +188,13 @@ function events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -263,7 +265,7 @@ function events_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'events',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -276,7 +278,7 @@ function events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -304,62 +306,6 @@ function events_field_default_field_instances() {
       'type' => 'date_select',
       'weight' => 10,
     ),
-  );
-
-  // Exported field_instance: 'node-events-field_registration_link'
-  $field_instances['node-events-field_registration_link'] = array(
-    'bundle' => 'events',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 9,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 6,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_registration_link',
-    'label' => 'Registration Link',
-    'required' => 0,
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'rel_remove' => 'default',
-      'title' => 'value',
-      'title_maxlength' => 128,
-      'title_value' => 'Click here to register',
-      'url' => 0,
-      'user_register_form' => FALSE,
-      'validate_url' => 1,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 11,
-    ),
-    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-events-field_time'
@@ -424,14 +370,14 @@ function events_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Contact');
   t('Description');
   t('Email');
   t('Event Category');
   t('Location');
-  t('Name');
   t('Phone');
   t('Registration Deadline');
-  t('Registration Link');
+  t('The contact person for the event');
   t('Time');
 
   return $field_instances;

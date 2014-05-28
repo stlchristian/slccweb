@@ -24,17 +24,16 @@ function events_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'field_contact',
-      1 => 'field_contact_phone',
-      2 => 'field_contact_email',
+      1 => 'field_contact_email',
+      2 => 'field_contact_phone',
       3 => 'field_registration_deadline',
-      4 => 'field_registration_link',
     ),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Event Details',
       'instance_settings' => array(
         'classes' => 'group-event-details field-group-div field-name-field-details',
-        'description' => 'Contact Information',
+        'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
@@ -56,9 +55,10 @@ function events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Event Details',
-    'weight' => '11',
+    'weight' => '2',
     'children' => array(
-      0 => 'field_registration_link',
+      0 => 'field_contact',
+      1 => 'field_contact_email',
     ),
     'format_type' => 'div',
     'format_settings' => array(

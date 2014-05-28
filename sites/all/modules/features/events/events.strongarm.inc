@@ -99,7 +99,18 @@ function events_strongarm() {
           'weight' => '0',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'webform' => array(
+          'teaser' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '9',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__events'] = $strongarm;
