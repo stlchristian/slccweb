@@ -207,11 +207,19 @@ li a.active {
 }
 
 /* Chapel Services*/
-
 /* chapel services listing */
-.page-chapel-services .views-table .views-field-field-speaker {
+.page-student-life-chapel-messages .views-table .views-field-name {
   width: 25%;
 }
+
+.page-student-life-chapel-messages .views-exposed-form .views-exposed-widget {
+  display: inline-block;
+}
+
+.page-student-life-chapel-messages .views-exposed-form .form-item-combine {
+  margin-top: initial;
+}
+
 
 /* Webform Pages and Blocks */
 /* reset the margins for the forms */

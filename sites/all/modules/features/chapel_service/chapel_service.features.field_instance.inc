@@ -10,89 +10,6 @@
 function chapel_service_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-chapel_service-body'
-  $field_instances['node-chapel_service-body'] = array(
-    'bundle' => 'chapel_service',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Description',
-    'required' => 0,
-    'settings' => array(
-      'display_summary' => 1,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-chapel_service-field_academic_semester'
-  $field_instances['node-chapel_service-field_academic_semester'] = array(
-    'bundle' => 'chapel_service',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_academic_semester',
-    'label' => 'Semester',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 33,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Exported field_instance: 'node-chapel_service-field_audio_file'
   $field_instances['node-chapel_service-field_audio_file'] = array(
     'bundle' => 'chapel_service',
@@ -205,84 +122,6 @@ function chapel_service_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-chapel_service-field_school_year'
-  $field_instances['node-chapel_service-field_school_year'] = array(
-    'bundle' => 'chapel_service',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_school_year',
-    'label' => 'School Year',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 35,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance: 'node-chapel_service-field_sermon_topic'
-  $field_instances['node-chapel_service-field_sermon_topic'] = array(
-    'bundle' => 'chapel_service',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_sermon_topic',
-    'label' => 'Sermon Topic',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'node-chapel_service-field_speaker'
   $field_instances['node-chapel_service-field_speaker'] = array(
     'bundle' => 'chapel_service',
@@ -328,10 +167,6 @@ function chapel_service_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Audio');
   t('Date');
-  t('Description');
-  t('School Year');
-  t('Semester');
-  t('Sermon Topic');
   t('Speaker');
 
   return $field_instances;
