@@ -397,3 +397,15 @@ div.header-and-slogan {
   position: absolute;
   width: 100%;
 }
+
+/* Boxes with Icons */
+/* change icon position */
+p.box-download, p.box-sticky, p.box-confirmation, p.box-error, p.box-warning, p.box-information, p.box-system {
+	background-position: 10px center;
+  margin: 0;
+}
+
+/* top-bottom margins are too big */
+#panel-first-wrapper .grid-inner {
+  padding: 15px 0;
+}
