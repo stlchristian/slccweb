@@ -11,14 +11,6 @@ function events_uuid_features_default_terms() {
   $terms = array();
 
   $terms[] = array(
-    'name' => 'Weather Alert',
-    'description' => '',
-    'format' => 'filtered_html',
-    'weight' => 2,
-    'uuid' => '4388752c-c6ee-4984-b581-ca510abd3e82',
-    'vocabulary_machine_name' => 'event_categories',
-  );
-  $terms[] = array(
     'name' => 'Admissions',
     'description' => '',
     'format' => 'filtered_html',
