@@ -31,7 +31,14 @@ function chapel_service_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Display';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '20, 40, 60';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'field_date' => 'field_date',
@@ -70,13 +77,24 @@ function chapel_service_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  $handler->display->display_options['style_options']['empty_table'] = TRUE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'To listen to a sermon, use the player embedded into the table below. To download a sermon to your computer, right-click the "Download" link and select "Save link as..."';
+  $handler->display->display_options['header']['area']['content'] = 'Chapel attendance is required for students because we desire to produce not just academic excellence, but Christ-likeness. Designed to encourage and strengthen Christian character, the Chapel program is carried out to develop well-prepared servants for Christ - men and women who not only have the training for ministry, but also the heart for ministry. Any non-student who wishes to attend are more than welcome to join us or to listen online!
+
+<em>To listen to a sermon, use the player embedded in the table below. To download a sermon, right-click the "Download" link and select "Save link as..."</em>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'empty text';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Sorry, there are no chapel messages to display. Either we haven\'t uploaded the chapel audio yet, or your search hasn\'t matched any results. Please check back again soon.';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Relationship: Content: Taxonomy terms on node */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
@@ -223,14 +241,18 @@ function chapel_service_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Items per page'),
+    t('Display'),
     t('- All -'),
     t('Offset'),
     t('« first'),
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('To listen to a sermon, use the player embedded into the table below. To download a sermon to your computer, right-click the "Download" link and select "Save link as..."'),
+    t('Chapel attendance is required for students because we desire to produce not just academic excellence, but Christ-likeness. Designed to encourage and strengthen Christian character, the Chapel program is carried out to develop well-prepared servants for Christ - men and women who not only have the training for ministry, but also the heart for ministry. Any non-student who wishes to attend are more than welcome to join us or to listen online!
+
+<em>To listen to a sermon, use the player embedded in the table below. To download a sermon, right-click the "Download" link and select "Save link as..."</em>'),
+    t('empty text'),
+    t('Sorry, there are no chapel messages to display. Either we haven\'t uploaded the chapel audio yet, or your search hasn\'t matched any results. Please check back again soon.'),
     t('term'),
     t('Date'),
     t('Speaker'),

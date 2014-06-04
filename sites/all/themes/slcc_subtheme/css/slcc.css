@@ -1,17 +1,16 @@
+/* Fonts */
+/* site slogan and page titles */
+@font-face {
+  font-family: 'Optimus Princeps';
+  src: url('fonts/OptimusPrinceps/OptimusPrinceps.ttf');
+}
+
+@font-face {
+  font-family: 'Optimus Princeps Semi-Bold';
+  src: url('fonts/OptimusPrinceps/OptimusPrincepsSemiBold.ttf');
+}
+
 /* Link Colors */
-/*
-.front a:visited,
-.front a {
-  color: #666;
-}
-
-.front a:hover,
-.front a:focus,
-.front a:active {
-  color: #205f93;
-}
-*/
-
 p a:visited,
 p a,
 table tbody a:visited,
@@ -49,7 +48,12 @@ li a.active {
 }
 
 .front #page-title {
-  text-transform: capitalize;
+  color: #333;
+  font-size: 1.077em;
+  margin-bottom: 15px;
+  margin-top: 0;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif !important;
 }
 
 .list-search .view-filters .views-widget-filter-field_state_value {
@@ -220,6 +224,13 @@ li a.active {
   margin-top: initial;
 }
 
+.page-student-life-chapel-messages .views-exposed-form select#edit-items-per-page {
+  padding: 5px 3px;
+}
+
+.page-student-life-chapel-messages .views-exposed-form .form-item-items-per-page {
+  margin: 1em;
+}
 
 /* Webform Pages and Blocks */
 /* reset the margins for the forms */
@@ -265,14 +276,11 @@ div#block-views-features-block--2 .view-features .view-content .col-last .col-in
 }
 
 div#block-views-features-block--2 .view-features .webform-client-form .form-actions .form-submit {
-  background-color: #009900;
+  background-color: #669900;
   width: 100%;
-}
-
-div#block-views-features-block--2 .view-features .webform-client-form .form-actions .form-submit:focus,
-div#block-views-features-block--2 .view-features .webform-client-form .form-actions .form-submit:active,
-div#block-views-features-block--2 .view-features .webform-client-form .form-actions .form-submit:hover {
-  background-color: #006600;
+  font-size: 115%;
+  height: 40px;
+  margin: 1.1em 0 0 0;
 }
 
 .front .webform-client-form {
@@ -283,6 +291,10 @@ div#block-views-features-block--2 .view-features .webform-client-form .form-acti
 div#block-views-features-block--2 .view-features .view-content .col-last .col-inner .views-field-title {
   font-size: 24px;
   margin: 0;
+}
+
+.front .webform-client-form #edit-actions--2 {
+  margin-bottom: 0;
 }
 
 /* info request on its own page */
@@ -346,13 +358,13 @@ fieldset legend {
 /* site slogan */
 #name-and-slogan {
   clear: left;
+  margin-left: 20px;
 }
 
 #name-and-slogan p {
   background: none;
   color: #dcdfdf;
-  font-family: Lobster;
-  font-size: 2em;
+  font-weight: initial;
 }
 
 div.header-and-slogan {
@@ -416,4 +428,80 @@ p.box-download, p.box-sticky, p.box-confirmation, p.box-error, p.box-warning, p.
 /* top-bottom margins are too big */
 #panel-first-wrapper .grid-inner {
   padding: 15px 0;
+}
+
+/* Fontawesome */
+/* breadcrump separators */
+#breadcrumb-wrapper ol li span {
+  background: none;
+  text-indent: 0px;
+  color: #dcdfdf;
+}
+
+/* features block */
+#panel-second-wrapper .views-field-view-node a,
+#panel-second-wrapper .fa-plus-circle {
+  background: none;
+  color: #666;
+  padding-left: 6px;
+}
+
+#panel-second-wrapper .fa-plus-circle:hover,
+#panel-second-wrapper .fa-plus-circle:active,
+#panel-second-wrapper .fa-plus-circle:focus {
+  color: #205f93;
+}
+
+/* featured students block */
+.jcarousel-skin-default .jcarousel-next,
+.jcarousel-skin-default .jcarousel-prev,
+.view .jcarousel-prev,
+.view .jcarousel-next {
+  background: none;
+  background-image: none;
+}
+
+.jcarousel-skin-default .jcarousel-next:before {
+  content: "\f138";
+}
+
+.jcarousel-skin-default .jcarousel-prev:before {
+  content: "\f137";
+}
+
+.jcarousel-skin-default .jcarousel-next,
+.jcarousel-skin-default .jcarousel-prev {
+  font-family: FontAwesome;
+  font-size: 1.33333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #666;
+}
+
+.jcarousel-skin-default .jcarousel-next:hover,
+.jcarousel-skin-default .jcarousel-prev:hover {
+  color: #205f93;
+}
+
+/* ""contact us"" block in footer */
+ul.contact-list li span.fa-li {
+  font-weight: normal;
+}
+
+ul.contact-list .fa-li {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+ul.contact-list li {
+  padding-left: 4px;
+}
+ul.contact-list li {
+  padding: 4px 0 4px 4px;
 }

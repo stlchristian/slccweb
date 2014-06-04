@@ -66,3 +66,27 @@ function slcc_subtheme_preprocess_field(&$vars, $hook) {
     $vars['items'][0]['#markup'] = nl2br($vars['items'][0]['#markup']);
   }
 }
+
+/**
+ * Override of theme_breadcrumb().
+ */
+function slcc_subtheme_breadcrumb($breadcrumb) {
+  if (theme_get_setting('breadcrumb_display')) {
+    $breadcrumb = $breadcrumb['breadcrumb'];
+    $home_class = 'crumb-home';
+    if (!empty($breadcrumb)) {
+      $heading = '<h2 class="element-invisible">' . t("You are here:") . '</h2>';
+      $output = '';
+      foreach ($breadcrumb as $key => $val) {
+        if ($key == 0) {
+          $output .= '<li class="crumb ' . $home_class . '">' . $val . '</li>';
+        }
+        else {
+          $output .= '<li class="crumb"><span class="fa fa-chevron-right"></span>' . $val . '</li>';
+        }
+      }
+      return $heading . '<ol id="crumbs">' . $output . '</ol>';
+    }
+  }
+  return '';
+}

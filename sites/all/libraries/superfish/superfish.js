@@ -13,7 +13,7 @@
   $.fn.superfish = function(op){
     var sf = $.fn.superfish,
       c = sf.c,
-      $arrow = $(['<span class="',c.arrowClass,'"> &#187;</span>'].join('')),
+      $arrow = $(['<span class="',c.arrowClass,'"></span>'].join('')),
       over = function(){
         var $$ = $(this), menu = getMenu($$);
         clearTimeout(menu.sfTimer);
@@ -76,7 +76,8 @@
     bcClass: 'sf-breadcrumb',
     menuClass: 'sf-js-enabled',
     anchorClass: 'sf-with-ul',
-    arrowClass: 'sf-sub-indicator',
+    //~ arrowClass: 'sf-sub-indicator',
+    arrowClass: 'fa fa-chevron-down sf-sub-indicator',
     shadowClass: 'sf-shadow'
   };
   sf.defaults = {

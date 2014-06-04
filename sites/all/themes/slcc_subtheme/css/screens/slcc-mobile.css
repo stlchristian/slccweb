@@ -5,3 +5,18 @@ form#webform-client-form-172 {
   margin: 0;
   width: 100%;
 }
+
+.header-and-slogan {
+  width: 100%;
+}
+
+.region-header {
+  float: left;
+  margin: 15px 20px;
+}
+
+#header .contact-us,
+#header .search-form {
+  width: 100%;
+  float: left;
+}

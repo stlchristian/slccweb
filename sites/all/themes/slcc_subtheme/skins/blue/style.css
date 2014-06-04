@@ -442,7 +442,9 @@ ideshow */
 .jcarousel-skin-default .jcarousel-next, 
 .jcarousel-skin-default .jcarousel-prev, 
 .view .jcarousel-prev, .view .jcarousel-next {
+/*
 	background-image: url("images/btn-control.png");
+*/
 }
 
 /* Poll */
@@ -463,8 +465,10 @@ ideshow */
 #panel-second-wrapper .views-field-view-node a:active, 
 #panel-second-wrapper .views-field-view-node a:focus,
 #panel-second-wrapper .views-field-view-node a:hover {
+/*
   background-image: url(images/readon-hover-bg.png);
   background-position: 0 2px;
+*/
 }
 
 #panel-fourth-wrapper,

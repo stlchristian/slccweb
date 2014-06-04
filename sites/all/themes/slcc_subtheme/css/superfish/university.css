@@ -41,8 +41,14 @@
   padding-top: 12px; 
 }
 
+/* original
 .menu.sf-menu.sf-style-university li.active-trail a .sf-sub-indicator {
   top: 1.45em;
+}
+*/
+/* mine */
+.menu.sf-menu.sf-style-university li.active-trail a .sf-sub-indicator {
+  top: 0.9em;
 }
 
 .menu.sf-menu.sf-style-university li.last a { border-right: none; }
@@ -52,6 +58,7 @@
 	
 }
 
+/* original
 a .sf-sub-indicator {
   background: url("../../images/arrow-3.png") no-repeat 0 0;
   height: 5px;
@@ -59,6 +66,18 @@ a .sf-sub-indicator {
   top: 1.65em;
   width: 8px;  
 }
+*/
+/* mine */
+a .sf-sub-indicator {
+  background: none;
+  height: initial;
+  left: -5px;
+  top: 1.2em;
+  width: 8px;
+  overflow: initial;
+  text-indent: 0px;
+}
+
 a:focus .sf-sub-indicator, 
 a:hover .sf-sub-indicator, 
 a:active .sf-sub-indicator, 

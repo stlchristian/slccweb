@@ -12,6 +12,7 @@ stylesheets[all][] = 'css/slcc.css'
 ; Responsive
 stylesheets[only screen and (min-width: 720px) and (max-width: 959px)][] = 'css/screens/slcc-tablet-vertical.css'
 stylesheets[only screen and (max-width:719px)][] = 'css/screens/slcc-mobile.css'
+stylesheets[only screen and (max-width:479px)][] = 'css/screens/slcc-mobile-vertical.css'
 
 ; Supported Skins
 skins[blue] = 'Blue'
