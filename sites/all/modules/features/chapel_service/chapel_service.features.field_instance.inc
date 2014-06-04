@@ -122,6 +122,44 @@ function chapel_service_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-chapel_service-field_scripture_reference'
+  $field_instances['node-chapel_service-field_scripture_reference'] = array(
+    'bundle' => 'chapel_service',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'bible_field',
+        'settings' => array(),
+        'type' => 'bible_field_default',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_scripture_reference',
+    'label' => 'Scripture Reference',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'bible_field',
+      'settings' => array(),
+      'type' => 'bible_field_default',
+      'weight' => 32,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-chapel_service-field_speaker'
   $field_instances['node-chapel_service-field_speaker'] = array(
     'bundle' => 'chapel_service',
@@ -167,6 +205,7 @@ function chapel_service_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Audio');
   t('Date');
+  t('Scripture Reference');
   t('Speaker');
 
   return $field_instances;

@@ -72,10 +72,29 @@ function chapel_service_field_default_field_bases() {
     'type' => 'datetime',
   );
 
+  // Exported field_base: 'field_scripture_reference'
+  $field_bases['field_scripture_reference'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_scripture_reference',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'bible_field',
+    'settings' => array(
+      'alphabetical' => 0,
+      'version' => 1,
+    ),
+    'translatable' => 0,
+    'type' => 'bible_field',
+  );
+
   // Exported field_base: 'field_speaker'
   $field_bases['field_speaker'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_speaker',

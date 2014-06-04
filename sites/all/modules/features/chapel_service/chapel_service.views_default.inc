@@ -42,7 +42,8 @@ function chapel_service_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'field_date' => 'field_date',
-    'name' => 'name',
+    'field_scripture_reference' => 'field_scripture_reference',
+    'term_node_tid' => 'term_node_tid',
     'title' => 'title',
     'field_audio_file' => 'field_audio_file',
   );
@@ -55,15 +56,20 @@ function chapel_service_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'name' => array(
-      'sortable' => 1,
+    'field_scripture_reference' => array(
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
+    'term_node_tid' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'title' => array(
-      'sortable' => 1,
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -85,7 +91,7 @@ function chapel_service_views_default_views() {
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = 'Chapel attendance is required for students because we desire to produce not just academic excellence, but Christ-likeness. Designed to encourage and strengthen Christian character, the Chapel program is carried out to develop well-prepared servants for Christ - men and women who not only have the training for ministry, but also the heart for ministry. Any non-student who wishes to attend are more than welcome to join us or to listen online!
 
-<em>To listen to a sermon, use the player embedded in the table below. To download a sermon, right-click the "Download" link and select "Save link as..."</em>';
+<em>Use the boxes below to search chapel messages for speakers, Scripture, or title. To listen to a sermon, use the player embedded in the table below. To download a sermon, right-click the "Download" link and select "Save link as..."</em>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -95,11 +101,35 @@ function chapel_service_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Sorry, there are no chapel messages to display. Either we haven\'t uploaded the chapel audio yet, or your search hasn\'t matched any results. Please check back again soon.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Relationship: Content: Taxonomy terms on node */
-  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
-  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
+  $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date']['settings'] = array(
+    'format_type' => 'events',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Scripture Reference */
+  $handler->display->display_options['fields']['field_scripture_reference']['id'] = 'field_scripture_reference';
+  $handler->display->display_options['fields']['field_scripture_reference']['table'] = 'field_data_field_scripture_reference';
+  $handler->display->display_options['fields']['field_scripture_reference']['field'] = 'field_scripture_reference';
+  $handler->display->display_options['fields']['field_scripture_reference']['label'] = 'Scripture';
+  $handler->display->display_options['fields']['field_scripture_reference']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_scripture_reference']['click_sort_column'] = 'book_id';
+  $handler->display->display_options['fields']['field_scripture_reference']['type'] = 'bible_field_book_chapter';
+  /* Field: Content: All taxonomy terms */
+  $handler->display->display_options['fields']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['fields']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['fields']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['fields']['term_node_tid']['label'] = 'Speaker';
+  $handler->display->display_options['fields']['term_node_tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['term_node_tid']['limit'] = TRUE;
+  $handler->display->display_options['fields']['term_node_tid']['vocabularies'] = array(
     'chapel_speaker' => 'chapel_speaker',
     'forums' => 0,
     'academic_divisions' => 0,
@@ -114,26 +144,6 @@ function chapel_service_views_default_views() {
     'school_year' => 0,
     'tags' => 0,
   );
-  /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
-  $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
-  $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
-  $handler->display->display_options['fields']['field_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_date']['settings'] = array(
-    'format_type' => 'events',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'term_node_tid';
-  $handler->display->display_options['fields']['name']['label'] = 'Speaker';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -177,17 +187,17 @@ function chapel_service_views_default_views() {
   $handler->display->display_options['filters']['field_audio_file_fid']['field'] = 'field_audio_file_fid';
   $handler->display->display_options['filters']['field_audio_file_fid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_audio_file_fid']['group'] = 1;
-  /* Filter criterion: Global: Combine fields filter */
-  $handler->display->display_options['filters']['combine']['id'] = 'combine';
-  $handler->display->display_options['filters']['combine']['table'] = 'views';
-  $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
-  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
-  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Search for message titles and speakers';
-  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
-  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
-  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Speaker (field_speaker) */
+  $handler->display->display_options['filters']['field_speaker_tid']['id'] = 'field_speaker_tid';
+  $handler->display->display_options['filters']['field_speaker_tid']['table'] = 'field_data_field_speaker';
+  $handler->display->display_options['filters']['field_speaker_tid']['field'] = 'field_speaker_tid';
+  $handler->display->display_options['filters']['field_speaker_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_speaker_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_speaker_tid']['expose']['operator_id'] = 'field_speaker_tid_op';
+  $handler->display->display_options['filters']['field_speaker_tid']['expose']['label'] = 'Speaker';
+  $handler->display->display_options['filters']['field_speaker_tid']['expose']['operator'] = 'field_speaker_tid_op';
+  $handler->display->display_options['filters']['field_speaker_tid']['expose']['identifier'] = 'field_speaker_tid';
+  $handler->display->display_options['filters']['field_speaker_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     15 => 0,
@@ -210,17 +220,71 @@ function chapel_service_views_default_views() {
     4 => 0,
     3 => 0,
   );
-  $handler->display->display_options['filters']['combine']['group_info']['label'] = 'Combine fields filter';
-  $handler->display->display_options['filters']['combine']['group_info']['identifier'] = 'combine';
-  $handler->display->display_options['filters']['combine']['group_info']['remember'] = FALSE;
-  $handler->display->display_options['filters']['combine']['group_info']['group_items'] = array(
-    1 => array(),
-    2 => array(),
-    3 => array(),
+  $handler->display->display_options['filters']['field_speaker_tid']['vocabulary'] = 'chapel_speaker';
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'word';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    15 => 0,
+    11 => 0,
+    20 => 0,
+    18 => 0,
+    13 => 0,
+    16 => 0,
+    7 => 0,
+    9 => 0,
+    5 => 0,
+    12 => 0,
+    21 => 0,
+    19 => 0,
+    14 => 0,
+    17 => 0,
+    8 => 0,
+    10 => 0,
+    6 => 0,
+    4 => 0,
+    3 => 0,
   );
-  $handler->display->display_options['filters']['combine']['fields'] = array(
-    'name' => 'name',
-    'title' => 'title',
+  /* Filter criterion: Content: Scripture Reference (field_scripture_reference:book_name) */
+  $handler->display->display_options['filters']['field_scripture_reference_book_name']['id'] = 'field_scripture_reference_book_name';
+  $handler->display->display_options['filters']['field_scripture_reference_book_name']['table'] = 'field_data_field_scripture_reference';
+  $handler->display->display_options['filters']['field_scripture_reference_book_name']['field'] = 'field_scripture_reference_book_name';
+  $handler->display->display_options['filters']['field_scripture_reference_book_name']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_scripture_reference_book_name']['expose']['operator_id'] = 'book_op';
+  $handler->display->display_options['filters']['field_scripture_reference_book_name']['expose']['label'] = 'Scripture';
+  $handler->display->display_options['filters']['field_scripture_reference_book_name']['expose']['operator'] = 'field_scripture_reference_book_name_op';
+  $handler->display->display_options['filters']['field_scripture_reference_book_name']['expose']['identifier'] = 'book';
+  $handler->display->display_options['filters']['field_scripture_reference_book_name']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    15 => 0,
+    11 => 0,
+    20 => 0,
+    18 => 0,
+    13 => 0,
+    16 => 0,
+    7 => 0,
+    9 => 0,
+    5 => 0,
+    12 => 0,
+    21 => 0,
+    19 => 0,
+    14 => 0,
+    17 => 0,
+    8 => 0,
+    10 => 0,
+    6 => 0,
+    4 => 0,
+    3 => 0,
   );
 
   /* Display: Page */
@@ -250,16 +314,14 @@ function chapel_service_views_default_views() {
     t('last »'),
     t('Chapel attendance is required for students because we desire to produce not just academic excellence, but Christ-likeness. Designed to encourage and strengthen Christian character, the Chapel program is carried out to develop well-prepared servants for Christ - men and women who not only have the training for ministry, but also the heart for ministry. Any non-student who wishes to attend are more than welcome to join us or to listen online!
 
-<em>To listen to a sermon, use the player embedded in the table below. To download a sermon, right-click the "Download" link and select "Save link as..."</em>'),
+<em>Use the boxes below to search chapel messages for speakers, Scripture, or title. To listen to a sermon, use the player embedded in the table below. To download a sermon, right-click the "Download" link and select "Save link as..."</em>'),
     t('empty text'),
     t('Sorry, there are no chapel messages to display. Either we haven\'t uploaded the chapel audio yet, or your search hasn\'t matched any results. Please check back again soon.'),
-    t('term'),
     t('Date'),
+    t('Scripture'),
     t('Speaker'),
     t('Title'),
     t('Audio'),
-    t('Search for message titles and speakers'),
-    t('Combine fields filter'),
     t('Page'),
   );
   $export['chapel_sermons'] = $view;

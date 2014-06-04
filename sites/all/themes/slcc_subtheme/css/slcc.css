@@ -212,7 +212,7 @@ li a.active {
 
 /* Chapel Services*/
 /* chapel services listing */
-.page-student-life-chapel-messages .views-table .views-field-name {
+.page-student-life-chapel-messages .views-table .views-field-term-node-tid {
   width: 25%;
 }
 
@@ -220,16 +220,16 @@ li a.active {
   display: inline-block;
 }
 
-.page-student-life-chapel-messages .views-exposed-form .form-item-combine {
-  margin-top: initial;
-}
-
-.page-student-life-chapel-messages .views-exposed-form select#edit-items-per-page {
+.page-student-life-chapel-messages .views-exposed-form .form-select {
   padding: 5px 3px;
 }
 
-.page-student-life-chapel-messages .views-exposed-form .form-item-items-per-page {
-  margin: 1em;
+.page-student-life-chapel-messages .views-exposed-form .form-item {
+  margin: 0;
+}
+
+.page-student-life-chapel-messages #edit-field-speaker-tid-wrapper input {
+  width: 300px;
 }
 
 /* Webform Pages and Blocks */
