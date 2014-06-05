@@ -309,12 +309,13 @@ function chapel_service_views_default_views() {
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
   $handler->display->display_options['header']['area_1']['content'] = '<?php
+$context = \'%1\';
 $crumbs = array();
 $crumbs[] = l(t(\'Home\'), \'<front>\');
 $crumbs[] = l(t(\'Student Life\'), \'student-life\');
-if (!empty(\'%1\')) {
+if (!empty($context)) {
 $crumbs[] = l(t(\'Chapel Messages\'), \'student-life/chapel-messages\');
-$crumbs[] = \'%1\';
+$crumbs[] = $context;
 } else {
 $crumbs[] = t(\'Chapel Messages\');
 }
@@ -548,12 +549,13 @@ drupal_set_breadcrumb($crumbs);
     t('Audio'),
     t('Page'),
     t('<?php
+$context = \'%1\';
 $crumbs = array();
 $crumbs[] = l(t(\'Home\'), \'<front>\');
 $crumbs[] = l(t(\'Student Life\'), \'student-life\');
-if (!empty(\'%1\')) {
+if (!empty($context)) {
 $crumbs[] = l(t(\'Chapel Messages\'), \'student-life/chapel-messages\');
-$crumbs[] = \'%1\';
+$crumbs[] = $context;
 } else {
 $crumbs[] = t(\'Chapel Messages\');
 }
