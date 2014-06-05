@@ -232,6 +232,35 @@ li a.active {
   width: 300px;
 }
 
+/* chapel services block */
+#sidebar-second-wrapper .view-chapel-sermons .views-row {
+  margin-bottom: 15px;
+}
+
+#sidebar-second-wrapper .view-chapel-sermons .views-field-title span {
+  font-size: 1.25em;
+  font-weight: normal;
+  line-height: 1.3;
+  margin-bottom: 3px;
+  color: #333;
+}
+
+#sidebar-second-wrapper .view-chapel-sermons .views-field-term-node-tid {
+  display: inline-block;
+}
+
+#sidebar-second-wrapper .view-chapel-sermons .views-field-field-scripture-reference {
+  display: inline-block;
+  float: right;
+  color: #333;
+}
+
+/*
+#sidebar-second-wrapper .view-chapel-sermons .view-footer {
+  clear: both;
+}
+*/
+
 /* Webform Pages and Blocks */
 /* reset the margins for the forms */
 .webform-client-form {

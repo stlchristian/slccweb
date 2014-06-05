@@ -689,7 +689,9 @@ function roles_and_permissions_user_default_permissions() {
   // Exported permission: 'administer superfish'.
   $permissions['administer superfish'] = array(
     'name' => 'administer superfish',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'superfish',
   );
 
