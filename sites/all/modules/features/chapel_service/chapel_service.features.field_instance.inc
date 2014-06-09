@@ -99,7 +99,7 @@ function chapel_service_field_default_field_instances() {
     'label' => 'Date',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -113,13 +113,13 @@ function chapel_service_field_default_field_instances() {
         'input_format' => 'M j Y - g:i:sa',
         'input_format_custom' => '',
         'label_position' => 'above',
-        'repeat_collapsed' => 0,
         'text_parts' => array(),
-        'year_range' => '-1:+3',
+        'year_range' => '-10:+2',
       ),
       'type' => 'date_select',
       'weight' => 4,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-chapel_service-field_scripture_reference'
