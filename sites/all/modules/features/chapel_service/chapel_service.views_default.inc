@@ -171,6 +171,11 @@ function chapel_service_views_default_views() {
     'download_link' => 1,
     'download_text' => 'Download',
   );
+  /* Sort criterion: Content: Date (field_date) */
+  $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
+  $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
+  $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
+  $handler->display->display_options['sorts']['field_date_value']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -522,6 +527,29 @@ drupal_set_breadcrumb($crumbs);
   $handler->display->display_options['fields']['field_scripture_reference']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_scripture_reference']['click_sort_column'] = 'book_id';
   $handler->display->display_options['fields']['field_scripture_reference']['type'] = 'bible_field_book_chapter';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'chapel_service' => 'chapel_service',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Audio (field_audio_file:fid) */
+  $handler->display->display_options['filters']['field_audio_file_fid']['id'] = 'field_audio_file_fid';
+  $handler->display->display_options['filters']['field_audio_file_fid']['table'] = 'field_data_field_audio_file';
+  $handler->display->display_options['filters']['field_audio_file_fid']['field'] = 'field_audio_file_fid';
+  $handler->display->display_options['filters']['field_audio_file_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_audio_file_fid']['group'] = 1;
   $translatables['chapel_sermons'] = array(
     t('Master'),
     t('Chapel Messages'),
