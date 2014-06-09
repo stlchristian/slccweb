@@ -47,7 +47,7 @@ function class_field_default_field_bases() {
   // Exported field_base: 'field_academic_program'
   $field_bases['field_academic_program'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => 3,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_academic_program',

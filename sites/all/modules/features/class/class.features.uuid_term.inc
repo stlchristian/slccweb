@@ -51,12 +51,15 @@ function class_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'class_section',
   );
   $terms[] = array(
-    'name' => 'Day',
+    'name' => 'Traditional',
     'description' => '',
     'format' => 'filtered_html',
     'weight' => 0,
     'uuid' => '9382a2c5-9e8a-44ed-bf8b-b6f83855f2a8',
     'vocabulary_machine_name' => 'academic_program',
+    'path' => array(
+      'pathauto' => 1,
+    ),
   );
   $terms[] = array(
     'name' => 'Professional',
@@ -67,12 +70,15 @@ function class_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'academic_divisions',
   );
   $terms[] = array(
-    'name' => 'Aim',
+    'name' => 'Evening',
     'description' => '',
     'format' => 'filtered_html',
     'weight' => 0,
     'uuid' => 'f78354f1-1406-46cd-b7cc-09ec7b1f9fdd',
     'vocabulary_machine_name' => 'academic_program',
+    'path' => array(
+      'pathauto' => 1,
+    ),
   );
   $terms[] = array(
     'name' => 'D',

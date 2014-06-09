@@ -57,11 +57,7 @@ function degree_program_field_default_field_instances() {
   // Exported field_instance: 'node-degree_program-field_academic_program'
   $field_instances['node-degree_program-field_academic_program'] = array(
     'bundle' => 'degree_program',
-    'default_value' => array(
-      0 => array(
-        'tid' => 45,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -90,9 +86,10 @@ function degree_program_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 12,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-degree_program-field_contact_for_further_inform'

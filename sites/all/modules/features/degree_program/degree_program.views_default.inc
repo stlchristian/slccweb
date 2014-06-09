@@ -41,19 +41,6 @@ function degree_program_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  $handler->display->display_options['sorts']['created']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date';
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
-  $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -89,7 +76,8 @@ function degree_program_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<p>We have grouped all our degree programmes into subjects to make it easy for you to find your ideal course. Choose your subject to see the full range of single and joint honours courses in each area.<p>';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<p>We have grouped all our degree programs into subjects to make it easy for you to find your ideal course. Choose your subject to see more information.<p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -157,8 +145,6 @@ function degree_program_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Post date'),
-    t('Title'),
     t('Block'),
     t('more'),
     t('Items per page'),
@@ -168,8 +154,9 @@ function degree_program_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('<p>We have grouped all our degree programmes into subjects to make it easy for you to find your ideal course. Choose your subject to see the full range of single and joint honours courses in each area.<p>'),
+    t('<p>We have grouped all our degree programs into subjects to make it easy for you to find your ideal course. Choose your subject to see more information.<p>'),
     t('Course Search'),
+    t('Title'),
   );
   $export['all_courses'] = $view;
 
