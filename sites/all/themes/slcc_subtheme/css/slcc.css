@@ -214,9 +214,6 @@ li a.active {
 
 /* Chapel Services*/
 /* chapel services listing */
-.page-student-life-chapel-messages .views-table .views-field-term-node-tid {
-  width: 25%;
-}
 
 .page-student-life-chapel-messages .views-exposed-form .views-exposed-widget {
   display: inline-block;

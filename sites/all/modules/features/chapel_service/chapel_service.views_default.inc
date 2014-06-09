@@ -201,7 +201,7 @@ function chapel_service_views_default_views() {
   $handler->display->display_options['filters']['field_speaker_tid']['expose']['operator_id'] = 'field_speaker_tid_op';
   $handler->display->display_options['filters']['field_speaker_tid']['expose']['label'] = 'Speaker';
   $handler->display->display_options['filters']['field_speaker_tid']['expose']['operator'] = 'field_speaker_tid_op';
-  $handler->display->display_options['filters']['field_speaker_tid']['expose']['identifier'] = 'field_speaker_tid';
+  $handler->display->display_options['filters']['field_speaker_tid']['expose']['identifier'] = 'speaker';
   $handler->display->display_options['filters']['field_speaker_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -226,6 +226,7 @@ function chapel_service_views_default_views() {
     3 => 0,
   );
   $handler->display->display_options['filters']['field_speaker_tid']['vocabulary'] = 'chapel_speaker';
+  $handler->display->display_options['filters']['field_speaker_tid']['error_message'] = FALSE;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
