@@ -47,14 +47,9 @@ function student_profile_views_default_views() {
   $handler->display->display_options['fields']['field_student_image']['label'] = '';
   $handler->display->display_options['fields']['field_student_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_student_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_student_image']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_student_image']['settings'] = array(
-    'colorbox_node_style' => 'student_thumb',
-    'colorbox_image_style' => '',
-    'colorbox_gallery' => 'post',
-    'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'auto',
-    'colorbox_caption_custom' => '',
+    'image_style' => 'student_thumb',
+    'image_link' => 'content',
   );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -147,10 +142,11 @@ function student_profile_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Dept */
+  /* Field: Content: Major */
   $handler->display->display_options['fields']['field_dept']['id'] = 'field_dept';
   $handler->display->display_options['fields']['field_dept']['table'] = 'field_data_field_dept';
   $handler->display->display_options['fields']['field_dept']['field'] = 'field_dept';
+  $handler->display->display_options['fields']['field_dept']['label'] = 'Dept';
   /* Field: Content: Age */
   $handler->display->display_options['fields']['field_age']['id'] = 'field_age';
   $handler->display->display_options['fields']['field_age']['table'] = 'field_data_field_age';

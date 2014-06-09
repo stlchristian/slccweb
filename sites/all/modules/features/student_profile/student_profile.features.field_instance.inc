@@ -130,13 +130,14 @@ function student_profile_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_dept',
-    'label' => 'Dept',
-    'required' => FALSE,
+    'label' => 'Major',
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
@@ -144,6 +145,7 @@ function student_profile_field_default_field_instances() {
       'type' => 'text_textfield',
       'weight' => 32,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-student_profile-field_gender'
@@ -283,8 +285,8 @@ function student_profile_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Age');
   t('Body');
-  t('Dept');
   t('Gender');
+  t('Major');
   t('Social');
   t('Student Image');
 

@@ -49,7 +49,7 @@ function student_profile_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_student_profile';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['comment_student_profile'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -92,6 +92,9 @@ function student_profile_strongarm() {
         'path' => array(
           'weight' => '30',
         ),
+        'workbench_access' => array(
+          'weight' => '0',
+        ),
       ),
       'display' => array(),
     ),
@@ -109,9 +112,7 @@ function student_profile_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_student_profile';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_student_profile'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -126,8 +127,10 @@ function student_profile_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_student_profile';
   $strongarm->value = array(
-    0 => 'status',
-    1 => 'promote',
+    0 => 'promote',
+    1 => 'sticky',
+    2 => 'moderation',
+    3 => 'revision',
   );
   $export['node_options_student_profile'] = $strongarm;
 
