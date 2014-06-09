@@ -40,6 +40,7 @@ function ministry_opportunity_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_ministry_opportunity_full_group_church_information',
       ),
       'formatter' => 'open',
     ),
@@ -73,6 +74,7 @@ function ministry_opportunity_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_ministry_opportunity_full_group_contact_information',
       ),
       'formatter' => 'open',
     ),
@@ -107,7 +109,7 @@ function ministry_opportunity_field_group_info() {
         'speed' => 'fast',
         'classes' => 'group-contact-information field-group-div',
         'required_fields' => 1,
-        'id' => '',
+        'id' => 'node_ministry_opportunity_form_group_contact_information',
       ),
     ),
   );
@@ -141,7 +143,7 @@ function ministry_opportunity_field_group_info() {
       'label' => 'Ministry Opportunity Details',
       'instance_settings' => array(
         'required_fields' => 1,
-        'id' => '',
+        'id' => 'node_ministry_opportunity_form_group_minopp_information',
         'classes' => 'group-minopp-information field-group-div',
         'description' => '',
         'show_label' => '1',
