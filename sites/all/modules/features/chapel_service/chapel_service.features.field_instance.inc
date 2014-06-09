@@ -114,7 +114,7 @@ function chapel_service_field_default_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-10:+2',
+        'year_range' => '1956:+2',
       ),
       'type' => 'date_select',
       'weight' => 4,
