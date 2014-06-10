@@ -226,7 +226,7 @@ li a.active {
   margin: 0;
 }
 
-.page-student-life-chapel-messages #edit-field-speaker-tid-wrapper input {
+.page-student-life-chapel-messages #edit-speaker-wrapper input {
   width: 300px;
 }
 
@@ -354,6 +354,10 @@ fieldset legend {
 }
 
 /* Additions to the Header */
+/* superfish styling (just a tad)*/
+.sf-menu .sf-megamenu-column {
+  padding-left: 0;
+}
 /* search form margin */
 #header #search-block-form {
   float: right;
