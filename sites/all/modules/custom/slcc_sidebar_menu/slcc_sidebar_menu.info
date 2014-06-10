@@ -1,0 +1,5 @@
+name = SLCC Sidebar Menu
+description = Provides a configured sidebar menu for us.
+core = 7.x
+dependencies[] = menu
+dependencies[] = menu_block
