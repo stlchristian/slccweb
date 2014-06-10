@@ -5,6 +5,7 @@
 #sidebar-second-wrapper .block-menu-block ul.menu li.expanded {
   padding: 0;
 }
+
 #sidebar-second-wrapper .block-menu-block ul.menu li.leaf a,
 #sidebar-second-wrapper .block-menu-block ul.menu li.expanded a,
 #sidebar-second-wrapper .block-menu-block ul.menu li.collapsed a {
@@ -12,7 +13,7 @@
   padding: 7px 20px;
   background: none;
   background-image: none !important;
-  color: #ffffff !important;
+  color: #eaf1f7 !important;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 12px;
@@ -20,7 +21,14 @@
   border-top: 1px solid #1b5280;
 }
 
-#sidebar-second-wrapper .block-menu-block ul.menu li.active-trail a {
+#sidebar-second-wrapper .block-menu-block ul.menu li.leaf.active-trail a,
+#sidebar-second-wrapper .block-menu-block ul.menu li.leaf.active-trail a:hover,
+#sidebar-second-wrapper .block-menu-block ul.menu li.leaf.active-trail a:focus,
+#sidebar-second-wrapper .block-menu-block ul.menu li.leaf.active-trail a:active,
+#sidebar-second-wrapper .block-menu-block ul.menu li.expanded.active-trail a,
+#sidebar-second-wrapper .block-menu-block ul.menu li.expanded.active-trail a:hover,
+#sidebar-second-wrapper .block-menu-block ul.menu li.expanded.active-trail a:focus,
+#sidebar-second-wrapper .block-menu-block ul.menu li.expanded.active-trail a:active {
   background-color: #195383;
   border-top: 3px solid #e09b0f;
 }
@@ -32,6 +40,7 @@
 #sidebar-second-wrapper .block-menu-block ul.menu li.collapsed a:focus,
 #sidebar-second-wrapper .block-menu-block ul.menu li.collapsed a:active {
   background-color: #195383;
+  border-top-color: #0c426f;
 }
 
 #sidebar-second-wrapper .block-menu-block ul.menu li.expanded ul.menu li.leaf a {
