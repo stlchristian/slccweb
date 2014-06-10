@@ -3,7 +3,7 @@
 #sidebar-second-wrapper .block-menu-block ul.menu li.leaf,
 #sidebar-second-wrapper .block-menu-block ul.menu li.collapsed,
 #sidebar-second-wrapper .block-menu-block ul.menu li.expanded {
-  padding: initial;
+  padding: 0;
 }
 #sidebar-second-wrapper .block-menu-block ul.menu li.leaf a,
 #sidebar-second-wrapper .block-menu-block ul.menu li.expanded a,
