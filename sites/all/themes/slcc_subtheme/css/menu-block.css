@@ -22,7 +22,7 @@
 
 #sidebar-second-wrapper .block-menu-block ul.menu li.active-trail a {
   background-color: #195383;
-  border-top: 3px solid #e09b0f;
+  border-top: 3px solid #e09b0f !important;
 }
 
 #sidebar-second-wrapper .block-menu-block ul.menu li.first a {
