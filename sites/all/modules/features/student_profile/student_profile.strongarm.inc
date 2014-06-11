@@ -83,6 +83,9 @@ function student_profile_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -128,9 +131,8 @@ function student_profile_strongarm() {
   $strongarm->name = 'node_options_student_profile';
   $strongarm->value = array(
     0 => 'promote',
-    1 => 'sticky',
-    2 => 'moderation',
-    3 => 'revision',
+    1 => 'moderation',
+    2 => 'revision',
   );
   $export['node_options_student_profile'] = $strongarm;
 

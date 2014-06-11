@@ -22,7 +22,7 @@ function student_profile_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -71,7 +71,7 @@ function student_profile_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'inline',
@@ -118,7 +118,7 @@ function student_profile_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'inline',
@@ -159,8 +159,8 @@ function student_profile_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -198,7 +198,7 @@ function student_profile_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'inline',
@@ -241,7 +241,7 @@ function student_profile_field_default_field_instances() {
           'image_style' => 'student_thumb',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',

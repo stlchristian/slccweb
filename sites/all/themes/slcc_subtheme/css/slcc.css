@@ -253,12 +253,6 @@ li a.active {
   color: #333;
 }
 
-/*
-#sidebar-second-wrapper .view-chapel-sermons .view-footer {
-  clear: both;
-}
-*/
-
 /* Webform Pages and Blocks */
 /* reset the margins for the forms */
 .webform-client-form {
@@ -536,4 +530,22 @@ ul.contact-list li {
 }
 ul.contact-list li {
   padding: 4px 0 4px 4px;
+}
+
+/* Views */
+/* student/* page */
+.node-student-profile .field,
+.node-type-student-profile .node-full .field-type-image {
+  width: 100%
+}
+
+.node-student-profile .field-name-body {
+  width: 78%;
+  float: right;
+  clear: none;
+}
+
+.node-student-profile .group-student-profile-bio {
+  width: 22%;
+  float: left;
 }
