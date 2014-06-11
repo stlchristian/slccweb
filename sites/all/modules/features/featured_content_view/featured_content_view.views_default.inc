@@ -72,10 +72,10 @@ function featured_content_view_views_default_views() {
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['label'] = '';
-  $handler->display->display_options['fields']['view_node']['element_type'] = 'span';
-  $handler->display->display_options['fields']['view_node']['element_class'] = 'fa fa-plus-circle';
+  $handler->display->display_options['fields']['view_node']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['alter']['link_class'] = 'fa fa-plus-circle';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['text'] = 'Read more';
+  $handler->display->display_options['fields']['view_node']['text'] = ' Read more';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -107,7 +107,7 @@ function featured_content_view_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Read more'),
+    t(' Read more'),
     t('Block'),
   );
   $export['features'] = $view;

@@ -31,7 +31,7 @@ function copyright_notice_block_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'slcc_subtheme',
-        'weight' => -13,
+        'weight' => -37,
       ),
     ),
     'title' => 'SLCC Copyright',

@@ -28,10 +28,10 @@ function sample_banner_block_default_fe_block_settings() {
         'weight' => 0,
       ),
       'slcc_subtheme' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'slcc_subtheme',
-        'weight' => -35,
+        'weight' => -37,
       ),
     ),
     'title' => '<none>',
