@@ -38,7 +38,6 @@ function athlete_profile_views_default_views() {
     'field_state' => 'field_hometown',
     'field_position' => 'field_position',
     'field_academic_class' => 'field_academic_class',
-    'field_sport' => 'field_sport',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -60,7 +59,7 @@ function athlete_profile_views_default_views() {
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
-      'separator' => '',
+      'separator' => ', ',
       'empty_column' => 0,
     ),
     'field_state' => array(
@@ -76,13 +75,6 @@ function athlete_profile_views_default_views() {
       'empty_column' => 0,
     ),
     'field_academic_class' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_sport' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -123,6 +115,7 @@ function athlete_profile_views_default_views() {
   $handler->display->display_options['fields']['field_state']['table'] = 'field_data_field_state';
   $handler->display->display_options['fields']['field_state']['field'] = 'field_state';
   $handler->display->display_options['fields']['field_state']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_state']['type'] = 'list_key';
   /* Field: Field: Position */
   $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
   $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
@@ -137,36 +130,28 @@ function athlete_profile_views_default_views() {
   $handler->display->display_options['fields']['field_academic_class']['label'] = 'Year';
   $handler->display->display_options['fields']['field_academic_class']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_academic_class']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Sport */
-  $handler->display->display_options['fields']['field_sport']['id'] = 'field_sport';
-  $handler->display->display_options['fields']['field_sport']['table'] = 'field_data_field_sport';
-  $handler->display->display_options['fields']['field_sport']['field'] = 'field_sport';
-  $handler->display->display_options['fields']['field_sport']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_sport']['type'] = 'taxonomy_term_reference_plain';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
-  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['title_enable'] = TRUE;
-  $handler->display->display_options['arguments']['term_node_tid_depth']['title'] = 'Meet the Soldiers';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['vocabularies'] = array(
+  /* Sort criterion: Content: Jersey (field_jersey) */
+  $handler->display->display_options['sorts']['field_jersey_value']['id'] = 'field_jersey_value';
+  $handler->display->display_options['sorts']['field_jersey_value']['table'] = 'field_data_field_jersey';
+  $handler->display->display_options['sorts']['field_jersey_value']['field'] = 'field_jersey_value';
+  /* Contextual filter: Field: Sport (field_sport) */
+  $handler->display->display_options['arguments']['field_sport_tid']['id'] = 'field_sport_tid';
+  $handler->display->display_options['arguments']['field_sport_tid']['table'] = 'field_data_field_sport';
+  $handler->display->display_options['arguments']['field_sport_tid']['field'] = 'field_sport_tid';
+  $handler->display->display_options['arguments']['field_sport_tid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['field_sport_tid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['field_sport_tid']['title'] = 'Meet the Soldiers';
+  $handler->display->display_options['arguments']['field_sport_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_sport_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_sport_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_sport_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_sport_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_sport_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_sport_tid']['validate_options']['vocabularies'] = array(
     'sport' => 'sport',
   );
-  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['transform'] = TRUE;
-  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '0';
+  $handler->display->display_options['arguments']['field_sport_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_sport_tid']['validate_options']['transform'] = TRUE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -184,7 +169,7 @@ function athlete_profile_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'athletics/%/meet-the-soldiers';
+  $handler->display->display_options['path'] = 'athletics/%/meet-soldiers';
   $translatables['athletics_roster'] = array(
     t('Master'),
     t('Athletics Roster'),
@@ -200,7 +185,6 @@ function athlete_profile_views_default_views() {
     t('State'),
     t('Position'),
     t('Year'),
-    t('Sport'),
     t('All'),
     t('Meet the Soldiers'),
     t('Page'),

@@ -43,7 +43,14 @@
   border-top-color: #0c426f;
 }
 
-#sidebar-second-wrapper .block-menu-block ul.menu li.expanded ul.menu li.leaf a {
-  padding-left: 30px;
+#sidebar-second-wrapper .block-menu-block ul.menu li.expanded ul.menu a,
+#sidebar-second-wrapper .block-menu-block ul.menu li.expanded ul.menu a:hover,
+#sidebar-second-wrapper .block-menu-block ul.menu li.expanded ul.menu a:focus,
+#sidebar-second-wrapper .block-menu-block ul.menu li.expanded ul.menu a:active {
+  padding-left: 35px;
   border-top: 1px solid #2a6392;
+}
+
+#sidebar-second-wrapper .block-menu-block ul.menu li.expanded ul.menu ul.menu a {
+  padding-left: 50px;
 }

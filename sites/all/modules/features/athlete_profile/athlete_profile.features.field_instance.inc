@@ -10,50 +10,6 @@
 function athlete_profile_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-athlete_profile-body'
-  $field_instances['node-athlete_profile-body'] = array(
-    'bundle' => 'athlete_profile',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => TRUE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 31,
-    ),
-  );
-
   // Exported field_instance: 'node-athlete_profile-field_academic_class'
   $field_instances['node-athlete_profile-field_academic_class'] = array(
     'bundle' => 'athlete_profile',
@@ -92,89 +48,6 @@ function athlete_profile_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 40,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance: 'node-athlete_profile-field_bats'
-  $field_instances['node-athlete_profile-field_bats'] = array(
-    'bundle' => 'athlete_profile',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Right',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_bats',
-    'label' => 'Bats',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 37,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance: 'node-athlete_profile-field_height'
-  $field_instances['node-athlete_profile-field_height'] = array(
-    'bundle' => 'athlete_profile',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_height',
-    'label' => 'Height',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 41,
     ),
     'workbench_access_field' => 0,
   );
@@ -263,47 +136,6 @@ function athlete_profile_field_default_field_instances() {
       'settings' => array(),
       'type' => 'number',
       'weight' => 36,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance: 'node-athlete_profile-field_notes'
-  $field_instances['node-athlete_profile-field_notes'] = array(
-    'bundle' => 'athlete_profile',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 11,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_notes',
-    'label' => 'Notes',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 3,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 46,
     ),
     'workbench_access_field' => 0,
   );
@@ -425,34 +257,24 @@ function athlete_profile_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-athlete_profile-field_throws'
-  $field_instances['node-athlete_profile-field_throws'] = array(
-    'bundle' => 'athlete_profile',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Right',
-      ),
-    ),
+  // Exported field_instance: 'taxonomy_term-position-field_sport'
+  $field_instances['taxonomy_term-position-field_sport'] = array(
+    'bundle' => 'position',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'taxonomy_term_reference_link',
         'weight' => 0,
       ),
     ),
-    'entity_type' => 'node',
-    'field_name' => 'field_throws',
-    'label' => 'Throws',
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_sport',
+    'label' => 'Sport',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -462,54 +284,7 @@ function athlete_profile_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 38,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance: 'node-athlete_profile-field_weight'
-  $field_instances['node-athlete_profile-field_weight'] = array(
-    'bundle' => 'athlete_profile',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_weight',
-    'label' => 'Weight',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 42,
+      'weight' => 32,
     ),
     'workbench_access_field' => 0,
   );
@@ -517,17 +292,11 @@ function athlete_profile_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Academic Class');
-  t('Bats');
-  t('Body');
-  t('Height');
   t('Hometown');
   t('Jersey');
-  t('Notes');
   t('Position');
   t('Sport');
   t('State');
-  t('Throws');
-  t('Weight');
 
   return $field_instances;
 }
