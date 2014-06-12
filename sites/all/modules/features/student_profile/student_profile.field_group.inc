@@ -25,9 +25,9 @@ function student_profile_field_group_info() {
     'children' => array(
       0 => 'field_dept',
       1 => 'field_student_image',
-      2 => 'field_age',
-      3 => 'field_social',
-      4 => 'field_gender',
+      2 => 'field_social',
+      3 => 'field_gender',
+      4 => 'field_academic_class',
     ),
     'format_type' => 'div',
     'format_settings' => array(

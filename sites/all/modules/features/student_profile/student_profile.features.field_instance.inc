@@ -50,12 +50,12 @@ function student_profile_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-student_profile-field_age'
-  $field_instances['node-student_profile-field_age'] = array(
+  // Exported field_instance: 'node-student_profile-field_academic_class'
+  $field_instances['node-student_profile-field_academic_class'] = array(
     'bundle' => 'student_profile',
     'default_value' => NULL,
     'deleted' => 0,
@@ -63,47 +63,33 @@ function student_profile_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'inline',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 3,
       ),
       'teaser' => array(
-        'label' => 'inline',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 2,
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_age',
-    'label' => 'Age',
+    'field_name' => 'field_academic_class',
+    'label' => 'Year',
     'required' => 0,
     'settings' => array(
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'number',
+      'active' => 1,
+      'module' => 'options',
       'settings' => array(),
-      'type' => 'number',
-      'weight' => 37,
+      'type' => 'options_select',
+      'weight' => 7,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-student_profile-field_dept'
@@ -143,7 +129,7 @@ function student_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 32,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -182,7 +168,7 @@ function student_profile_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 40,
+      'weight' => 9,
     ),
   );
 
@@ -223,7 +209,7 @@ function student_profile_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 38,
+      'weight' => 8,
     ),
   );
 
@@ -283,18 +269,18 @@ function student_profile_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 36,
+      'weight' => 5,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Age');
   t('Body');
   t('Gender');
   t('Major');
   t('Social');
   t('Student Image');
+  t('Year');
 
   return $field_instances;
 }
