@@ -76,11 +76,13 @@ function student_profile_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'student_profile' => 'student_profile',
   );
-  /* Filter criterion: Content: Sticky */
-  $handler->display->display_options['filters']['sticky']['id'] = 'sticky';
-  $handler->display->display_options['filters']['sticky']['table'] = 'node';
-  $handler->display->display_options['filters']['sticky']['field'] = 'sticky';
-  $handler->display->display_options['filters']['sticky']['value'] = '1';
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Promoted to front page */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
+  $handler->display->display_options['filters']['promote']['group'] = 1;
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -159,6 +161,12 @@ drupal_set_breadcrumb($crumbs);
   $handler->display->display_options['fields']['field_dept']['id'] = 'field_dept';
   $handler->display->display_options['fields']['field_dept']['table'] = 'field_data_field_dept';
   $handler->display->display_options['fields']['field_dept']['field'] = 'field_dept';
+  /* Field: Field: Academic Class */
+  $handler->display->display_options['fields']['field_academic_class']['id'] = 'field_academic_class';
+  $handler->display->display_options['fields']['field_academic_class']['table'] = 'field_data_field_academic_class';
+  $handler->display->display_options['fields']['field_academic_class']['field'] = 'field_academic_class';
+  $handler->display->display_options['fields']['field_academic_class']['label'] = 'Year';
+  $handler->display->display_options['fields']['field_academic_class']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Field: Gender */
   $handler->display->display_options['fields']['field_gender']['id'] = 'field_gender';
   $handler->display->display_options['fields']['field_gender']['table'] = 'field_data_field_gender';
@@ -224,6 +232,7 @@ $crumbs[] = t(\'Featured Students\');
 drupal_set_breadcrumb($crumbs);
 ?>'),
     t('Major'),
+    t('Year'),
     t('Gender'),
     t('Page'),
   );
