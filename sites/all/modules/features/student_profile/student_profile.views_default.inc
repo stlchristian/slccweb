@@ -124,6 +124,19 @@ function student_profile_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['style_options']['columns'] = '2';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'breadcrumbs';
+  $handler->display->display_options['header']['area']['content'] = '<?php
+$crumbs = array();
+$crumbs[] = l(t(\'Home\'), \'<front>\');
+$crumbs[] = l(t(\'Student Life\'), \'student-life\');
+$crumbs[] = t(\'Featured Students\');
+drupal_set_breadcrumb($crumbs);
+?>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Field: Content: Student Image */
   $handler->display->display_options['fields']['field_student_image']['id'] = 'field_student_image';
   $handler->display->display_options['fields']['field_student_image']['table'] = 'field_data_field_student_image';
@@ -188,7 +201,7 @@ function student_profile_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'student-resources/prospective-students/featured-students';
+  $handler->display->display_options['path'] = 'student-life/featured-students';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Featured Students';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -211,6 +224,14 @@ function student_profile_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('breadcrumbs'),
+    t('<?php
+$crumbs = array();
+$crumbs[] = l(t(\'Home\'), \'<front>\');
+$crumbs[] = l(t(\'Student Life\'), \'student-life\');
+$crumbs[] = t(\'Featured Students\');
+drupal_set_breadcrumb($crumbs);
+?>'),
     t('Dept'),
     t('Age'),
     t('Gender'),
