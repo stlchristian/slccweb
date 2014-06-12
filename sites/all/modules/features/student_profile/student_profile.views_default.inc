@@ -159,11 +159,6 @@ drupal_set_breadcrumb($crumbs);
   $handler->display->display_options['fields']['field_dept']['id'] = 'field_dept';
   $handler->display->display_options['fields']['field_dept']['table'] = 'field_data_field_dept';
   $handler->display->display_options['fields']['field_dept']['field'] = 'field_dept';
-  $handler->display->display_options['fields']['field_dept']['label'] = 'Dept';
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_age']['id'] = 'field_age';
-  $handler->display->display_options['fields']['field_age']['table'] = 'field_data_field_age';
-  $handler->display->display_options['fields']['field_age']['field'] = 'field_age';
   /* Field: Field: Gender */
   $handler->display->display_options['fields']['field_gender']['id'] = 'field_gender';
   $handler->display->display_options['fields']['field_gender']['table'] = 'field_data_field_gender';
@@ -228,8 +223,7 @@ $crumbs[] = l(t(\'Student Life\'), \'student-life\');
 $crumbs[] = t(\'Featured Students\');
 drupal_set_breadcrumb($crumbs);
 ?>'),
-    t('Dept'),
-    t('Broken handler field_data_field_age.field_age'),
+    t('Major'),
     t('Gender'),
     t('Page'),
   );
