@@ -9,6 +9,7 @@ screenshot = 'screenshot.png'
 ; Stylesheets
 stylesheets[all][] = 'css/slcc.css'
 stylesheets[all][] = 'css/menu-block.css'
+stylesheets[all][] = 'css/net-price.css'
 
 ; Responsive
 stylesheets[only screen and (min-width: 720px) and (max-width: 959px)][] = 'css/screens/slcc-tablet-vertical.css'
