@@ -171,6 +171,7 @@ drupal_set_breadcrumb($crumbs);
   $handler->display->display_options['fields']['field_gender']['id'] = 'field_gender';
   $handler->display->display_options['fields']['field_gender']['table'] = 'field_data_field_gender';
   $handler->display->display_options['fields']['field_gender']['field'] = 'field_gender';
+  $handler->display->display_options['fields']['field_gender']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_gender']['delta_offset'] = '0';
   /* Field: Content: Social */
   $handler->display->display_options['fields']['field_social']['id'] = 'field_social';
