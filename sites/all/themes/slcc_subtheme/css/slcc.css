@@ -334,6 +334,11 @@ fieldset legend {
   padding: 0 10px 0 10px;
 }
 
+/* evergreen search box */
+input#evergreen-search-box {
+  margin-bottom: 10px;
+}
+
 /* 404 Page */
 /* specify our image */
 .page-404 {
