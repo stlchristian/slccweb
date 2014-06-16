@@ -28,13 +28,13 @@ function student_profile_default_fe_block_settings() {
         'weight' => 0,
       ),
       'slcc_subtheme' => array(
-        'region' => 'panel_third_1',
+        'region' => 'content',
         'status' => 1,
         'theme' => 'slcc_subtheme',
         'weight' => 0,
       ),
     ),
-    'title' => 'Featured Students',
+    'title' => 'Educating Christians',
     'visibility' => 1,
   );
 

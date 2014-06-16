@@ -40,6 +40,13 @@ function student_profile_views_default_views() {
   $handler->display->display_options['style_options']['easing'] = '';
   $handler->display->display_options['style_options']['vertical'] = 0;
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<em>Learn more about some of our current students.</em>';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   /* Field: Content: Student Image */
   $handler->display->display_options['fields']['field_student_image']['id'] = 'field_student_image';
   $handler->display->display_options['fields']['field_student_image']['table'] = 'field_data_field_student_image';
@@ -95,6 +102,7 @@ function student_profile_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('<em>Learn more about some of our current students.</em>'),
     t('Block'),
   );
   $export['student_profile'] = $view;
