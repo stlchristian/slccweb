@@ -31,11 +31,37 @@ function student_profile_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'slcc_subtheme',
-        'weight' => 0,
+        'weight' => -37,
       ),
     ),
-    'title' => 'Educating Christians',
+    'title' => '',
     'visibility' => 1,
+  );
+
+  $export['views-student_profile-block_1'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'student_profile-block_1',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '<front>',
+    'roles' => array(),
+    'themes' => array(
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'slcc_subtheme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'slcc_subtheme',
+        'weight' => -36,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   return $export;
