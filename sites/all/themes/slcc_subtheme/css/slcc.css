@@ -58,19 +58,32 @@ li a.active {
   font-family: Arial, Helvetica, sans-serif !important;
 }
 
-.list-search .view-filters .views-widget-filter-field_state_value {
-  width: 20%;
+/* Views */
+/* degree programs */
+.view-all-courses .item-list {
+  float: left;
+  width: 33%;
 }
 
-.list-search .view-filters .views-widget-filter-field_pay_type_value {
-  width: 14%;
+.view-all-courses .item-list h3 {
+  font-size: 1.077em;
+  font-weight: bold;
+  margin: 0 0 4px;
+  line-height: 100%;
+  padding: 0 0 0 6px;
+  text-transform: uppercase;
 }
 
-.list-search .view-filters .views-submit-button {
-  margin: 23px 0 0 ;
+.view-all-courses .item-list a,
+.view-all-courses .item-list a:hover,
+.view-all-courses .item-list a:focus,
+.view-all-courses .item-list a:visited,
+.view-all-courses .item-list a:active {
+  background: none;
+  background-image: none;
 }
 
-/* Events Pages */
+/* events pages */
 .views-field-field-details {
   border-left: 1px dotted #ccc;
   float: right;
@@ -488,13 +501,16 @@ p.box-download, p.box-sticky, p.box-confirmation, p.box-error, p.box-warning, p.
 #main-content .block-views {
   margin: 0 0 25px;
 }
+
 #main-content .container {
   border-top: 1px solid #EFECE1;
   padding: 30px 0;
 }
+
 #main-content .grid-inner {
 	padding: 0;
 }
+
 #main-content .block-title {
   font-size: 1.077em;
   font-weight: bold;
@@ -563,7 +579,7 @@ ul.contact-list li {
 }
 
 /* Views */
-/* student/* page */
+/* student page */
 .node-student-profile .field,
 .node-type-student-profile .node-full .field-type-image {
   width: 100%

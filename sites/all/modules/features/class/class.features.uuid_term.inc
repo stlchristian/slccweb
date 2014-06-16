@@ -73,7 +73,7 @@ function class_uuid_features_default_terms() {
     'name' => 'Evening',
     'description' => '',
     'format' => 'filtered_html',
-    'weight' => 0,
+    'weight' => 1,
     'uuid' => 'f78354f1-1406-46cd-b7cc-09ec7b1f9fdd',
     'vocabulary_machine_name' => 'academic_program',
     'path' => array(
