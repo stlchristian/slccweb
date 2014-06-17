@@ -54,6 +54,44 @@ function basic_page_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-page-field_category'
+  $field_instances['node-page-field_category'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_category',
+    'label' => 'Category',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 35,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-page-field_img'
   $field_instances['node-page-field_img'] = array(
     'bundle' => 'page',
@@ -162,6 +200,7 @@ function basic_page_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Category');
   t('Image');
   t('Slideshow Image');
   t('Upload an image to go with this basic page.');
