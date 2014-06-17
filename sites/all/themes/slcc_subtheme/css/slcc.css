@@ -332,7 +332,8 @@ div#block-views-features-block--2 .view-features .view-content .col-last .col-in
 }
 
 /* info request on its own page */
-div#webform-component-information-about-your-interests--prospective-term {
+div#webform-component-information-about-your-interests--prospective-term,
+div#webform-component-enrollment-term {
   float: left;
   margin-right: 1em;
   margin-top: 0;
