@@ -31,7 +31,7 @@ function basic_page_field_default_field_instances() {
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 1,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -50,7 +50,7 @@ function basic_page_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
+      'weight' => 1,
     ),
   );
 
@@ -63,10 +63,9 @@ function basic_page_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -87,16 +86,16 @@ function basic_page_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 35,
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-page-field_img'
-  $field_instances['node-page-field_img'] = array(
+  // Exported field_instance: 'node-page-field_image'
+  $field_instances['node-page-field_image'] = array(
     'bundle' => 'page',
     'deleted' => 0,
-    'description' => 'Upload an image to go with this basic page.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -116,17 +115,17 @@ function basic_page_field_default_field_instances() {
           'image_style' => 'articles',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_img',
+    'field_name' => 'field_image',
     'label' => 'Image',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 1,
+      'alt_field' => 0,
       'default_image' => 0,
-      'file_directory' => 'field/image',
+      'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
@@ -142,8 +141,9 @@ function basic_page_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 31,
+      'weight' => 5,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-page-field_slideshow'
@@ -156,7 +156,7 @@ function basic_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -196,7 +196,7 @@ function basic_page_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 33,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -207,7 +207,6 @@ function basic_page_field_default_field_instances() {
   t('Category');
   t('Image');
   t('Slideshow Image');
-  t('Upload an image to go with this basic page.');
 
   return $field_instances;
 }
