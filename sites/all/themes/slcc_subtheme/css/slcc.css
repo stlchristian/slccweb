@@ -13,6 +13,28 @@
 }
 
 /* Link Colors */
+.front a:visited,
+.front a {
+  color: #4c4c4c;
+}
+
+.front a:hover,
+.front a:focus,
+.front a:active {
+  color: #205f93;
+}
+
+.request-apply a:hover,
+.request-apply a:focus,
+.request-apply a:active,
+.request-apply a:visited,
+.request-apply a {
+  color: #fff;
+}
+
+
+a:visited,
+a
 p a:visited,
 p a,
 table tbody a:visited,
@@ -333,7 +355,8 @@ div#block-views-features-block--2 .view-features .view-content .col-last .col-in
 
 /* info request on its own page */
 div#webform-component-information-about-your-interests--prospective-term,
-div#webform-component-personal-information--enrollment-term {
+div#webform-component-personal-information--enrollment-term,
+div#webform-component-personal-information--application-term {
   float: left;
   margin-right: 1em;
   margin-top: 0;
@@ -523,6 +546,10 @@ p.box-download, p.box-sticky, p.box-confirmation, p.box-error, p.box-warning, p.
 
 #main-content .view-header {
   padding: 0 0 0 6px;
+}
+
+.jcarousel-skin-default .jcarousel-clip-horizontal {
+  width: 100%;
 }
 
 /* jcarousel arrows */
