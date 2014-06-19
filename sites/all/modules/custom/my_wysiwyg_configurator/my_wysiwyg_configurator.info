@@ -1,0 +1,4 @@
+name = SLCC WYSIWYG CKEditor Configuration
+description = Modifieds the configuration for CKEditor as we need it.
+core = 7.x
+dependencies[] = wysiwyg
