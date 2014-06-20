@@ -90,3 +90,15 @@ function slcc_subtheme_breadcrumb($breadcrumb) {
   }
   return '';
 }
+
+/**
+ * Override of theme_preprocess_html().
+ */
+function slcc_subtheme_preprocess_html(&$variables) {
+  // This function looks for node 1 and only adds the javascript for this.
+  // However it can be extended in different ways if required
+  if ($variables['node']['nid'] = 238) {
+    drupal_add_js('misc/form.js');
+    drupal_add_js('misc/collapse.js');
+  }
+}
