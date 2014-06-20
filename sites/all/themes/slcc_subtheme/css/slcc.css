@@ -623,3 +623,10 @@ ul.contact-list li {
   width: 22%;
   float: left;
 }
+
+/* FAQs */
+html.js fieldset.faq-fieldset .fieldset-legend {
+  background-image: none;
+  background: none;
+  padding-left: 0;
+}
