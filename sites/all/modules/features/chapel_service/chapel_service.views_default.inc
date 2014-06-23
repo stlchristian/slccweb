@@ -467,7 +467,7 @@ drupal_set_breadcrumb($crumbs);
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="student-life/chapel-messages">Click here</a> to listen to our recorded messages.';
+  $handler->display->display_options['footer']['area']['content'] = '<strong><a href="student-life/chapel-messages">Please click here</a></strong> to listen to our recorded messages.';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Date */
@@ -596,7 +596,7 @@ drupal_set_breadcrumb($crumbs);
     t('%1'),
     t('Block'),
     t('Recent Chapels'),
-    t('<a href="student-life/chapel-messages">Click here</a> to listen to our recorded messages.'),
+    t('<strong><a href="student-life/chapel-messages">Please click here</a></strong> to listen to our recorded messages.'),
   );
   $export['chapel_sermons'] = $view;
 

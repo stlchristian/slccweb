@@ -1,17 +1,17 @@
 <?php
 /**
  * @file
- * events.views_default.inc
+ * campus_event.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function events_views_default_views() {
+function campus_event_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'events';
+  $view->name = 'campus_event';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
@@ -23,7 +23,7 @@ function events_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Events';
-  $handler->display->display_options['css_class'] = 'page-events';
+  $handler->display->display_options['css_class'] = 'page-campus_event';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -93,7 +93,7 @@ function events_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'events' => 'events',
+    'campus_event' => 'campus_event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Time -  start date (field_time) */
@@ -113,14 +113,14 @@ function events_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'events';
+  $handler->display->display_options['path'] = 'campus_event';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Events';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $translatables['events'] = array(
+  $translatables['campus_event'] = array(
     t('Master'),
     t('Events'),
     t('more'),
@@ -140,7 +140,7 @@ function events_views_default_views() {
     t('Speaker(s)'),
     t('Page'),
   );
-  $export['events'] = $view;
+  $export['campus_event'] = $view;
 
   return $export;
 }

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * events.features.uuid_term.inc
+ * campus_event.features.uuid_term.inc
  */
 
 /**
  * Implements hook_uuid_features_default_terms().
  */
-function events_uuid_features_default_terms() {
+function campus_event_uuid_features_default_terms() {
   $terms = array();
 
   $terms[] = array(

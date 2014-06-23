@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * events.features.field_base.inc
+ * campus_event.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function events_field_default_field_bases() {
+function campus_event_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_event_categories'

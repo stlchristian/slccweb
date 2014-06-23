@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * events.features.inc
+ * campus_event.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function events_ctools_plugin_api($module = NULL, $api = NULL) {
+function campus_event_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -19,17 +19,17 @@ function events_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function events_views_api($module = NULL, $api = NULL) {
+function campus_event_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_node_info().
  */
-function events_node_info() {
+function campus_event_node_info() {
   $items = array(
-    'events' => array(
-      'name' => t('Events'),
+    'campus_event' => array(
+      'name' => t('Campus Event'),
       'base' => 'node_content',
       'description' => t('A new event that will be taking place'),
       'has_title' => '1',

@@ -4,4 +4,4 @@
  * Code for the Events feature.
  */
 
-include_once 'events.features.inc';
+include_once 'campus_event.features.inc';

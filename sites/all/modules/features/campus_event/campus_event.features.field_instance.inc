@@ -1,18 +1,18 @@
 <?php
 /**
  * @file
- * events.features.field_instance.inc
+ * campus_event.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function events_field_default_field_instances() {
+function campus_event_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-events-body'
-  $field_instances['node-events-body'] = array(
-    'bundle' => 'events',
+  // Exported field_instance: 'node-campus_event-body'
+  $field_instances['node-campus_event-body'] = array(
+    'bundle' => 'campus_event',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -55,9 +55,9 @@ function events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-events-field_contact'
-  $field_instances['node-events-field_contact'] = array(
-    'bundle' => 'events',
+  // Exported field_instance: 'node-campus_event-field_contact'
+  $field_instances['node-campus_event-field_contact'] = array(
+    'bundle' => 'campus_event',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'The contact person for the event',
@@ -97,9 +97,9 @@ function events_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-events-field_contact_email'
-  $field_instances['node-events-field_contact_email'] = array(
-    'bundle' => 'events',
+  // Exported field_instance: 'node-campus_event-field_contact_email'
+  $field_instances['node-campus_event-field_contact_email'] = array(
+    'bundle' => 'campus_event',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -137,9 +137,9 @@ function events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-events-field_contact_phone'
-  $field_instances['node-events-field_contact_phone'] = array(
-    'bundle' => 'events',
+  // Exported field_instance: 'node-campus_event-field_contact_phone'
+  $field_instances['node-campus_event-field_contact_phone'] = array(
+    'bundle' => 'campus_event',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -177,9 +177,9 @@ function events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-events-field_event_categories'
-  $field_instances['node-events-field_event_categories'] = array(
-    'bundle' => 'events',
+  // Exported field_instance: 'node-campus_event-field_event_categories'
+  $field_instances['node-campus_event-field_event_categories'] = array(
+    'bundle' => 'campus_event',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -213,9 +213,9 @@ function events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-events-field_location'
-  $field_instances['node-events-field_location'] = array(
-    'bundle' => 'events',
+  // Exported field_instance: 'node-campus_event-field_location'
+  $field_instances['node-campus_event-field_location'] = array(
+    'bundle' => 'campus_event',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -255,9 +255,9 @@ function events_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-events-field_registration_deadline'
-  $field_instances['node-events-field_registration_deadline'] = array(
-    'bundle' => 'events',
+  // Exported field_instance: 'node-campus_event-field_registration_deadline'
+  $field_instances['node-campus_event-field_registration_deadline'] = array(
+    'bundle' => 'campus_event',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -265,7 +265,7 @@ function events_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'events',
+          'format_type' => 'campus_event',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -308,9 +308,9 @@ function events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-events-field_registration_form'
-  $field_instances['node-events-field_registration_form'] = array(
-    'bundle' => 'events',
+  // Exported field_instance: 'node-campus_event-field_registration_form'
+  $field_instances['node-campus_event-field_registration_form'] = array(
+    'bundle' => 'campus_event',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -347,9 +347,9 @@ function events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-events-field_registration_link'
-  $field_instances['node-events-field_registration_link'] = array(
-    'bundle' => 'events',
+  // Exported field_instance: 'node-campus_event-field_registration_link'
+  $field_instances['node-campus_event-field_registration_link'] = array(
+    'bundle' => 'campus_event',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -403,9 +403,9 @@ function events_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-events-field_time'
-  $field_instances['node-events-field_time'] = array(
-    'bundle' => 'events',
+  // Exported field_instance: 'node-campus_event-field_time'
+  $field_instances['node-campus_event-field_time'] = array(
+    'bundle' => 'campus_event',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -413,7 +413,7 @@ function events_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'events',
+          'format_type' => 'campus_event',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -426,7 +426,7 @@ function events_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'events',
+          'format_type' => 'campus_event',
           'fromto' => 'value',
           'multiple_from' => '',
           'multiple_number' => '',

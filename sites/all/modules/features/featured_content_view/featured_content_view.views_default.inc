@@ -41,12 +41,6 @@ function featured_content_view_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Webform: Webform form body */
-  $handler->display->display_options['fields']['webform_form_body']['id'] = 'webform_form_body';
-  $handler->display->display_options['fields']['webform_form_body']['table'] = 'node';
-  $handler->display->display_options['fields']['webform_form_body']['field'] = 'webform_form_body';
-  $handler->display->display_options['fields']['webform_form_body']['label'] = '';
-  $handler->display->display_options['fields']['webform_form_body']['element_label_colon'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -58,6 +52,12 @@ function featured_content_view_views_default_views() {
     'image_style' => 'features',
     'image_link' => 'content',
   );
+  /* Field: Webform: Webform form body */
+  $handler->display->display_options['fields']['webform_form_body']['id'] = 'webform_form_body';
+  $handler->display->display_options['fields']['webform_form_body']['table'] = 'node';
+  $handler->display->display_options['fields']['webform_form_body']['field'] = 'webform_form_body';
+  $handler->display->display_options['fields']['webform_form_body']['label'] = '';
+  $handler->display->display_options['fields']['webform_form_body']['element_label_colon'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -67,6 +67,7 @@ function featured_content_view_views_default_views() {
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_plain';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
