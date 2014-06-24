@@ -523,6 +523,10 @@ p.box-download, p.box-sticky, p.box-confirmation, p.box-error, p.box-warning, p.
   color: #205f93;
 }
 
+#panel-second-wrapper .block .views-field-title {
+  text-transform: capitalize;
+}
+
 /* featured students block */
 /* main-content */
 #main-content .block-views {
