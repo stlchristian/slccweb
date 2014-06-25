@@ -102,7 +102,7 @@ function campus_event_strongarm() {
       'display' => array(
         'webform' => array(
           'teaser' => array(
-            'weight' => '6',
+            'weight' => '4',
             'visible' => FALSE,
           ),
           'default' => array(

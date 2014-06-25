@@ -157,6 +157,42 @@ li a.active {
   margin-bottom: 10px;
 }
 
+.node-type-campus-event .group-event-time,
+.view-campus-event .group-event-time {
+  float: left;
+  width: 19%;  
+}
+
+.node-type-campus-event .field-name-body,
+.view-campus-event .field-name-body {
+  margin-left: 19%;
+  width: 52%;
+}
+
+.node-type-campus-event .group-event-time .field-name-field-location,
+.view-campus-event .group-event-time .field-name-field-location {
+  font-size: 1.167em;
+}
+
+.node-type-campus-event .group-event-time .field-name-field-location .field-label,
+.view-campus-event .group-event-time .field-name-field-location .field-label {
+  color: #666666;
+}
+
+.view-campus-event .views-row {
+  border-bottom: 1px solid #DDDDDD;
+  padding: 20px 0;
+}
+
+.view-campus-event .views-row-first {
+  padding: 0 0 20px 0;
+}
+
+.view-campus-event .views-row .article {
+  margin: 0;
+  padding: 0;
+}
+
 /* Ministry Opportunities */
 .node-type-ministry-opportunity .node-title {
   margin: 0 0 10px 0;

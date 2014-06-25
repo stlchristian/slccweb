@@ -21,7 +21,7 @@ function campus_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Event Details',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'field_contact',
       1 => 'field_contact_email',
@@ -56,7 +56,7 @@ function campus_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Event Details',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'field_contact',
       1 => 'field_contact_email',
@@ -77,6 +77,33 @@ function campus_event_field_group_info() {
     ),
   );
   $export['group_event_details|node|campus_event|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_event_registration|node|campus_event|default';
+  $field_group->group_name = 'group_event_registration';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'campus_event';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Click Here to Register',
+    'weight' => '3',
+    'children' => array(
+      0 => 'webform',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Click Here to Register',
+      'instance_settings' => array(
+        'classes' => 'group-event-registration',
+        'description' => '',
+      ),
+      'formatter' => 'collapsed',
+    ),
+  );
+  $export['group_event_registration|node|campus_event|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
