@@ -88,14 +88,14 @@ function campus_event_field_group_info() {
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Click Here to Register',
+    'label' => 'Click Here to Sign Up',
     'weight' => '3',
     'children' => array(
       0 => 'webform',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'Click Here to Register',
+      'label' => 'Click Here to Sign Up',
       'instance_settings' => array(
         'classes' => 'group-event-registration',
         'description' => '',
