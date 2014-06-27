@@ -34,6 +34,7 @@ function athletic_match_views_default_views() {
   $handler->display->display_options['fields']['field_time']['id'] = 'field_time';
   $handler->display->display_options['fields']['field_time']['table'] = 'field_data_field_time';
   $handler->display->display_options['fields']['field_time']['field'] = 'field_time';
+  $handler->display->display_options['fields']['field_time']['label'] = 'Date';
   $handler->display->display_options['fields']['field_time']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_time']['settings'] = array(
     'format_type' => 'events',
@@ -117,9 +118,10 @@ function athletic_match_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Time'),
+    t('Date'),
     t('Opponent'),
     t('Location'),
+    t('Time'),
     t('All'),
     t('%1 Schedule'),
     t('Page'),
