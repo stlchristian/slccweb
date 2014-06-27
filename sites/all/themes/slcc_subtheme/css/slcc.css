@@ -275,15 +275,8 @@ li a.active {
   padding: 0 !important;
 }
 
-.page-ministry-opportunities .views-table th.views-field-changed,
-.page-ministry-opportunities .views-table th.views-field-field-pay-type {
-  width: 15%;
-}
-
-.page-ministry-opportunities .views-table th.views-field-title,
-.page-ministry-opportunities .views-table th.views-field-field-church-name,
-.page-ministry-opportunities .views-table th.views-field-field-city {
-  width: 23%;
+.view-ministry-opportunities .view-filters .views-exposed-widget {
+  width: auto;
 }
 
 /* Chapel Services*/
