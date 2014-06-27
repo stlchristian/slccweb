@@ -30,7 +30,7 @@ function athletic_match_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'table';
-  /* Field: Content: Date */
+  /* Field: Content: Time */
   $handler->display->display_options['fields']['field_time']['id'] = 'field_time';
   $handler->display->display_options['fields']['field_time']['table'] = 'field_data_field_time';
   $handler->display->display_options['fields']['field_time']['field'] = 'field_time';
@@ -42,7 +42,7 @@ function athletic_match_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Opponent */
+  /* Field: Field: Opponent */
   $handler->display->display_options['fields']['field_opponent']['id'] = 'field_opponent';
   $handler->display->display_options['fields']['field_opponent']['table'] = 'field_data_field_opponent';
   $handler->display->display_options['fields']['field_opponent']['field'] = 'field_opponent';
@@ -55,11 +55,10 @@ function athletic_match_views_default_views() {
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_location']['type'] = 'text_plain';
-  /* Field: Content: Date */
+  /* Field: Content: Time */
   $handler->display->display_options['fields']['field_time_1']['id'] = 'field_time_1';
   $handler->display->display_options['fields']['field_time_1']['table'] = 'field_data_field_time';
   $handler->display->display_options['fields']['field_time_1']['field'] = 'field_time';
-  $handler->display->display_options['fields']['field_time_1']['label'] = 'Time';
   $handler->display->display_options['fields']['field_time_1']['settings'] = array(
     'format_type' => 'athletics_time',
     'fromto' => 'value',
@@ -67,7 +66,7 @@ function athletic_match_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Sort criterion: Content: Date -  start date (field_time) */
+  /* Sort criterion: Content: Time -  start date (field_time) */
   $handler->display->display_options['sorts']['field_time_value']['id'] = 'field_time_value';
   $handler->display->display_options['sorts']['field_time_value']['table'] = 'field_data_field_time';
   $handler->display->display_options['sorts']['field_time_value']['field'] = 'field_time_value';
@@ -118,10 +117,9 @@ function athletic_match_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Date'),
+    t('Time'),
     t('Opponent'),
     t('Location'),
-    t('Time'),
     t('All'),
     t('%1 Schedule'),
     t('Page'),

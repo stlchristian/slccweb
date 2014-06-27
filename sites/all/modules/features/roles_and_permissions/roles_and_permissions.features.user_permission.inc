@@ -927,26 +927,6 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create events content'.
-  $permissions['create events content'] = array(
-    'name' => 'create events content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'admissions contributor' => 'admissions contributor',
-      'admissions editor' => 'admissions editor',
-      'bookstore contributor' => 'bookstore contributor',
-      'bookstore editor' => 'bookstore editor',
-      'development contributor' => 'development contributor',
-      'development editor' => 'development editor',
-      'library contributor' => 'library contributor',
-      'library editor' => 'library editor',
-      'operations contributor' => 'operations contributor',
-      'operations editor' => 'operations editor',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create forum content'.
   $permissions['create forum content'] = array(
     'name' => 'create forum content',
@@ -969,18 +949,6 @@ function roles_and_permissions_user_default_permissions() {
       'library editor' => 'library editor',
       'operations contributor' => 'operations contributor',
       'operations editor' => 'operations editor',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'create ministry_opportunity content'.
-  $permissions['create ministry_opportunity content'] = array(
-    'name' => 'create ministry_opportunity content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1154,29 +1122,9 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any events content'.
-  $permissions['delete any events content'] = array(
-    'name' => 'delete any events content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete any forum content'.
   $permissions['delete any forum content'] = array(
     'name' => 'delete any forum content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any ministry_opportunity content'.
-  $permissions['delete any ministry_opportunity content'] = array(
-    'name' => 'delete any ministry_opportunity content',
     'roles' => array(
       'administrator' => 'administrator',
       'webmaster' => 'webmaster',
@@ -1264,29 +1212,9 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete own events content'.
-  $permissions['delete own events content'] = array(
-    'name' => 'delete own events content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete own forum content'.
   $permissions['delete own forum content'] = array(
     'name' => 'delete own forum content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own ministry_opportunity content'.
-  $permissions['delete own ministry_opportunity content'] = array(
-    'name' => 'delete own ministry_opportunity content',
     'roles' => array(
       'administrator' => 'administrator',
       'webmaster' => 'webmaster',
@@ -1501,43 +1429,11 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit any events content'.
-  $permissions['edit any events content'] = array(
-    'name' => 'edit any events content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'admissions contributor' => 'admissions contributor',
-      'admissions editor' => 'admissions editor',
-      'bookstore contributor' => 'bookstore contributor',
-      'bookstore editor' => 'bookstore editor',
-      'development contributor' => 'development contributor',
-      'development editor' => 'development editor',
-      'library contributor' => 'library contributor',
-      'library editor' => 'library editor',
-      'operations contributor' => 'operations contributor',
-      'operations editor' => 'operations editor',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit any forum content'.
   $permissions['edit any forum content'] = array(
     'name' => 'edit any forum content',
     'roles' => array(
       'administrator' => 'administrator',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any ministry_opportunity content'.
-  $permissions['edit any ministry_opportunity content'] = array(
-    'name' => 'edit any ministry_opportunity content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'development contributor' => 'development contributor',
-      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -1724,26 +1620,6 @@ function roles_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit own events content'.
-  $permissions['edit own events content'] = array(
-    'name' => 'edit own events content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'admissions contributor' => 'admissions contributor',
-      'admissions editor' => 'admissions editor',
-      'bookstore contributor' => 'bookstore contributor',
-      'bookstore editor' => 'bookstore editor',
-      'development contributor' => 'development contributor',
-      'development editor' => 'development editor',
-      'library contributor' => 'library contributor',
-      'library editor' => 'library editor',
-      'operations contributor' => 'operations contributor',
-      'operations editor' => 'operations editor',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit own forum content'.
   $permissions['edit own forum content'] = array(
     'name' => 'edit own forum content',
@@ -1766,17 +1642,6 @@ function roles_and_permissions_user_default_permissions() {
       'library editor' => 'library editor',
       'operations contributor' => 'operations contributor',
       'operations editor' => 'operations editor',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own ministry_opportunity content'.
-  $permissions['edit own ministry_opportunity content'] = array(
-    'name' => 'edit own ministry_opportunity content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',

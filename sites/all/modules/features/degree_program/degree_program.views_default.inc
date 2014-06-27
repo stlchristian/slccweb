@@ -211,7 +211,7 @@ drupal_set_breadcrumb($crumbs);
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('<p>SLCC offers degrees that students can earn in a variety of ways. Our <strong>traditional degree programs</strong> have classes which meet during the daytime, and are geared students looking for the "traditional" college experience. Our <strong>evening degree programs</strong> make it easy for you to take advantage of learning from a professor in-person while allowing you to continue meeting your family and work needs. Our <strong>online degree programs</strong> are ideal for distance learners and those who are looking to work at a more individualized pace.<p>
+    t('<p>SLCC offers degrees that students can earn in a variety of ways. Our <strong>traditional degree programs</strong> have classes which meet during the daytime, and are geared toward students looking for the "traditional" college experience. Our <strong>evening degree programs</strong> make it easy for you to take advantage of learning from a professor in-person while allowing you to continue meeting your family and work needs. Our <strong>online degree programs</strong> are ideal for distance learners and those who are looking to work at a more individualized pace.<p>
 <p>Whatever your educational goals or learning style, we have something to offer you! Click on one of the degree programs below to learn more.</p>'),
     t('breadcrumbs'),
     t('<?php
