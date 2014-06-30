@@ -2,6 +2,7 @@
   Blue Color
 */
 
+/*
 a {
   color: #4c4c4c;
 }
@@ -12,6 +13,7 @@ a:active,
 li a.active {
   color: #205f93;
 }
+*/
 
 .node-title a:hover, 
 .node-title a:active, 

@@ -33,24 +33,13 @@ a.typo-btn {
 }
 
 
-a:visited,
-a
-p a:visited,
-p a,
-table tbody a:visited,
-table tbody a {
+a {
   color: #205f93;
 }
 
 a:hover,
 a:focus,
 a:active,
-p a:hover,
-p a:focus,
-p a:active,
-table tbody a:hover,
-table tbody a:focus,
-table tbody a:active,
 li a.active {
   color: #4c4c4c;
 }
