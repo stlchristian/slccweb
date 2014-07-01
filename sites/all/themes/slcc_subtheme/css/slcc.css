@@ -661,3 +661,16 @@ html.js fieldset.faq-fieldset .fieldset-legend {
 div#article-173 .typo-btn {
   margin-right: 1em;
 }
+
+/* Grad Rates Table */
+table.grad-rates {
+  font-size: 11px;
+}
+
+table.grad-rates th {
+  text-align: center;
+}
+
+table.grad-rates tr {
+  border-bottom: 1px solid #333;
+}
