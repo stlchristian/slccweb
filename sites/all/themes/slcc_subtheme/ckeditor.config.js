@@ -10,4 +10,3 @@ CKEDITOR.editorConfig = function(config) {
 };
 
 CKEDITOR.dtd.$removeEmpty['i'] = false;
-CKEDITOR.dtd.$inline = i;

@@ -16,7 +16,7 @@ function ckeditor_formats_ckeditor_profile_defaults() {
         'toolbar' => '[
     [\'Cut\',\'Copy\',\'Paste\',\'PasteText\',\'PasteFromWord\',\'-\',\'SpellChecker\',\'Scayt\'],
     [\'Undo\',\'Redo\',\'Find\',\'Replace\',\'-\',\'SelectAll\'],
-    [\'Image\',\'Media\',\'HorizontalRule\'],
+    [\'Media\',\'MediaEmbed\',\'HorizontalRule\'],
     [\'Maximize\',\'ShowBlocks\'],
     \'/\',
     [\'Format\'],
