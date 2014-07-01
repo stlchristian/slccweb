@@ -29,7 +29,7 @@ function ckeditor_formats_filter_default_formats() {
         'weight' => 1,
         'status' => 1,
         'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <span> <i> <ul> <ol> <li> <dl> <dt> <dd> <br> <p> <img> <h1> <h2> <h3> <h4>',
+          'allowed_html' => '<a> <em> <strong> <small> <cite> <blockquote> <code> <span> <i> <ul> <ol> <li> <dl> <dt> <dd> <br> <p> <img> <h1> <h2> <h3> <h4>',
           'filter_html_help' => 1,
           'filter_html_nofollow' => 0,
         ),
