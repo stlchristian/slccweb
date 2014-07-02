@@ -5,9 +5,9 @@
     font-family: 'Optimus Princeps';
     src: url('fonts/OptimusPrinceps/optimusprinceps.eot');
     src: url('fonts/OptimusPrinceps/optimusprinceps.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OptimusPrinceps/optimusprinceps.svg#optimusprincepsregular') format('svg');
          url('fonts/OptimusPrinceps/optimusprinceps.woff') format('woff'),
          url('fonts/OptimusPrinceps/optimusprinceps.ttf') format('truetype'),
-         url('fonts/OptimusPrinceps/optimusprinceps.svg#optimusprincepsregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -32,7 +32,6 @@ a.typo-btn {
   color: #fff;
 }
 
-
 a,
 a:visited {
   color: #205f93;
@@ -41,6 +40,8 @@ a:visited {
 a:hover,
 a:focus,
 a:active,
+.view-all-courses .item-list li a:hover,
+.view-all-courses .item-list li a:focus,
 li a.active {
   color: #4c4c4c;
 }
@@ -96,6 +97,11 @@ li a.active {
 .view-all-courses .item-list a:active {
   background: none;
   background-image: none;
+  padding-left: 0;
+}
+
+.view-all-courses .fa-li {
+  position: static;
 }
 
 /* events pages */

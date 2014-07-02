@@ -89,12 +89,12 @@ li a.active {
 }
 
 /* --- Sidebar --- */
-.sidebar .block div.list-courses ul li:hover a,
+/*.sidebar .block div.list-courses ul li:hover a,
 .sidebar .block div.list-courses ul li a:hover,
 .sidebar .block div.list-courses ul li a:focus,
 .sidebar .block div.list-courses ul li a:active {
   color: #205f93;
-}
+}*/
 
 .sidebar .search-form span.button input.form-submit {
   background-color: #205f93;
@@ -521,10 +521,10 @@ ul.social-list li a {
   color: #205f93;
 }
 
-.view-all-courses .item-list li a:hover,
+/*.view-all-courses .item-list li a:hover,
 .view-all-courses .item-list li a:focus {
   color: #205f93;
-}
+}*/
 
 .view-videos .views-field-title a;hover,
 .view-videos .views-field-title a:focus {

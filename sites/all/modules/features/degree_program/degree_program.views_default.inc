@@ -40,7 +40,13 @@ function degree_program_views_default_views() {
       'rendered_strip' => 0,
     ),
   );
+  $handler->display->display_options['style_options']['class'] = 'fa-ul';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'nothing' => 'nothing',
+    'title' => 'title',
+  );
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   /* Relationship: Content: Taxonomy terms on node */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
@@ -62,18 +68,23 @@ function degree_program_views_default_views() {
     'sport' => 0,
     'tags' => 0,
   );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<i class="fa-li fa fa-angle-right"></i>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '&nbsp;[title]';
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['link_class'] = 'fa fa-angle-right';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<i class="fa-li fa fa-angle-right"></i>[title]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -142,7 +153,10 @@ function degree_program_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<p>SLCC offers degrees that students can earn in a variety of ways. Our <strong>traditional degree programs</strong> have classes which meet during the daytime, and are geared toward students looking for the "traditional" college experience. Our <strong>evening degree programs</strong> make it easy for you to take advantage of learning from a professor in-person while allowing you to continue meeting your family and work needs. Our <strong>online degree programs</strong> are ideal for distance learners and those who are looking to work at a more individualized pace.<p>
+  $handler->display->display_options['header']['area']['content'] = '<p>St. Louis Christian College <strong>Educates Christians</strong> with a biblical and academic foundation. We take the task very seriously, and we offer competitive degrees to prepare students to serve God. SLCC offers degrees that students can earn in a variety of ways.</p>
+<p>Our <strong>traditional degree programs</strong> have classes which meet during the daytime, and are geared toward students looking for the "traditional" college experience.</p>
+<p>Our <strong>evening degree programs</strong> make it easy for you to take advantage of learning from a professor in-person while allowing you to continue meeting your family and work needs.</p>
+<p>Our <strong>online degree programs</strong> are ideal for distance learners and those who are looking to work at a more individualized pace.</p>
 <p>Whatever your educational goals or learning style, we have something to offer you! Click on one of the degree programs below to learn more.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Header: Global: Text area */
@@ -198,7 +212,8 @@ drupal_set_breadcrumb($crumbs);
     t('Asc'),
     t('Desc'),
     t('term'),
-    t('&nbsp;[title]'),
+    t('<i class="fa-li fa fa-angle-right"></i>'),
+    t('<i class="fa-li fa fa-angle-right"></i>[title]'),
     t('[name] Degrees'),
     t('All'),
     t('%1 Degree Programs'),
@@ -211,7 +226,10 @@ drupal_set_breadcrumb($crumbs);
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('<p>SLCC offers degrees that students can earn in a variety of ways. Our <strong>traditional degree programs</strong> have classes which meet during the daytime, and are geared toward students looking for the "traditional" college experience. Our <strong>evening degree programs</strong> make it easy for you to take advantage of learning from a professor in-person while allowing you to continue meeting your family and work needs. Our <strong>online degree programs</strong> are ideal for distance learners and those who are looking to work at a more individualized pace.<p>
+    t('<p>St. Louis Christian College <strong>Educates Christians</strong> with a biblical and academic foundation. We take the task very seriously, and we offer competitive degrees to prepare students to serve God. SLCC offers degrees that students can earn in a variety of ways.</p>
+<p>Our <strong>traditional degree programs</strong> have classes which meet during the daytime, and are geared toward students looking for the "traditional" college experience.</p>
+<p>Our <strong>evening degree programs</strong> make it easy for you to take advantage of learning from a professor in-person while allowing you to continue meeting your family and work needs.</p>
+<p>Our <strong>online degree programs</strong> are ideal for distance learners and those who are looking to work at a more individualized pace.</p>
 <p>Whatever your educational goals or learning style, we have something to offer you! Click on one of the degree programs below to learn more.</p>'),
     t('breadcrumbs'),
     t('<?php
