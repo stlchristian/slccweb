@@ -25,3 +25,8 @@ form#webform-client-form-172 {
   width: 100%;
   margin-bottom: 20px;
 }
+
+.node-degree-program .group-degree-details,
+.node-degree-program .group-degree-information {
+  width: 100%;
+}

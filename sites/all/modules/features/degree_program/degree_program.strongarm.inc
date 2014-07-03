@@ -83,6 +83,9 @@ function degree_program_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -90,10 +93,10 @@ function degree_program_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
         'workbench_access' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
       ),
       'display' => array(),
@@ -112,14 +115,16 @@ function degree_program_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_degree_program';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
   $export['menu_options_degree_program'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_degree_program';
-  $strongarm->value = 'main-menu:0';
+  $strongarm->value = 'main-menu:1237';
   $export['menu_parent_degree_program'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -10,6 +10,33 @@
 function degree_program_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_career_opportunities'
+  $field_bases['field_career_opportunities'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_career_opportunities',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_with_summary',
+  );
+
   // Exported field_base: 'field_contact_for_further_inform'
   $field_bases['field_contact_for_further_inform'] = array(
     'active' => 1,
@@ -67,6 +94,33 @@ function degree_program_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_degrees_offered'
+  $field_bases['field_degrees_offered'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_degrees_offered',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_description'
   $field_bases['field_description'] = array(
     'active' => 1,
@@ -121,13 +175,13 @@ function degree_program_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_programme_information'
-  $field_bases['field_programme_information'] = array(
+  // Exported field_base: 'field_objectives_for_graduates'
+  $field_bases['field_objectives_for_graduates'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_programme_information',
+    'field_name' => 'field_objectives_for_graduates',
     'foreign keys' => array(
       'format' => array(
         'columns' => array(

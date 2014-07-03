@@ -10,50 +10,6 @@
 function degree_program_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-degree_program-body'
-  $field_instances['node-degree_program-body'] = array(
-    'bundle' => 'degree_program',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => TRUE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 2,
-    ),
-  );
-
   // Exported field_instance: 'node-degree_program-field_academic_program'
   $field_instances['node-degree_program-field_academic_program'] = array(
     'bundle' => 'degree_program',
@@ -63,10 +19,9 @@ function degree_program_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 8,
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -87,7 +42,50 @@ function degree_program_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 12,
+      'weight' => 11,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-degree_program-field_career_opportunities'
+  $field_instances['node-degree_program-field_career_opportunities'] = array(
+    'bundle' => 'degree_program',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_career_opportunities',
+    'label' => 'Career Opportunities',
+    'required' => 0,
+    'settings' => array(
+      'display_summary' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -104,7 +102,7 @@ function degree_program_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -115,7 +113,7 @@ function degree_program_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_contact_for_further_inform',
-    'label' => 'Contact for further information',
+    'label' => 'Contact Information',
     'required' => 0,
     'settings' => array(
       'display_summary' => 0,
@@ -130,8 +128,9 @@ function degree_program_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 9,
+      'weight' => 10,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-degree_program-field_course_image'
@@ -148,7 +147,7 @@ function degree_program_field_default_field_instances() {
           'image_style' => 'articles',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -184,8 +183,8 @@ function degree_program_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-degree_program-field_description'
-  $field_instances['node-degree_program-field_description'] = array(
+  // Exported field_instance: 'node-degree_program-field_degrees_offered'
+  $field_instances['node-degree_program-field_degrees_offered'] = array(
     'bundle' => 'degree_program',
     'default_value' => NULL,
     'deleted' => 0,
@@ -206,8 +205,49 @@ function degree_program_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'field_name' => 'field_degrees_offered',
+    'label' => 'Degrees Offered',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 9,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-degree_program-field_description'
+  $field_instances['node-degree_program-field_description'] = array(
+    'bundle' => 'degree_program',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
     'field_name' => 'field_description',
-    'label' => 'Description',
+    'label' => 'Program Description',
     'required' => 0,
     'settings' => array(
       'display_summary' => 0,
@@ -222,23 +262,31 @@ function degree_program_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 5,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-degree_program-field_how_to_apply'
   $field_instances['node-degree_program-field_how_to_apply'] = array(
     'bundle' => 'degree_program',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'summary' => '',
+        'value' => '<p><a class="typo-btn btn-rounded-big btn-green typo-btn-big btn-big-green" href="/admissions/apply-now"><span>Apply Now<i class="fa fa-chevron-right fa-fw"></i></span></a></p>
+',
+        'format' => 'filtered_html',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -264,12 +312,13 @@ function degree_program_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 8,
+      'weight' => 4,
     ),
+    'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-degree_program-field_programme_information'
-  $field_instances['node-degree_program-field_programme_information'] = array(
+  // Exported field_instance: 'node-degree_program-field_objectives_for_graduates'
+  $field_instances['node-degree_program-field_objectives_for_graduates'] = array(
     'bundle' => 'degree_program',
     'default_value' => NULL,
     'deleted' => 0,
@@ -280,7 +329,7 @@ function degree_program_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -290,8 +339,8 @@ function degree_program_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_programme_information',
-    'label' => 'Program Information',
+    'field_name' => 'field_objectives_for_graduates',
+    'label' => 'Objectives for Graduates',
     'required' => 0,
     'settings' => array(
       'display_summary' => 0,
@@ -306,14 +355,33 @@ function degree_program_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 8,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-degree_program-field_what_you_study'
   $field_instances['node-degree_program-field_what_you_study'] = array(
     'bundle' => 'degree_program',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'summary' => '',
+        'value' => '<p>Specialty Courses Include:</p>
+
+<ul>
+	<li>class</li>
+	<li>class</li>
+</ul>
+
+<p>Click here for traditional courses</p>
+
+<p>Click here for evening courses</p>
+
+<p>Click here for online courses</p>
+',
+        'format' => 'filtered_html',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -322,7 +390,7 @@ function degree_program_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -348,19 +416,21 @@ function degree_program_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 10,
+      'weight' => 7,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Academic Program');
-  t('Body');
-  t('Contact for further information');
+  t('Career Opportunities');
+  t('Contact Information');
   t('Course Image');
-  t('Description');
+  t('Degrees Offered');
   t('How to apply');
-  t('Program Information');
+  t('Objectives for Graduates');
+  t('Program Description');
   t('What you study');
 
   return $field_instances;
