@@ -5,11 +5,20 @@
     font-family: 'Optimus Princeps';
     src: url('fonts/OptimusPrinceps/optimusprinceps.eot');
     src: url('fonts/OptimusPrinceps/optimusprinceps.eot?#iefix') format('embedded-opentype'),
-         url('fonts/OptimusPrinceps/optimusprinceps.svg#optimusprincepsregular') format('svg');
          url('fonts/OptimusPrinceps/optimusprinceps.woff') format('woff'),
          url('fonts/OptimusPrinceps/optimusprinceps.ttf') format('truetype'),
+         url('fonts/OptimusPrinceps/optimusprinceps.svg#optimusprincepsregular') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+
+/* fix for Chrome's crappy rendering of WOFF fonts, and
+   Firefox's total apathy toward SVG fonts */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'Optimus Princeps';
+      src: url('fonts/OptimusPrinceps/optimusprinceps.svg#optimusprincepsregular') format('svg');
+  }
 }
 
 /* Link Colors */
@@ -132,6 +141,7 @@ li a.active {
   margin: 0 0 0 20px;  
 }
 
+/* events on their own page */
 .node-type-campus-event .group-event-time .field-type-datetime {
   display: block;
   font-size: 1.25em;
@@ -681,4 +691,38 @@ table.grad-rates th {
 table.grad-rates tr {
   border-bottom: 1px solid #333;
   vertical-align: bottom;
+}
+
+/* degree programs */
+.node-degree-program .group-degree-details {
+  float: right;
+  margin-left: 30px;
+  width: 35%;
+}
+
+.node-degree-program .group-degree-information {
+  width: 60%;
+  float: left;
+}
+
+.node-degree-program .group-degree-details .field-type-image {
+  float: none;
+}
+
+.node-degree-program .field-name-field-contact-for-further-inform img {
+  float: left;
+  margin-right: 7px;
+}
+
+.node-degree-program .group-degree-details .field {
+  margin-left: 10px;
+}
+
+.node-degree-program .group-degree-information .field-name-field-career-opportunities {
+  float: left;
+  width: 50%;
+}
+
+.node-degree-program .field-name-field-objectives-for-graduates {
+  clear: both;
 }
