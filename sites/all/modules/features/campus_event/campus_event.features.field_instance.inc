@@ -308,6 +308,61 @@ function campus_event_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-campus_event-field_slideshow'
+  $field_instances['node-campus_event-field_slideshow'] = array(
+    'bundle' => 'campus_event',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_slideshow',
+    'label' => 'Slideshow Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'default' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'media_generic',
+      'weight' => 12,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-campus_event-field_time'
   $field_instances['node-campus_event-field_time'] = array(
     'bundle' => 'campus_event',
@@ -377,6 +432,7 @@ function campus_event_field_default_field_instances() {
   t('Location');
   t('Phone');
   t('Registration Deadline');
+  t('Slideshow Image');
   t('The contact person for the event');
   t('Time');
 
