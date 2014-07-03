@@ -342,7 +342,8 @@ div#block-views-features-block--2 .view-features .view-content .views-row .col-l
   cursor: default;
 }
 
-div#block-views-features-block--2 .view-features .view-content .views-row .col-last .views-field-view-node {
+div#block-views-features-block--2 .view-features .view-content .views-row .col-last .views-field-view-node,
+div#block-views-features-block--2 .view-features .view-content .views-row .col-last .views-field-nothing {
   display: none;
 }
 
@@ -536,18 +537,17 @@ p.box-download, p.box-sticky, p.box-confirmation, p.box-error, p.box-warning, p.
 }
 
 /* features block */
-#panel-second-wrapper .views-field-view-node a,
-#panel-second-wrapper .fa-plus-circle {
+#panel-second-wrapper .views-field-view-node a {
   background: none;
   color: #666;
   padding-left: 6px;
 }
 
-#panel-second-wrapper .fa-plus-circle:hover,
+/*#panel-second-wrapper .fa-plus-circle:hover,
 #panel-second-wrapper .fa-plus-circle:active,
 #panel-second-wrapper .fa-plus-circle:focus {
   color: #205f93;
-}
+}*/
 
 #panel-second-wrapper .block .views-field-title {
   text-transform: capitalize;

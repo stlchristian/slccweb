@@ -13,7 +13,92 @@ function student_profile_field_default_field_instances() {
   // Exported field_instance: 'node-student_profile-body'
   $field_instances['node-student_profile-body'] = array(
     'bundle' => 'student_profile',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'summary' => '',
+        'value' => '<h1>Current Student</h1>
+
+<ul class="fa-ul">
+	<li><i class="fa-li fa fa-angle-right"></i>Why did you choose SLCC?
+	<ul class="fa-ul">
+		<li><i class="fa-li fa fa-angle-double-right"></i>answer</li>
+	</ul>
+	</li>
+	<li><i class="fa-li fa fa-angle-right"></i>What do you want prospective students to know about SLCC?
+	<ul class="fa-ul">
+		<li><i class="fa-li fa fa-angle-double-right"></i>answer</li>
+	</ul>
+	</li>
+	<li><i class="fa-li fa fa-angle-right"></i>What are your ministry plans?
+	<ul class="fa-ul">
+		<li><i class="fa-li fa fa-angle-double-right"></i>answer</li>
+	</ul>
+	</li>
+	<li><i class="fa-li fa fa-angle-right"></i>How is SLCC helping to assist you in getting there?
+	<ul class="fa-ul">
+		<li><i class="fa-li fa fa-angle-double-right"></i>answer</li>
+	</ul>
+	</li>
+	<li><i class="fa-li fa fa-angle-right"></i>Who would you most like to meet from the Bible or from history?
+	<ul class="fa-ul">
+		<li><i class="fa-li fa fa-angle-double-right"></i>answer</li>
+	</ul>
+	</li>
+	<li><i class="fa-li fa fa-angle-right"></i>What is one place in the world you would most like to visit?
+	<ul class="fa-ul">
+		<li><i class="fa-li fa fa-angle-double-right"></i>answer</li>
+	</ul>
+	</li>
+	<li><i class="fa-li fa fa-angle-right"></i>Favorite food or snack?
+	<ul class="fa-ul">
+		<li><i class="fa-li fa fa-angle-double-right"></i>answer</li>
+	</ul>
+	</li>
+	<li><i class="fa-li fa fa-angle-right"></i>Favorite Bible Character?
+	<ul class="fa-ul">
+		<li><i class="fa-li fa fa-angle-double-right"></i>answer</li>
+	</ul>
+	</li>
+	<li><i class="fa-li fa fa-angle-right"></i>Favorite Bible verse?
+	<ul class="fa-ul">
+		<li><i class="fa-li fa fa-angle-double-right"></i>answer</li>
+	</ul>
+	</li>
+</ul>
+
+<h1>Alumni</h1>
+
+<ul class="fa-ul">
+	<li><i class="fa-li fa fa-angle-right"></i>Where do you serve?
+	<ul class="fa-ul">
+		<li><i class="fa-li fa fa-angle-double-right"></i>answer</li>
+	</ul>
+	</li>
+	<li><i class="fa-li fa fa-angle-right"></i>What ministry degree did you receive at SLCC?
+	<ul class="fa-ul">
+		<li><i class="fa-li fa fa-angle-double-right"></i>answer</li>
+	</ul>
+	</li>
+	<li><i class="fa-li fa fa-angle-right"></i>How long have you been in vocational ministry?
+	<ul class="fa-ul">
+		<li><i class="fa-li fa fa-angle-double-right"></i>answer</li>
+	</ul>
+	</li>
+	<li><i class="fa-li fa fa-angle-right"></i>How did SLCC prepare you for ministry?
+	<ul class="fa-ul">
+		<li><i class="fa-li fa fa-angle-double-right"></i>answer</li>
+	</ul>
+	</li>
+	<li><i class="fa-li fa fa-angle-right"></i>How do you encourage teens and adults to consider Bible college?
+	<ul class="fa-ul">
+		<li><i class="fa-li fa fa-angle-double-right"></i>answer</li>
+	</ul>
+	</li>
+</ul>
+',
+        'format' => 'filtered_html',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -37,13 +122,14 @@ function student_profile_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
@@ -52,6 +138,7 @@ function student_profile_field_default_field_instances() {
       'type' => 'text_textarea_with_summary',
       'weight' => 3,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-student_profile-field_academic_class'
@@ -175,7 +262,13 @@ function student_profile_field_default_field_instances() {
   // Exported field_instance: 'node-student_profile-field_social'
   $field_instances['node-student_profile-field_social'] = array(
     'bundle' => 'student_profile',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => '<p><a href="http://www.facebook.com/#" title="Facebook"><i class="fa fa-facebook-square fa-2x fa-fw"></i></a><a href="http://twitter.com/#" title="Twitter"><i class="fa fa-twitter-square fa-2x fa-fw"></i></a></p>
+',
+        'format' => 'filtered_html',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -211,6 +304,7 @@ function student_profile_field_default_field_instances() {
       'type' => 'text_textarea',
       'weight' => 8,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-student_profile-field_student_image'
