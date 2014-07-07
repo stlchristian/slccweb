@@ -434,6 +434,17 @@ input#evergreen-search-box {
 .sf-menu .sf-megamenu-column {
   padding-left: 0;
 }
+
+.menu.sf-menu.sf-style-university ul li a.menuparent {
+  font-weight: normal;
+  text-transform: none;
+}
+
+.menu.sf-menu ul li a .sf-sub-indicator {
+  background: none;
+  top: .7em;
+}
+
 /* search form margin */
 #header #search-block-form {
   float: right;
@@ -718,7 +729,8 @@ table.grad-rates tr {
   margin-left: 10px;
 }
 
-.node-degree-program .group-degree-information .field-name-field-career-opportunities {
+.node-degree-program .group-degree-information .field-name-field-career-opportunities,
+.node-degree-program .group-degree-information .field-name-field-what-you-study {
   float: left;
   width: 50%;
 }

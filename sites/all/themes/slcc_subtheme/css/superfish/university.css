@@ -86,10 +86,14 @@ li.sfHover a .sf-sub-indicator {
   background-position: 0 0;
 }
 .menu.sf-menu ul li a .sf-sub-indicator {
+/*
   background: url("../../images/arrow-4.png") no-repeat 0 0;
+*/
   left: auto;
   height: 7px;
+/*
   top: 1.2em;
+*/
   right: 0;
 }
 
@@ -162,9 +166,13 @@ li.sfHover a .sf-sub-indicator {
   border-bottom: 0 !important; 
   border: 0 none;
   color: #737E8E;
+/*
   font-weight: bold !important;
+*/
   padding: 10px 0;
+/*
   text-transform: uppercase !important;
+*/
 }
 .menu.sf-menu.sf-style-university ul li.active-trail a:active,
 .menu.sf-menu.sf-style-university ul li.active-trail a:focus,
