@@ -1,0 +1,10 @@
+name = Paypal Donation Block
+description = A block for our giving pages that leads people to our special paypal link
+core = 7.x
+package = Block Features
+version = 7.x-1.0
+project = paypal_donation_block
+dependencies[] = fe_block
+features[fe_block_boxes][] = paypal_button
+features[fe_block_settings][] = block-paypal_button
+features[features_api][] = api:2
