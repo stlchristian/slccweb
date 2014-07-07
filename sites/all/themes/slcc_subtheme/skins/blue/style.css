@@ -66,7 +66,9 @@ li a.active {
 }
 
 .menu.sf-menu.sf-style-university ul li a.menuparent {
+/*
   color: #acb4c0!important;
+*/
 }
 
 .menu.sf-menu.sf-style-university li.active-trail ul li a, 

@@ -438,6 +438,7 @@ input#evergreen-search-box {
 .menu.sf-menu.sf-style-university ul li a.menuparent {
   font-weight: normal;
   text-transform: none;
+  color: #a7c3db;
 }
 
 .menu.sf-menu ul li a .sf-sub-indicator {
