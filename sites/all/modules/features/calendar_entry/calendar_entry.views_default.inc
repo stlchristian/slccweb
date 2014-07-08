@@ -146,7 +146,7 @@ function calendar_entry_views_default_views() {
   $handler->display->display_options['filters']['field_school_year_tid']['table'] = 'field_data_field_school_year';
   $handler->display->display_options['filters']['field_school_year_tid']['field'] = 'field_school_year_tid';
   $handler->display->display_options['filters']['field_school_year_tid']['value'] = array(
-    0 => '98',
+    0 => '102',
   );
   $handler->display->display_options['filters']['field_school_year_tid']['vocabulary'] = 'school_year';
   /* Filter criterion: Content: Calendar (field_calendar) */
@@ -154,7 +154,7 @@ function calendar_entry_views_default_views() {
   $handler->display->display_options['filters']['field_calendar_tid']['table'] = 'field_data_field_calendar';
   $handler->display->display_options['filters']['field_calendar_tid']['field'] = 'field_calendar_tid';
   $handler->display->display_options['filters']['field_calendar_tid']['value'] = array(
-    0 => '96',
+    0 => '100',
   );
   $handler->display->display_options['filters']['field_calendar_tid']['vocabulary'] = 'calendar';
 
@@ -204,7 +204,7 @@ function calendar_entry_views_default_views() {
   $handler->display->display_options['filters']['field_school_year_tid']['table'] = 'field_data_field_school_year';
   $handler->display->display_options['filters']['field_school_year_tid']['field'] = 'field_school_year_tid';
   $handler->display->display_options['filters']['field_school_year_tid']['value'] = array(
-    0 => '98',
+    0 => '102',
   );
   $handler->display->display_options['filters']['field_school_year_tid']['vocabulary'] = 'school_year';
   $handler->display->display_options['path'] = 'student-life/calendar';
