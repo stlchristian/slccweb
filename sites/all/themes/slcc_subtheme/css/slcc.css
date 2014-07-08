@@ -679,6 +679,15 @@ ul.contact-list li {
   float: left;
 }
 
+/* calendar entries */
+td.views-align-right {
+  text-align: right;
+}
+
+.view .view-header h2 {
+  margin-top: 0;
+}
+
 /* FAQs */
 html.js fieldset.faq-fieldset .fieldset-legend {
   background-image: none;
