@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Online Form feature.
+ */
+
+include_once 'online_form.features.inc';

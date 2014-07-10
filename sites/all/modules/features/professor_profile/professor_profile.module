@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Professor Profile feature.
+ */
+
+include_once 'professor_profile.features.inc';

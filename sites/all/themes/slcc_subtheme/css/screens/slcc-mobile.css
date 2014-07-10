@@ -1,0 +1,32 @@
+form#webform-client-form-172 {
+  clear: both;
+  border-top: 1px solid #EFECE1;
+  padding: 20px 0 0 0;
+  margin: 0;
+  width: 100%;
+}
+
+.header-and-slogan {
+  width: 100%;
+}
+
+.region-header {
+  float: left;
+  margin: 15px 20px;
+}
+
+#header .contact-us,
+#header .search-form {
+  width: 100%;
+  float: left;
+}
+
+.node-student-profile .group-student-profile-bio {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.node-degree-program .group-degree-details,
+.node-degree-program .group-degree-information {
+  width: 100%;
+}

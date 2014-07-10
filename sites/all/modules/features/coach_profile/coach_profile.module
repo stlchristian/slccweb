@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Coach Profile feature.
+ */
+
+include_once 'coach_profile.features.inc';

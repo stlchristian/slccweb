@@ -1,0 +1,10 @@
+name = Connect with Us Block
+description = Social block for the site footer
+core = 7.x
+package = Block Features
+version = 7.x-2.0
+project = connect_with_us_block
+dependencies[] = fe_block
+features[fe_block_boxes][] = connect_with_us_block
+features[fe_block_settings][] = block-connect_with_us_block
+features[features_api][] = api:2

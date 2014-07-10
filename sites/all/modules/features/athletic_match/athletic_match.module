@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Athletic Match feature.
+ */
+
+include_once 'athletic_match.features.inc';
