@@ -96,9 +96,9 @@ function ministry_opportunity_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<em>Welcome to our nationwide database for SLCC alumni to locate job openings and ministry opportunities across the country. Please select your desired position and location of interest from the list below.</em>
+  $handler->display->display_options['header']['area']['content'] = 'Welcome to our nationwide database for SLCC alumni to locate job openings and ministry opportunities across the country. Please select your desired position and location of interest from the list below.
 
-Submitting an open position is easy and free! Please <a href="ministry-opportunity/submit">click here</a> to be taken to the online submission form.';
+Submitting an open position is easy and free! <strong><a href="/ministry-opportunity/submit">Please click here</a></strong> to be taken to the online submission form.';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
@@ -276,9 +276,9 @@ Submitting an open position is easy and free! Please <a href="ministry-opportuni
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('<em>Welcome to our nationwide database for SLCC alumni to locate job openings and ministry opportunities across the country. Please select your desired position and location of interest from the list below.</em>
+    t('Welcome to our nationwide database for SLCC alumni to locate job openings and ministry opportunities across the country. Please select your desired position and location of interest from the list below.
 
-Submitting an open position is easy and free! Please <a href="ministry-opportunity/submit">click here</a> to be taken to the online submission form.'),
+Submitting an open position is easy and free! <strong><a href="/ministry-opportunity/submit">Please click here</a></strong> to be taken to the online submission form.'),
     t('Date'),
     t('Position'),
     t('Church Name'),
