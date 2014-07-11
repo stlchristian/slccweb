@@ -443,6 +443,7 @@ input#evergreen-search-box {
 
 .menu.sf-menu ul li a .sf-sub-indicator {
   background: none;
+  height: auto;
   top: .7em;
 }
 
