@@ -749,3 +749,8 @@ table.grad-rates tr {
 .node-degree-program .field-name-field-objectives-for-graduates {
   clear: both;
 }
+
+div.athletics-logo {
+  float: left;
+  width: 33%;
+}
