@@ -16,7 +16,7 @@ form#webform-client-form-172 {
 }
 
 #header .contact-us,
-#header .search-form {
+#header form {
   width: 100%;
   float: left;
 }
