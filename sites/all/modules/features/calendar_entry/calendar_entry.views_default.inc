@@ -25,7 +25,11 @@ function calendar_entry_views_default_views() {
   $handler->display->display_options['title'] = 'Academic Calendar';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '21600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '21600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
@@ -107,7 +111,7 @@ function calendar_entry_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: School Year */
+  /* Field: Field: School Year */
   $handler->display->display_options['fields']['field_school_year']['id'] = 'field_school_year';
   $handler->display->display_options['fields']['field_school_year']['table'] = 'field_data_field_school_year';
   $handler->display->display_options['fields']['field_school_year']['field'] = 'field_school_year';
@@ -115,7 +119,7 @@ function calendar_entry_views_default_views() {
   $handler->display->display_options['fields']['field_school_year']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_school_year']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_school_year']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Semester */
+  /* Field: Field: Semester */
   $handler->display->display_options['fields']['field_semester']['id'] = 'field_semester';
   $handler->display->display_options['fields']['field_semester']['table'] = 'field_data_field_semester';
   $handler->display->display_options['fields']['field_semester']['field'] = 'field_semester';
@@ -141,7 +145,7 @@ function calendar_entry_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'calendar_entry' => 'calendar_entry',
   );
-  /* Filter criterion: Content: School Year (field_school_year) */
+  /* Filter criterion: Field: School Year (field_school_year) */
   $handler->display->display_options['filters']['field_school_year_tid']['id'] = 'field_school_year_tid';
   $handler->display->display_options['filters']['field_school_year_tid']['table'] = 'field_data_field_school_year';
   $handler->display->display_options['filters']['field_school_year_tid']['field'] = 'field_school_year_tid';
@@ -149,7 +153,7 @@ function calendar_entry_views_default_views() {
     0 => '102',
   );
   $handler->display->display_options['filters']['field_school_year_tid']['vocabulary'] = 'school_year';
-  /* Filter criterion: Content: Calendar (field_calendar) */
+  /* Filter criterion: Field: Calendar (field_calendar) */
   $handler->display->display_options['filters']['field_calendar_tid']['id'] = 'field_calendar_tid';
   $handler->display->display_options['filters']['field_calendar_tid']['table'] = 'field_data_field_calendar';
   $handler->display->display_options['filters']['field_calendar_tid']['field'] = 'field_calendar_tid';
@@ -199,7 +203,7 @@ function calendar_entry_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'calendar_entry' => 'calendar_entry',
   );
-  /* Filter criterion: Content: School Year (field_school_year) */
+  /* Filter criterion: Field: School Year (field_school_year) */
   $handler->display->display_options['filters']['field_school_year_tid']['id'] = 'field_school_year_tid';
   $handler->display->display_options['filters']['field_school_year_tid']['table'] = 'field_data_field_school_year';
   $handler->display->display_options['filters']['field_school_year_tid']['field'] = 'field_school_year_tid';
