@@ -1,5 +1,17 @@
 <?php
 
+// All Pantheon Environments.
+if (defined('PANTHEON_ENVIRONMENT')) {
+  // Use Redis for caching.
+  $conf['redis_client_interface'] = 'PhpRedis';
+  $conf['cache_backends'][] = 'sites/all/modules/redis/redis.autoload.inc';
+  $conf['cache_default_class'] = 'Redis_Cache';
+  $conf['cache_prefix'] = array('default' => 'pantheon-redis');
+  // Do not use Redis for cache_form (no performance difference).
+  $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+  // Use Redis for Drupal locks (semaphore).
+  $conf['lock_inc'] = 'sites/all/modules/redis/redis.lock.inc';
+}
 /**
  * @file
  * Drupal site-specific configuration file.
@@ -215,10 +227,10 @@ $databases = array (
   array (
     'default' => 
     array (
-      'database' => 'stlchristian_org',
-      'username' => 'slcc_prod_sql',
-      'password' => 'YMFQzWwbDRrD4Dk',
-      'host' => 'mysql.slcc.co',
+      'database' => 'databasename',
+      'username' => 'username',
+      'password' => 'password',
+      'host' => 'hostname',
       'port' => '',
       'driver' => 'mysql',
       'prefix' => '',
