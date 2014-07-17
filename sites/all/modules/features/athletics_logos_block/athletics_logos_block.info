@@ -1,0 +1,10 @@
+name = Athletics Logos Block
+description = Athletics logo at the bottom of all athletics pages
+core = 7.x
+package = Block Features
+version = 7.x-1.0
+project = athletics_logos_block
+dependencies[] = fe_block
+features[fe_block_boxes][] = athletics_logos
+features[fe_block_settings][] = block-athletics_logos
+features[features_api][] = api:2
