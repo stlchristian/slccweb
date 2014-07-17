@@ -16,16 +16,16 @@ function athletics_logos_block_default_fe_block_boxes() {
   $fe_block_boxes->machine_name = 'athletics_logos';
   $fe_block_boxes->body = '<div class="athletics-logo">
 <a target="_blank" href="http://www.accasports.org">
-<img src="/sites/default/files/athletics/acca-logo.jpg" />
+<img src="/sites/default/files/acca-logo.jpg" />
 </a>
 </div>
 <div class="athletics-logo">
 <center>
-<img src="/sites/default/files/athletics/soldier-head.gif" />
+<img src="/sites/default/files/soldier-head.gif" />
 </center>
 </div>
 <div class="athletics-logo">
-<img src="/sites/default/files/athletics/mccc-logo.jpg" />
+<img src="/sites/default/files/mccc-logo.jpg" />
 </div>';
 
   $export['athletics_logos'] = $fe_block_boxes;
