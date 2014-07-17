@@ -87,7 +87,6 @@ li.sfHover a .sf-sub-indicator {
 }
 .menu.sf-menu ul li a .sf-sub-indicator {
   left: auto;
-  height: 7px;
   right: 0;
 }
 
