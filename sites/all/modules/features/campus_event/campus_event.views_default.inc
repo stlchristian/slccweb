@@ -26,7 +26,11 @@ function campus_event_views_default_views() {
   $handler->display->display_options['css_class'] = 'page-campus_event';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
@@ -41,7 +45,7 @@ function campus_event_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Content: Time */
   $handler->display->display_options['fields']['field_time']['id'] = 'field_time';
   $handler->display->display_options['fields']['field_time']['table'] = 'field_data_field_time';
   $handler->display->display_options['fields']['field_time']['field'] = 'field_time';
@@ -73,7 +77,7 @@ function campus_event_views_default_views() {
     'links' => 1,
   );
   $handler->display->display_options['fields']['field_speaker']['group_column'] = 'target_id';
-  /* Sort criterion: Content: Date -  start date (field_time) */
+  /* Sort criterion: Content: Time -  start date (field_time) */
   $handler->display->display_options['sorts']['field_time_value']['id'] = 'field_time_value';
   $handler->display->display_options['sorts']['field_time_value']['table'] = 'field_data_field_time';
   $handler->display->display_options['sorts']['field_time_value']['field'] = 'field_time_value';
@@ -96,14 +100,14 @@ function campus_event_views_default_views() {
     'campus_event' => 'campus_event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Date -  start date (field_time) */
+  /* Filter criterion: Content: Time -  start date (field_time) */
   $handler->display->display_options['filters']['field_time_value']['id'] = 'field_time_value';
   $handler->display->display_options['filters']['field_time_value']['table'] = 'field_data_field_time';
   $handler->display->display_options['filters']['field_time_value']['field'] = 'field_time_value';
   $handler->display->display_options['filters']['field_time_value']['operator'] = '>';
   $handler->display->display_options['filters']['field_time_value']['group'] = 2;
   $handler->display->display_options['filters']['field_time_value']['default_date'] = 'now';
-  /* Filter criterion: Content: Date - end date (field_time:value2) */
+  /* Filter criterion: Content: Time - end date (field_time:value2) */
   $handler->display->display_options['filters']['field_time_value2']['id'] = 'field_time_value2';
   $handler->display->display_options['filters']['field_time_value2']['table'] = 'field_data_field_time';
   $handler->display->display_options['filters']['field_time_value2']['field'] = 'field_time_value2';
