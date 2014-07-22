@@ -25,14 +25,19 @@ function athletic_match_user_default_permissions() {
   // Exported permission: 'delete any athletic_match content'.
   $permissions['delete any athletic_match content'] = array(
     'name' => 'delete any athletic_match content',
-    'roles' => array(),
+    'roles' => array(
+      'athletics editor' => 'athletics editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own athletic_match content'.
   $permissions['delete own athletic_match content'] = array(
     'name' => 'delete own athletic_match content',
-    'roles' => array(),
+    'roles' => array(
+      'athletics contributor' => 'athletics contributor',
+      'athletics editor' => 'athletics editor',
+    ),
     'module' => 'node',
   );
 

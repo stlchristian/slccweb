@@ -25,14 +25,19 @@ function athlete_profile_user_default_permissions() {
   // Exported permission: 'delete any athlete_profile content'.
   $permissions['delete any athlete_profile content'] = array(
     'name' => 'delete any athlete_profile content',
-    'roles' => array(),
+    'roles' => array(
+      'athletics editor' => 'athletics editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own athlete_profile content'.
   $permissions['delete own athlete_profile content'] = array(
     'name' => 'delete own athlete_profile content',
-    'roles' => array(),
+    'roles' => array(
+      'athletics contributor' => 'athletics contributor',
+      'athletics editor' => 'athletics editor',
+    ),
     'module' => 'node',
   );
 
