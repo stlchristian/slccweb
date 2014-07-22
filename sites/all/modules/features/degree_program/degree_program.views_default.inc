@@ -153,12 +153,12 @@ function degree_program_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<p>St. Louis Christian College <strong>Educates Christians</strong> with a biblical and academic foundation. We take the task very seriously, and we offer competitive degrees to prepare students to serve God. SLCC offers degrees that students can earn in a variety of ways.</p>
+  $handler->display->display_options['header']['area']['content'] = '<p>St. Louis Christian College <strong>Educates Christians</strong> with a biblical and academic foundation. We take the task very seriously, and we offer competitive degrees to prepare students to serve God. SLCC offers degrees that students can earn in a variety of ways. Every degree we offer is a Bible major with diverse specializations. You will graduate with a solid understanding of biblical principles, along with practical training in your chosen specialty.</p>
 <p>Our <strong>traditional degree programs</strong> have classes which meet during the daytime, and are geared toward students looking for the "traditional" college experience.</p>
 <p>Our <strong>evening degree programs</strong> make it easy for you to take advantage of learning from a professor in-person while allowing you to continue meeting your family and work needs.</p>
 <p>Our <strong>online degree programs</strong> are ideal for distance learners and those who are looking to work at a more individualized pace.</p>
 <p>Whatever your educational goals or learning style, we have something to offer you! Click on one of the degree programs below to learn more.</p>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
@@ -226,7 +226,7 @@ drupal_set_breadcrumb($crumbs);
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('<p>St. Louis Christian College <strong>Educates Christians</strong> with a biblical and academic foundation. We take the task very seriously, and we offer competitive degrees to prepare students to serve God. SLCC offers degrees that students can earn in a variety of ways.</p>
+    t('<p>St. Louis Christian College <strong>Educates Christians</strong> with a biblical and academic foundation. We take the task very seriously, and we offer competitive degrees to prepare students to serve God. SLCC offers degrees that students can earn in a variety of ways. Every degree we offer is a Bible major with diverse specializations. You will graduate with a solid understanding of biblical principles, along with practical training in your chosen specialty.</p>
 <p>Our <strong>traditional degree programs</strong> have classes which meet during the daytime, and are geared toward students looking for the "traditional" college experience.</p>
 <p>Our <strong>evening degree programs</strong> make it easy for you to take advantage of learning from a professor in-person while allowing you to continue meeting your family and work needs.</p>
 <p>Our <strong>online degree programs</strong> are ideal for distance learners and those who are looking to work at a more individualized pace.</p>
