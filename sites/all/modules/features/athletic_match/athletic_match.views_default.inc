@@ -25,7 +25,11 @@ function athletic_match_views_default_views() {
   $handler->display->display_options['title'] = 'Schedule';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '1800';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '21600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
@@ -37,7 +41,7 @@ function athletic_match_views_default_views() {
   $handler->display->display_options['fields']['field_time']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_time']['settings'] = array(
     'format_type' => 'events',
-    'fromto' => 'value',
+    'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
@@ -60,6 +64,9 @@ function athletic_match_views_default_views() {
   $handler->display->display_options['fields']['field_time_1']['table'] = 'field_data_field_time';
   $handler->display->display_options['fields']['field_time_1']['field'] = 'field_time';
   $handler->display->display_options['fields']['field_time_1']['label'] = 'Time';
+  $handler->display->display_options['fields']['field_time_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_time_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_time_1']['empty'] = 'TBA';
   $handler->display->display_options['fields']['field_time_1']['settings'] = array(
     'format_type' => 'athletics_time',
     'fromto' => 'value',
@@ -67,6 +74,17 @@ function athletic_match_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
+  /* Field: Views: Views Conditional */
+  $handler->display->display_options['fields']['views_conditional']['id'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional']['table'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional']['field'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional']['label'] = 'Time';
+  $handler->display->display_options['fields']['views_conditional']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_conditional']['if'] = 'field_time_1';
+  $handler->display->display_options['fields']['views_conditional']['condition'] = '1';
+  $handler->display->display_options['fields']['views_conditional']['equalto'] = '12:00 am';
+  $handler->display->display_options['fields']['views_conditional']['then'] = 'TBA';
+  $handler->display->display_options['fields']['views_conditional']['or'] = '[field_time_1]';
   /* Sort criterion: Content: Date -  start date (field_time) */
   $handler->display->display_options['sorts']['field_time_value']['id'] = 'field_time_value';
   $handler->display->display_options['sorts']['field_time_value']['table'] = 'field_data_field_time';
@@ -122,6 +140,7 @@ function athletic_match_views_default_views() {
     t('Opponent'),
     t('Location'),
     t('Time'),
+    t('TBA'),
     t('All'),
     t('%1 Schedule'),
     t('Page'),
