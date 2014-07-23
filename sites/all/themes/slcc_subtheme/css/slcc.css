@@ -754,3 +754,14 @@ div.athletics-logo {
   float: left;
   width: 33%;
 }
+
+div.social-icons a i,
+div.social-icons a:visited i,
+div.social-icons a:focus i,
+div.social-icons a:active i {
+  color: #D9DEE4;
+}
+
+div.social-icons a:hover i {
+  color: #e09b0f;
+}

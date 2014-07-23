@@ -14,15 +14,14 @@ function connect_with_us_block_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Connect with us';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'connect_with_us_block';
-  $fe_block_boxes->body = '<div class="custom">
+  $fe_block_boxes->body = '<div class="social-icons">
 <p>We\'re available anywhere you\'d like to learn more. Follow us and get in touch.</p>
-<ul class="social-list">
-<li class="twitter"><a target="_blank" title="Twitter" href="http://twitter.com/stlchristian">Twitter</a></li>
-<li class="facebook"><a target="_blank" title="Facebook" href="http://facebook.com/slcconline">Facebook</a></li>
-<li class="google-plus"><a target="_blank" title="Google plus" href="http://plus.google.com/103438173161121000417">Google plus</a></li>
-<!--<li class="feed"><a target="_blank" title="Feed" href="#">Feed</a></li>
-<li class="vimeo"><a target="_blank" title="Vimeo" href="#">Vimeo</a></li>-->
-</ul></div>';
+<a target="_blank" title="Twitter" href="http://twitter.com/stlchristian"><i class="fa fa-fw fa-3x fa-twitter-square"></i></a>
+<a target="_blank" title="Facebook" href="http://facebook.com/slcconline"><i class="fa fa-fw fa-3x fa-facebook-square"></i></a>
+<a target="_blank" title="Google plus" href="http://plus.google.com/115876446376304273641"><i class="fa fa-fw fa-3x fa-google-plus-square"></i></a>
+<a target="_blank" title="YouTube" href="http://youtube.com/stlouischristian"><i class="fa fa-fw fa-3x fa-youtube-play"></i></a>
+<a target="_blank" title="Pinterest" href="http://pinterest.com/stlchristian"><i class="fa fa-fw fa-3x fa-pinterest-square"></i></a>
+</div>';
 
   $export['connect_with_us_block'] = $fe_block_boxes;
 
