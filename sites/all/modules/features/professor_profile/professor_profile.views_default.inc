@@ -90,7 +90,7 @@ function professor_profile_views_default_views() {
   $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
-  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Combine fields filter';
+  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Search professor name or title';
   $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
   $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
@@ -203,12 +203,23 @@ function professor_profile_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = 'Name';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Job Title */
   $handler->display->display_options['fields']['field_job_title']['id'] = 'field_job_title';
   $handler->display->display_options['fields']['field_job_title']['table'] = 'field_data_field_job_title';
   $handler->display->display_options['fields']['field_job_title']['field'] = 'field_job_title';
   $handler->display->display_options['fields']['field_job_title']['label'] = 'Title';
   $handler->display->display_options['fields']['field_job_title']['element_label_colon'] = FALSE;
+  /* Field: Content: Email */
+  $handler->display->display_options['fields']['field_contact_email']['id'] = 'field_contact_email';
+  $handler->display->display_options['fields']['field_contact_email']['table'] = 'field_data_field_contact_email';
+  $handler->display->display_options['fields']['field_contact_email']['field'] = 'field_contact_email';
+  $handler->display->display_options['fields']['field_contact_email']['element_label_colon'] = FALSE;
+  /* Field: Content: Phone */
+  $handler->display->display_options['fields']['field_contact_phone']['id'] = 'field_contact_phone';
+  $handler->display->display_options['fields']['field_contact_phone']['table'] = 'field_data_field_contact_phone';
+  $handler->display->display_options['fields']['field_contact_phone']['field'] = 'field_contact_phone';
+  $handler->display->display_options['fields']['field_contact_phone']['element_label_colon'] = FALSE;
   $handler->display->display_options['path'] = 'academics/faculty';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Faculty Directory';
@@ -225,7 +236,7 @@ function professor_profile_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Social'),
-    t('Combine fields filter'),
+    t('Search professor name or title'),
     t('Block'),
     t('Page'),
     t('Items per page'),
@@ -238,6 +249,8 @@ function professor_profile_views_default_views() {
     t('Last Name'),
     t('Name'),
     t('Title'),
+    t('Email'),
+    t('Phone'),
   );
   $export['professor'] = $view;
 

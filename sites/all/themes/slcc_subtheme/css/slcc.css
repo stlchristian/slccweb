@@ -287,7 +287,8 @@ li a.active {
 
 /* Chapel Services*/
 /* chapel services listing */
-.page-student-life-chapel-messages .views-exposed-form .views-exposed-widget {
+.page-student-life-chapel-messages .views-exposed-form .views-exposed-widget,
+.view-professor .views-exposed-form .views-exposed-widget {
   display: inline-block;
 }
 
@@ -295,7 +296,8 @@ li a.active {
   padding: 5px 3px;
 }
 
-.page-student-life-chapel-messages .views-exposed-form .form-item {
+.page-student-life-chapel-messages .views-exposed-form .form-item,
+.view-professor .views-exposed-form .form-item {
   margin: 0;
 }
 
