@@ -665,17 +665,20 @@ ul.contact-list li {
 /* Views */
 /* student page */
 .node-student-profile .field,
-.node-type-student-profile .node-full .field-type-image {
+.node-type-student-profile .node-full .field-type-image,
+.node-type-professor-profile .node-full .field-type-image {
   width: 100%
 }
 
-.node-student-profile .field-name-body {
+.node-student-profile .field-name-body,
+.node-professor-profile .field-name-body {
   width: 78%;
   float: right;
   clear: none;
 }
 
-.node-student-profile .group-student-profile-bio {
+.node-student-profile .group-student-profile-bio,
+.node-professor-profile .group-professor-profile-bio {
   width: 22%;
   float: left;
 }
