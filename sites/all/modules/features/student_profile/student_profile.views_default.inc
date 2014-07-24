@@ -201,19 +201,6 @@ function student_profile_views_default_views() {
   $handler->display->display_options['style_options']['columns'] = '2';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['label'] = 'breadcrumbs';
-  $handler->display->display_options['header']['area']['content'] = '<?php
-$crumbs = array();
-$crumbs[] = l(t(\'Home\'), \'<front>\');
-$crumbs[] = l(t(\'Student Life\'), \'student-life\');
-$crumbs[] = t(\'Featured Students\');
-drupal_set_breadcrumb($crumbs);
-?>';
-  $handler->display->display_options['header']['area']['format'] = 'php_code';
-  /* Header: Global: Text area */
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
@@ -287,7 +274,7 @@ We have graduates serving all over the world, in a number of different capacitie
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'admissions/featured-soldiers';
   $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Featured Students';
+  $handler->display->display_options['menu']['title'] = 'Featured Soldiers';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
@@ -308,14 +295,6 @@ We have graduates serving all over the world, in a number of different capacitie
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('breadcrumbs'),
-    t('<?php
-$crumbs = array();
-$crumbs[] = l(t(\'Home\'), \'<front>\');
-$crumbs[] = l(t(\'Student Life\'), \'student-life\');
-$crumbs[] = t(\'Featured Students\');
-drupal_set_breadcrumb($crumbs);
-?>'),
     t('St. Louis Christian College is incredibly proud of its students and graduates. We invite you to learn some more about our Soldier community.
 
 We have current students who are working hard and are preparing to enter the harvest field. St. Louis Christian College <strong>Educates Christians</strong> and prepares them for service to the Lord. Take a look at some of the students who are currently attending courses, and see who you might find around campus.
