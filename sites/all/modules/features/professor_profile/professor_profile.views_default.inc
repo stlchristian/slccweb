@@ -143,6 +143,8 @@ function professor_profile_views_default_views() {
 
   /* Display: Faculty Page */
   $handler = $view->new_display('page', 'Faculty Page', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Faculty Directory';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -362,6 +364,7 @@ function professor_profile_views_default_views() {
     t('Search professor name or title'),
     t('Block'),
     t('Faculty Page'),
+    t('Faculty Directory'),
     t('Last Name'),
     t('Name'),
     t('Title'),
