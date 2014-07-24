@@ -181,14 +181,14 @@ function student_profile_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Featured Students';
+  $handler->display->display_options['title'] = 'Featured Soldiers';
   $handler->display->display_options['css_class'] = 'students_page';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan'] = '21600';
   $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan'] = '21600';
   $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -213,6 +213,16 @@ $crumbs[] = t(\'Featured Students\');
 drupal_set_breadcrumb($crumbs);
 ?>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area_1']['id'] = 'area_1';
+  $handler->display->display_options['header']['area_1']['table'] = 'views';
+  $handler->display->display_options['header']['area_1']['field'] = 'area';
+  $handler->display->display_options['header']['area_1']['content'] = 'St. Louis Christian College is incredibly proud of its students and graduates. We invite you to learn some more about our Soldier community.
+
+We have current students who are working hard and are preparing to enter the harvest field. St. Louis Christian College <strong>Educates Christians</strong> and prepares them for service to the Lord. Take a look at some of the students who are currently attending courses, and see who you might find around campus.
+
+We have graduates serving all over the world, in a number of different capacities and ministries. St. Louis Christian College <strong>Graduates Leaders</strong>, and we are excited to give you a peak into the community of leaders who are serving and representing SLCC.';
+  $handler->display->display_options['header']['area_1']['format'] = 'filtered_html';
   /* Field: Content: Student Image */
   $handler->display->display_options['fields']['field_student_image']['id'] = 'field_student_image';
   $handler->display->display_options['fields']['field_student_image']['table'] = 'field_data_field_student_image';
@@ -275,7 +285,7 @@ drupal_set_breadcrumb($crumbs);
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'student-life/featured-students';
+  $handler->display->display_options['path'] = 'admissions/featured-soldiers';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Featured Students';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -284,7 +294,7 @@ drupal_set_breadcrumb($crumbs);
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['students_page'] = array(
     t('Master'),
-    t('Featured Students'),
+    t('Featured Soldiers'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -306,6 +316,11 @@ $crumbs[] = l(t(\'Student Life\'), \'student-life\');
 $crumbs[] = t(\'Featured Students\');
 drupal_set_breadcrumb($crumbs);
 ?>'),
+    t('St. Louis Christian College is incredibly proud of its students and graduates. We invite you to learn some more about our Soldier community.
+
+We have current students who are working hard and are preparing to enter the harvest field. St. Louis Christian College <strong>Educates Christians</strong> and prepares them for service to the Lord. Take a look at some of the students who are currently attending courses, and see who you might find around campus.
+
+We have graduates serving all over the world, in a number of different capacities and ministries. St. Louis Christian College <strong>Graduates Leaders</strong>, and we are excited to give you a peak into the community of leaders who are serving and representing SLCC.'),
     t('Major'),
     t('Year'),
     t('Gender'),
