@@ -34,10 +34,11 @@ function athletic_match_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'table';
-  /* Field: Content: Date */
+  /* Field: Content: Time */
   $handler->display->display_options['fields']['field_time']['id'] = 'field_time';
   $handler->display->display_options['fields']['field_time']['table'] = 'field_data_field_time';
   $handler->display->display_options['fields']['field_time']['field'] = 'field_time';
+  $handler->display->display_options['fields']['field_time']['label'] = 'Date';
   $handler->display->display_options['fields']['field_time']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_time']['settings'] = array(
     'format_type' => 'events',
@@ -59,11 +60,10 @@ function athletic_match_views_default_views() {
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_location']['type'] = 'text_plain';
-  /* Field: Content: Date */
+  /* Field: Content: Time */
   $handler->display->display_options['fields']['field_time_1']['id'] = 'field_time_1';
   $handler->display->display_options['fields']['field_time_1']['table'] = 'field_data_field_time';
   $handler->display->display_options['fields']['field_time_1']['field'] = 'field_time';
-  $handler->display->display_options['fields']['field_time_1']['label'] = 'Time';
   $handler->display->display_options['fields']['field_time_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_time_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_time_1']['empty'] = 'TBA';
@@ -85,7 +85,7 @@ function athletic_match_views_default_views() {
   $handler->display->display_options['fields']['views_conditional']['equalto'] = '12:00 am';
   $handler->display->display_options['fields']['views_conditional']['then'] = 'TBA';
   $handler->display->display_options['fields']['views_conditional']['or'] = '[field_time_1]';
-  /* Sort criterion: Content: Date -  start date (field_time) */
+  /* Sort criterion: Content: Time -  start date (field_time) */
   $handler->display->display_options['sorts']['field_time_value']['id'] = 'field_time_value';
   $handler->display->display_options['sorts']['field_time_value']['table'] = 'field_data_field_time';
   $handler->display->display_options['sorts']['field_time_value']['field'] = 'field_time_value';
