@@ -287,21 +287,21 @@ li a.active {
 
 /* Chapel Services*/
 /* chapel services listing */
-.page-student-life-chapel-messages .views-exposed-form .views-exposed-widget,
+.view-chapel-sermons .views-exposed-form .views-exposed-widget,
 .view-professor .views-exposed-form .views-exposed-widget {
   display: inline-block;
 }
 
-.page-student-life-chapel-messages .views-exposed-form .form-select {
+.view-chapel-sermons .views-exposed-form .form-select {
   padding: 5px 3px;
 }
 
-.page-student-life-chapel-messages .views-exposed-form .form-item,
+.view-chapel-sermons .views-exposed-form .form-item,
 .view-professor .views-exposed-form .form-item {
   margin: 0;
 }
 
-.page-student-life-chapel-messages #edit-speaker-wrapper input {
+.view-chapel-sermons #edit-speaker-wrapper input {
   width: 300px;
 }
 
@@ -692,6 +692,11 @@ td.views-align-right {
 
 .view .view-header h2 {
   margin-top: 0;
+}
+
+/* faculty/staff directories */
+.view-professor .views-field-field-job-title {
+  width: 30%;
 }
 
 /* FAQs */

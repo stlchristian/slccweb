@@ -47,7 +47,7 @@ function professor_profile_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -86,7 +86,7 @@ function professor_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 6,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -131,7 +131,45 @@ function professor_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 8,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-professor_profile-field_employee_type'
+  $field_instances['node-professor_profile-field_employee_type'] = array(
+    'bundle' => 'professor_profile',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_employee_type',
+    'label' => 'Employee Type',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 2,
     ),
     'workbench_access_field' => 0,
   );
@@ -171,7 +209,7 @@ function professor_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -213,7 +251,7 @@ function professor_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -252,7 +290,7 @@ function professor_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 5,
     ),
     'workbench_access_field' => 0,
   );
@@ -313,7 +351,7 @@ function professor_profile_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -339,8 +377,8 @@ function professor_profile_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_title',
-    'label' => 'Title',
-    'required' => 1,
+    'label' => 'Salutation',
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -352,7 +390,7 @@ function professor_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -361,13 +399,14 @@ function professor_profile_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Email');
+  t('Employee Type');
   t('First Name');
   t('Job Title');
   t('Last Name');
   t('Phone');
   t('Prof., Dr., etc.');
   t('Professor Image');
-  t('Title');
+  t('Salutation');
 
   return $field_instances;
 }
