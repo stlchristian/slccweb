@@ -206,7 +206,7 @@ function student_profile_views_default_views() {
   $handler->display->display_options['header']['area_1']['field'] = 'area';
   $handler->display->display_options['header']['area_1']['content'] = 'St. Louis Christian College is incredibly proud of its students and graduates. We invite you to learn some more about our Soldier community.
 
-We have current students who are working hard and are preparing to enter the harvest field. St. Louis Christian College <strong>Educates Christians</strong> and prepares them for service to the Lord. Take a look at some of the students who are currently attending courses, and see who you might find around campus.
+We have current students who are working hard and are preparing to enter the harvest field. St. Louis Christian College <strong>Educates Christians</strong> and prepares them for service to the Lord. Take a look at some of the students who are currently attending courses, and see whom you might find around campus.
 
 We have graduates serving all over the world, in a number of different capacities and ministries. St. Louis Christian College <strong>Graduates Leaders</strong>, and we are excited to give you a peak into the community of leaders who are serving and representing SLCC.';
   $handler->display->display_options['header']['area_1']['format'] = 'filtered_html';
