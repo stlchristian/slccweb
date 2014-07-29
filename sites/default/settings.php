@@ -222,22 +222,23 @@ if (defined('PANTHEON_ENVIRONMENT')) {
  *   );
  * @endcode
  */
-$databases = array (
-  'default' => 
-  array (
+if (!defined('PANTHEON_ENVIRONMENT')) {
+  $databases = array (
     'default' => 
     array (
-      'database' => 'databasename',
-      'username' => 'username',
-      'password' => 'password',
-      'host' => 'hostname',
-      'port' => '',
-      'driver' => 'mysql',
-      'prefix' => '',
+      'default' => 
+      array (
+        'database' => 'DATABASE',
+        'username' => 'USERNAME',
+        'password' => 'PASSWORD',
+        'host' => 'localhost',
+        'port' => '',
+        'driver' => 'mysql',
+        'prefix' => '',
+      ),
     ),
-  ),
-);
-
+  );
+}
 /**
  * Access control for update.php script.
  *
