@@ -108,7 +108,7 @@ function chapel_service_views_default_views() {
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['label'] = 'empty text';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Sorry, there are no chapel messages to display. Either we haven\'t uploaded the chapel audio yet, or your search hasn\'t matched any results. Please check back again soon.';
+  $handler->display->display_options['empty']['area']['content'] = 'Sorry, there are no chapel messages to display. Your search hasn\'t matched any results. Please check your search terms and try again.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Field: Content: Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
@@ -304,6 +304,15 @@ function chapel_service_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Display';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '20, 40, 60';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -574,7 +583,7 @@ drupal_set_breadcrumb($crumbs);
 
 <em>Use the boxes below to search chapel messages for speakers, Scripture, or title. To listen to a sermon, use the player embedded in the table below. To download a sermon, right-click the "Download" link and select "Save link as..."</em>'),
     t('empty text'),
-    t('Sorry, there are no chapel messages to display. Either we haven\'t uploaded the chapel audio yet, or your search hasn\'t matched any results. Please check back again soon.'),
+    t('Sorry, there are no chapel messages to display. Your search hasn\'t matched any results. Please check your search terms and try again.'),
     t('Date'),
     t('Scripture'),
     t('Speaker'),
