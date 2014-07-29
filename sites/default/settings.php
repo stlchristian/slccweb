@@ -12,6 +12,17 @@ if (defined('PANTHEON_ENVIRONMENT')) {
   // Use Redis for Drupal locks (semaphore).
   $conf['lock_inc'] = 'sites/all/modules/contrib/redis/redis.lock.inc';
 }
+
+// Require WWW.
+if (isset($_SERVER['PANTHEON_ENVIRONMENT']) && 
+  $_SERVER['PANTHEON_ENVIRONMENT'] === 'live') {
+  if ($_SERVER['HTTP_HOST'] == 'stlchristian.org' || 
+      $_SERVER['HTTP_HOST'] == 'live-stlchristian.gotpantheon.com') {
+    header('HTTP/1.0 301 Moved Permanently'); 
+    header('Location: http://www.stlchristian.org'. $_SERVER['REQUEST_URI']); 
+    exit();
+  }
+}
 /**
  * @file
  * Drupal site-specific configuration file.
