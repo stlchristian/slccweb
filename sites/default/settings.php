@@ -24,24 +24,27 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
   }
 }
 
-// URL Redirects
+// Environment-Specific Configurations.
 if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
   // Development Site
   if ($_SERVER['PANTHEON_ENVIRONMENT'] === 'dev') {
-    // Redirect to dev.slcc.co
+    // Redirect to dev.slcc.co.
     if ($_SERVER['HTTP_HOST'] == 'dev-stlchristian.gotpantheon.com') {
       header('HTTP/1.0 301 Moved Permanently');
       header('Location: http://dev.slcc.co' . $_SERVER['REQUEST_URI']);
     }
-    // Google Analytics
+    // Google Analytics.
     $conf['googleanalytics_account'] = 'UA-33834428-5';
   }
-  // test.slcc.co
+  // Test Site
   elseif ($_SERVER['PANTHEON_ENVIRONMENT'] === 'test') {
+    // Redirect to test.slcc.co.
     if ($_SERVER['HTTP_HOST'] == 'test-stlchristian.gotpantheon.com') {
       header('HTTP/1.0 301 Moved Permanently');
       header('Location: http://test.slcc.co' . $_SERVER['REQUEST_URI']);
     }
+    // Google Analytics.
+    $conf['googleanalytics_account'] = 'UA-33834428-6';
   }
 }
 
