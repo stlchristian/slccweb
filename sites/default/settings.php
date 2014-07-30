@@ -13,11 +13,6 @@ if (defined('PANTHEON_ENVIRONMENT')) {
   $conf['lock_inc'] = 'sites/all/modules/contrib/redis/redis.lock.inc';
 }
 
-// Require WWW.
-if (isset($_SERVER['PANTHEON_ENVIRONMENT']) && 
-
-}
-
 // Environment-Specific Configurations.
 if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
   // Development Site
