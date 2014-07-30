@@ -15,13 +15,7 @@ if (defined('PANTHEON_ENVIRONMENT')) {
 
 // Require WWW.
 if (isset($_SERVER['PANTHEON_ENVIRONMENT']) && 
-  $_SERVER['PANTHEON_ENVIRONMENT'] === 'live') {
-  if ($_SERVER['HTTP_HOST'] == 'stlchristian.org' || 
-      $_SERVER['HTTP_HOST'] == 'live-stlchristian.gotpantheon.com') {
-    header('HTTP/1.0 301 Moved Permanently'); 
-    header('Location: http://www.stlchristian.org'. $_SERVER['REQUEST_URI']); 
-    exit();
-  }
+
 }
 
 // Environment-Specific Configurations.
@@ -32,6 +26,7 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
     if ($_SERVER['HTTP_HOST'] == 'dev-stlchristian.gotpantheon.com') {
       header('HTTP/1.0 301 Moved Permanently');
       header('Location: http://dev.slcc.co' . $_SERVER['REQUEST_URI']);
+      exit();
     }
     // Google Analytics.
     $conf['googleanalytics_account'] = 'UA-33834428-5';
@@ -42,9 +37,22 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
     if ($_SERVER['HTTP_HOST'] == 'test-stlchristian.gotpantheon.com') {
       header('HTTP/1.0 301 Moved Permanently');
       header('Location: http://test.slcc.co' . $_SERVER['REQUEST_URI']);
+      exit();
     }
     // Google Analytics.
     $conf['googleanalytics_account'] = 'UA-33834428-6';
+  }
+  // Live Site
+  elseif ($_SERVER['PANTHEON_ENVIRONMENT'] === 'live') {
+    
+    if ($_SERVER['HTTP_HOST'] == 'stlchristian.org' || 
+        $_SERVER['HTTP_HOST'] == 'live-stlchristian.gotpantheon.com') {
+      header('HTTP/1.0 301 Moved Permanently'); 
+      header('Location: http://www.stlchristian.org'. $_SERVER['REQUEST_URI']); 
+      exit();
+    }
+    // Google Analytics.
+    $conf['googleanalytics_account'] = 'UA-3834428-4';
   }
 }
 
