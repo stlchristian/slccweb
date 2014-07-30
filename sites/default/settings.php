@@ -23,6 +23,25 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
     exit();
   }
 }
+
+// URL Redirects
+if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
+  // dev.slcc.co
+  if ($_SERVER['PANTHEON_ENVIRONMENT'] === 'dev') {
+    if ($_SERVER['HTTP_HOST'] == 'dev-stlchristian.gotpantheon.com') {
+      header('HTTP/1.0 301 Moved Permanently');
+      header('Location: http://dev.slcc.co' . $_SERVER['REQUEST_URI']);
+    }
+  }
+  // test.slcc.co
+  elseif ($_SERVER['PANTHEON_ENVIRONMENT'] === 'test') {
+    if ($_SERVER['HTTP_HOST'] == 'test-stlchristian.gotpantheon.com') {
+      header('HTTP/1.0 301 Moved Permanently');
+      header('Location: http://test.slcc.co' . $_SERVER['REQUEST_URI']);
+    }
+  }
+}
+
 /**
  * @file
  * Drupal site-specific configuration file.
