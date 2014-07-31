@@ -42,10 +42,10 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
     // Redirect to www.stlchristian.edu
     if ($_SERVER['HTTP_HOST'] == 'stlchristian.org' || 
         $_SERVER['HTTP_HOST'] == 'www.stlchristian.org' || 
-        $_SERVER['HTTP_HOST'] == 'stlchristian.edu' || 
+        $_SERVER['HTTP_HOST'] == 'www.stlchristian.edu' || 
         $_SERVER['HTTP_HOST'] == 'live-stlchristian.gotpantheon.com') {
       header('HTTP/1.0 301 Moved Permanently'); 
-      header('Location: http://www.stlchristian.edu'. $_SERVER['REQUEST_URI']); 
+      header('Location: http://stlchristian.edu'. $_SERVER['REQUEST_URI']); 
       exit();
     }
     // Google Analytics.
