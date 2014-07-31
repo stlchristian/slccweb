@@ -11,6 +11,37 @@ if (defined('PANTHEON_ENVIRONMENT')) {
   $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
   // Use Redis for Drupal locks (semaphore).
   $conf['lock_inc'] = 'sites/all/modules/contrib/redis/redis.lock.inc';
+  
+  // Drupal caching in development environments.
+  if (!in_array(PANTHEON_ENVIRONMENT, array('test', 'live'))) {
+    // Anonymous caching.
+    $conf['cache'] = 0;
+    // Block caching - disabled.
+    $conf['block_cache'] = 0;
+    // Expiration of cached pages - none.
+    $conf['page_cache_maximum_age'] = 0;
+    // Aggregate and compress CSS files in Drupal - off.
+    $conf['preprocess_css'] = 0;
+    // Aggregate JavaScript files in Drupal - off.
+    $conf['preprocess_js'] = 0;
+  }
+  // Drupal caching in test and live environments.
+  else {
+    // Anonymous caching - enabled.
+    $conf['cache'] = 1;
+    // Block caching - enabled.
+    $conf['block_cache'] = 1;
+    // Expiration of cached pages - 1 hour.
+    $conf['page_cache_maximum_age'] = 3600;
+    // Aggregate and compress CSS files in Drupal - on.
+    $conf['preprocess_css'] = 1;
+    // Aggregate JavaScript files in Drupal - on.
+    $conf['preprocess_js'] = 1;
+  }
+  // Minimum cache lifetime - always none.
+  $conf['cache_lifetime'] = 0;
+  // Cached page compression - always off.
+  $conf['page_compression'] = 0;
 }
 
 // Environment-Specific Configurations.
@@ -39,13 +70,12 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
   }
   // Live Site
   elseif ($_SERVER['PANTHEON_ENVIRONMENT'] === 'live') {
-    // Redirect to www.stlchristian.edu
-    if ($_SERVER['HTTP_HOST'] == 'stlchristian.org' || 
-        $_SERVER['HTTP_HOST'] == 'www.stlchristian.org' || 
-        $_SERVER['HTTP_HOST'] == 'www.stlchristian.edu' || 
-        $_SERVER['HTTP_HOST'] == 'live-stlchristian.gotpantheon.com') {
+    // Redirect to stlchristian.edu, HTTPS
+    if ($_SERVER['HTTP_HOST'] != 'stlchristian.edu' ||
+        !isset($_SERVER['HTTP_X_SSL']) ||
+        $_SERVER['HTTP_X_SSL'] != 'ON') {
       header('HTTP/1.0 301 Moved Permanently'); 
-      header('Location: http://stlchristian.edu'. $_SERVER['REQUEST_URI']); 
+      header('Location: https://stlchristian.edu'. $_SERVER['REQUEST_URI']); 
       exit();
     }
     // Google Analytics.
