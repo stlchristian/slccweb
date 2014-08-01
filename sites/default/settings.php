@@ -79,8 +79,26 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
       exit();
     }
     // Google Analytics.
-    $conf['googleanalytics_account'] = 'UA-3834428-4';
+    $conf['googleanalytics_account'] = 'UA-33834428-4';
   }
+}
+
+if (!defined('PANTHEON_ENVIRONMENT')) {
+  $databases = array (
+    'default' => 
+    array (
+      'default' => 
+      array (
+        'database' => 'DATABASE',
+        'username' => 'USERNAME',
+        'password' => 'PASSWORD',
+        'host' => 'localhost',
+        'port' => '',
+        'driver' => 'mysql',
+        'prefix' => '',
+      ),
+    ),
+  );
 }
 
 /**
@@ -293,23 +311,7 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
  *   );
  * @endcode
  */
-if (!defined('PANTHEON_ENVIRONMENT')) {
-  $databases = array (
-    'default' => 
-    array (
-      'default' => 
-      array (
-        'database' => 'DATABASE',
-        'username' => 'USERNAME',
-        'password' => 'PASSWORD',
-        'host' => 'localhost',
-        'port' => '',
-        'driver' => 'mysql',
-        'prefix' => '',
-      ),
-    ),
-  );
-}
+
 /**
  * Access control for update.php script.
  *
