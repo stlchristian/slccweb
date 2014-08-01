@@ -73,6 +73,12 @@
               '@url' => base_path() . 'search',
               '@title' => t('Go to Search Page')
             ))?>
+            <br />
+            <?php print t('If you\'d like to view our old website for reference,
+                          <a target="_blank" title="@title" href="@url">please click here</a>', array(
+              '@url' => 'http://legacy.stlchristian.edu',
+              '@title' => t('Visit our Old Website')
+            ))?>
           </div>
         </div>
       </div>
