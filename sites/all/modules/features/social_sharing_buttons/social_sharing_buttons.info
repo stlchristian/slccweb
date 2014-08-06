@@ -1,0 +1,10 @@
+name = Social Sharing Buttons
+description = Buttons for facebook likes, tweets, etc.
+core = 7.x
+package = Block Features
+version = 7.x-1.0
+project = social_sharing_buttons
+dependencies[] = fe_block
+features[fe_block_boxes][] = social_sharing_buttons
+features[fe_block_settings][] = block-social_sharing_buttons
+features[features_api][] = api:2
