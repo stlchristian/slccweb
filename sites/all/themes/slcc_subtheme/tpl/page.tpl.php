@@ -159,8 +159,10 @@
 	<div id="breadcrumb-wrapper" class="wrapper clearfix">
 	  <div class="container">
 		<div class="grid-inner clearfix">
-	      <?php print $breadcrumb; ?>
-	    </div>
+      <?php print $breadcrumb; ?>
+      <?php $block = module_invoke('block', 'block_view', '13'); ?>
+      <?php print render($block['content']); ?>
+    </div>
 	  </div>
 	</div>
   <!-- /#BREACRUMB -->

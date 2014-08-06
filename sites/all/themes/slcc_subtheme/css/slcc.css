@@ -777,5 +777,5 @@ div.social-icons a:hover i {
 }
 
 div#social-sharing-buttons {
-  margin-bottom: 1em;
+  float: right;
 }
