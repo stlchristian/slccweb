@@ -280,7 +280,7 @@ function degree_program_field_default_field_instances() {
     'default_value' => array(
       0 => array(
         'summary' => '',
-        'value' => '<p><a class="typo-btn btn-rounded-big btn-green typo-btn-big btn-big-green" href="/admissions/apply-now"><span>Apply Now<i class="fa fa-chevron-right fa-fw"></i></span></a></p>
+        'value' => '<p><a class="typo-btn btn-rounded-big btn-green typo-btn-big btn-big-green" href="/admissions/apply"><span>Apply Now<i class="fa fa-chevron-right fa-fw"></i></span></a></p>
 ',
         'format' => 'filtered_html',
       ),
