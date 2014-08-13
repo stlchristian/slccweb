@@ -37,5 +37,6 @@ function ministry_opportunity_node_info() {
       'help' => t('We\'re happy that you\'ve decided to partner with SLCC to find a quality candidate for your ministry. Please fill out this form, and we\'ll have it posted as soon as possible.'),
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

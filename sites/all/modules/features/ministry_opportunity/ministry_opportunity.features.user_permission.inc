@@ -27,6 +27,7 @@ function ministry_opportunity_user_default_permissions() {
     'name' => 'delete any ministry_opportunity content',
     'roles' => array(
       'administrator' => 'administrator',
+      'development contributor' => 'development contributor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
