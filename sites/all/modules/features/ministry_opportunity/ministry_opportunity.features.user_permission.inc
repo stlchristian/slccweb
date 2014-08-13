@@ -66,5 +66,51 @@ function ministry_opportunity_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'publish any ministry_opportunity content'.
+  $permissions['publish any ministry_opportunity content'] = array(
+    'name' => 'publish any ministry_opportunity content',
+    'roles' => array(
+      'development contributor' => 'development contributor',
+    ),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish editable ministry_opportunity content'.
+  $permissions['publish editable ministry_opportunity content'] = array(
+    'name' => 'publish editable ministry_opportunity content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish own ministry_opportunity content'.
+  $permissions['publish own ministry_opportunity content'] = array(
+    'name' => 'publish own ministry_opportunity content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish any ministry_opportunity content'.
+  $permissions['unpublish any ministry_opportunity content'] = array(
+    'name' => 'unpublish any ministry_opportunity content',
+    'roles' => array(
+      'development contributor' => 'development contributor',
+    ),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish editable ministry_opportunity content'.
+  $permissions['unpublish editable ministry_opportunity content'] = array(
+    'name' => 'unpublish editable ministry_opportunity content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish own ministry_opportunity content'.
+  $permissions['unpublish own ministry_opportunity content'] = array(
+    'name' => 'unpublish own ministry_opportunity content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
   return $permissions;
 }
