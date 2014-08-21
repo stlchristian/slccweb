@@ -59,7 +59,7 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
 	// Redirect /autodiscover/autodiscover.xml to autodiscover.stlchristian.edu
 	if ($_SERVER['REQUEST_URI'] == '/autodiscover/autodiscover.xml') {
 	  header('HTTP/1.0 301 Moved Permanently');
-	  header('Location: http://autodiscover.stlchristian.edu');
+	  header('Location: http://autodiscover.stlchristian.edu/autodiscover/autodiscover.xml');
 	  exit();
 	}
   }
