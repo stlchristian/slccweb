@@ -18,7 +18,7 @@ function contact_us_block_default_fe_block_boxes() {
 <p>Do you have a question about SLCC, or do you want some more information?</p>
 <ul class="contact-list fa-ul">
 <li><i class="fa-li fa fa-phone-square"></i><strong>Phone: </strong><span class="phone">314-837-6777</span></li>
-<li><i class="fa-li fa fa-envelope"></i><strong>Email: </strong><a href="mailto:questions@slcconline.edu">questions@slcconline.edu</a></li>
+<li><i class="fa-li fa fa-envelope"></i><strong>Email: </strong><a href="mailto:info@stlchristian.edu">info@stlchristian.edu</a></li>
 <li><i class="fa-li fa fa-university"></i>1360 Grandview Dr., Florissant, MO 63033</li>
 </ul>
 </div>';
