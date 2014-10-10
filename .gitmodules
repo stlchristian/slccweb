@@ -1,0 +1,3 @@
+[submodule "sites/all/modules/contrib/bracket/designs/ccb8champ"]
+	path = sites/all/modules/contrib/bracket/designs/ccb8champ
+	url = git@github.com:ElliotFriend/drupal-bracket-ccb8champ.git
