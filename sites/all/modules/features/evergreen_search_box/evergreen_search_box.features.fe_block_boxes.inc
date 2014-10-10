@@ -16,7 +16,7 @@ function evergreen_search_box_default_fe_block_boxes() {
   $fe_block_boxes->machine_name = 'catalog_search';
   $fe_block_boxes->body = '<p><em>This search box will open a new window with your search results.</em></p>
 
-<form target="_blank" action="http://evergreen.slcconline.edu/eg/opac/results" method="get">
+<form target="_blank" action="https://evergreen.slcconline.edu/eg/opac/results" method="get">
     <input type="search" id="evergreen-search-box" alt="Catalog Search" maxlength="200" size="25" name="query" placeholder="Search for keywords..." />
     <input type="hidden" name="qtype" value="keyword" />
     <input type="hidden" name="locg" value="4" />
