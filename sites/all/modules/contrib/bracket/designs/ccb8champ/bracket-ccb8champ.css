@@ -5,8 +5,11 @@
  */
  
 /* Bracket - set a width so browser will scroll bracket */
+div.node-bracket {
+  height: 700px;
+}
 div.bracket-block {
-  width: 800px;
+  width: 700px;
 }
 
 /* Fonts */
@@ -46,12 +49,14 @@ div.bracket-result-comment {
 
 /* Round elements */
 div.bracket-round {
-  width: 150px;
+  width: 100px;
+  left: 10px;
 }
 
 /* Result elements */
 div.bracket-results {
-  width: 150px;
+  width: 100px;
+  left: 10px;
 }
 
 /* Bracket footer */
@@ -63,8 +68,8 @@ div.bracket-footer {
 /* Logo images */
 div.bracket-logo-image-block {
   position: absolute;
-  top: 40px;
-  left: 650px;
+  top: 500px;
+  left: 40px;
 }
 div.bracket-sponsorlogo-image-block {
   position: absolute;
@@ -92,13 +97,14 @@ div.bracket-round-1-match-spacer {
 /* Defines the height of each match in Round 4 */
 /* first loser round */
 div.round-4-match {
-  height: 60px;  
+  height: 100px;  
 }
 /* Defines some space between matches in Round 4 */
 div.bracket-round-4-match-spacer {
-  height: 30px;
+  height: 70px;
 }
 /* Defines the top of the first match in Round 2 */
+#round-4-spacer,
 #round-2-spacer {
   height: 40px;
 }
@@ -113,12 +119,12 @@ div.bracket-round-2-match-spacer {
 /* Defines the distance between the last match in */
 /* Round 2 and the first match in the loser round */
 #round-2-loser-round-spacer {
-  height: 40px;
+  height: 90px;
 }
 /* Defines the height of each match in Round 5 */
 /* second loser round */
 div.round-5-match {
-  height: 60px;  
+  height: 200px;  
 }
 /* Defines some space between matches in Round 5 */
 div.bracket-round-5-match-spacer {
@@ -135,12 +141,12 @@ div.round-3-match {
 /* Defines the distance between the last match in */
 /* Round 3 and the first match in the loser round */
 #round-3-loser-round-spacer {
-  height: 120px;
+  height: 60px;
 }
 /* Defines the height of each match in Round 6 */
 /* third loser round */
 div.round-6-match {
-  height: 120px;  
+  height: 60px;  
 }
 /* Defines the top of first result */
 #results-spacer {
@@ -150,7 +156,11 @@ div.round-6-match {
 div.bracket-result-spacer {
   height: 40px;  
 }
+/* Defines the top of the fifth place result */
+#fifth-results-spacer {
+  height: 210px;
+}
 /* Defines the distance between winner and loser results */
 #loser-results-spacer {
-  height: 220px;
+  height: 165px;
 }

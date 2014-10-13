@@ -352,7 +352,7 @@ function ccb8champ_pdf($node) {
 
   // bracket comments
   $pdf->setFont($_bracket_pdf_font_name, '', $_bracket_pdf_font_norm);
-  $pdf->setXY($left, 1.25);
+  $pdf->setXY($left, 1);
   $pdf->multicell($iwidth - ($left * 2), 0.125, $node->comments, 0, 'C');
 
   // bracket footnote
