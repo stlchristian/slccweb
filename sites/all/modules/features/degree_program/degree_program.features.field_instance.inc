@@ -367,6 +367,47 @@ function degree_program_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-degree_program-field_suggested_course_sequence'
+  $field_instances['node-degree_program-field_suggested_course_sequence'] = array(
+    'bundle' => 'degree_program',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_suggested_course_sequence',
+    'label' => 'Suggested Course Sequence',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 31,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-degree_program-field_what_you_study'
   $field_instances['node-degree_program-field_what_you_study'] = array(
     'bundle' => 'degree_program',
@@ -438,6 +479,7 @@ function degree_program_field_default_field_instances() {
   t('How to apply');
   t('Objectives for Graduates');
   t('Program Description');
+  t('Suggested Course Sequence');
   t('What you study');
 
   return $field_instances;

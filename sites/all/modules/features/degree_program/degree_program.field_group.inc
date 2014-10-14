@@ -62,6 +62,7 @@ function degree_program_field_group_info() {
       1 => 'field_what_you_study',
       2 => 'field_career_opportunities',
       3 => 'field_objectives_for_graduates',
+      4 => 'field_suggested_course_sequence',
     ),
     'format_type' => 'div',
     'format_settings' => array(

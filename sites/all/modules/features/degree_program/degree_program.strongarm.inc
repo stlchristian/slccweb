@@ -98,6 +98,9 @@ function degree_program_strongarm() {
         'workbench_access' => array(
           'weight' => '1',
         ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),
