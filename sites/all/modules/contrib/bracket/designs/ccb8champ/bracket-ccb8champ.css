@@ -43,6 +43,10 @@ div.bracket-result {
 div.bracket-result-comment {
   font-size: 1.0em;
 }
+div.round-1-match-block .bracket-match-comment-block,
+div.round-6-match-block .bracket-match-comment-block {
+  top: 25%;
+}
 
 /* Round elements */
 div.bracket-round {
@@ -160,4 +164,11 @@ div.bracket-result-spacer {
 /* Defines the distance between winner and loser results */
 #loser-results-spacer {
   height: 165px;
+}
+/* Defines the float for the bracket footer */
+div.bracket-footer {
+  float: right;
+  text-align: left;
+  width: 400px;
+  padding-top: 0px;
 }

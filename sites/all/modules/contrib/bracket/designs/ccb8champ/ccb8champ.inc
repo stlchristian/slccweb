@@ -186,7 +186,7 @@ function ccb8champ_image($node) {
   bracket_image_imagetextwordwrap($img, $_bracket_image_font_small, $iwidth / 2 - (400 / 2), 60, 400, $node->comments, $_bracket_image_fg_color, 'C');
 
   // bracket footnote
-  bracket_image_imagetextwordwrap($img, $_bracket_image_font_small, $left, $iheight-$h, $iwidth-($left*2), $node->footer, $_bracket_image_fg_color, 'C');
+  bracket_image_imagetextwordwrap($img, $_bracket_image_font_small, $left, $iheight-($h * 3), $iwidth-($left), $node->footer, $_bracket_image_fg_color, 'L');
 
   // bracket logo
   if ($node->logopath != '') {
@@ -332,12 +332,6 @@ function ccb8champ_pdf($node) {
   $pdf->cell($width, 0.125, $node->result[3]->cname, 0, 0, 'C');
   $pdf->setXY($l, $t+0.0625);
   $pdf->cell($width, 0.125, $node->result[3]->comment, 0, 0, 'C');
-  //~ $t += ($hh / 2);
-  //~ $pdf->line($l, $t, $l+$width, $t);
-  //~ $pdf->setXY($l, $t-0.125);
-  //~ $pdf->cell($width, 0.125, $node->result[4]->cname, 0, 0, 'C');
-  //~ $pdf->setXY($l, $t+0.0625);
-  //~ $pdf->cell($width, 0.125, $node->result[4]->comment, 0, 0, 'C');
 
   // bracket title
   $left = 1.5;
@@ -357,8 +351,8 @@ function ccb8champ_pdf($node) {
 
   // bracket footnote
   $pdf->setFont($_bracket_pdf_font_name, '', $_bracket_pdf_font_small);
-  $pdf->setXY($left, $iheight - 0.5);
-  $pdf->multicell($iwidth - ($left * 2), 0.125, $node->footer, 0, 'C');
+  $pdf->setXY(($left * 3), $iheight - 0.5);
+  $pdf->multicell($iwidth - ($left * 4), 0.125, $node->footer, 0, 'L');
 
   // bracket logo
   if ($node->logopath != '') {

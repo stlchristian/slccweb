@@ -32,7 +32,6 @@ drupal_add_css(drupal_get_path('module', 'bracket') . '/designs/ccb8champ/bracke
     <?php print theme('bracket_match', array('node' => $node, 'round_index' => 4, 'match_index' => 1, 'orientation' => 'right')) ?>
     <div class="bracket-round-4-match-spacer"></div>
     <?php print theme('bracket_match', array('node' => $node, 'round_index' => 4, 'match_index' => 2, 'orientation' => 'right')) ?>
-    <div class="bracket-footer"><?php print nl2br(filter_xss_admin($node->footer)) ?></div>
   </div>
   <div id="round-1" class="bracket-round">
     <div class="bracket-round-comment"><?php print $node->round[1]->comment ? filter_xss_admin($node->round[1]->comment) : '&nbsp;' ?></div>
@@ -69,5 +68,6 @@ drupal_add_css(drupal_get_path('module', 'bracket') . '/designs/ccb8champ/bracke
     <?php print theme('bracket_result', array('node' => $node, 'result_index' => 3, 'orientation' => 'left')) ?>
   </div>
   <?php print theme('bracket_images', array('node' => $node)) ?>
+  <div class="bracket-footer"><?php print nl2br(filter_xss_admin($node->footer)) ?></div>
 </div>
 
