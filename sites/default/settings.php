@@ -119,6 +119,16 @@ if (!defined('PANTHEON_ENVIRONMENT')) {
       ),
     ),
   );
+  // Anonymous caching.
+  $conf['cache'] = 0;
+  // Block caching - disabled.
+  $conf['block_cache'] = 0;
+  // Expiration of cached pages - none.
+  $conf['page_cache_maximum_age'] = 0;
+  // Aggregate and compress CSS files in Drupal - off.
+  $conf['preprocess_css'] = 0;
+  // Aggregate JavaScript files in Drupal - off.
+  $conf['preprocess_js'] = 0;
 }
 
 /**
