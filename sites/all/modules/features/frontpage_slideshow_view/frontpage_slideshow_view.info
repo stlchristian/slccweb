@@ -1,0 +1,12 @@
+name = Frontpage Slideshow View
+description = jCarousel slideshow to be displayed on the frontpage.
+core = 7.x
+package = Views
+version = 7.x-1.0
+project = frontpage_slideshow_view
+dependencies[] = views
+dependencies[] = views_slideshow
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = Slideshow
+features_exclude[dependencies][ctools] = ctools
