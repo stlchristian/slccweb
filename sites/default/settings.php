@@ -129,6 +129,8 @@ if (!defined('PANTHEON_ENVIRONMENT')) {
   $conf['preprocess_css'] = 0;
   // Aggregate JavaScript files in Drupal - off.
   $conf['preprocess_js'] = 0;
+  // Temporary directory
+  $conf['file_temporary_path'] = '/tmp';
 }
 
 /**
