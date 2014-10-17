@@ -1,8 +1,8 @@
 name = mde32champ
 description = Modified Double Elimination 32 Competitor Championship Bracket
-; Information added by drupal.org packaging script on 2013-02-18
-version = "7.x-1.1"
+; Information added by Drupal.org packaging script on 2014-10-16
+version = "7.x-1.2"
 core = "7.x"
 project = "bracket"
-datestamp = "1361227332"
+datestamp = "1413482022"
 

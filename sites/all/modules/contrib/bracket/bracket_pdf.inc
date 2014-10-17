@@ -384,7 +384,11 @@ function bracket_pdf_drawdashedline($pdf, $x1, $y1, $x2, $y2) {
  */
 function bracket_pdf_insert_image($pdf, $imgpath, $x, $y, $w=0, $center = FALSE) {
 
-  $path = bracket_logo_url($imgpath);
+  // use a real path if possible
+  $path = drupal_realpath($imgpath);
+  if (!$path) {
+    $path = bracket_logo_url($imgpath);
+  }
   $ftype = strrchr($path, '.');
   if ($ftype == '.png' || $ftype == '.jpg' || $ftype == '.jpeg') {
     $size = getimagesize($path);

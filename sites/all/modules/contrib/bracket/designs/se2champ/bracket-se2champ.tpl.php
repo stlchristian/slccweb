@@ -26,7 +26,7 @@ drupal_add_css(drupal_get_path('module', 'bracket') . '/designs/se2champ/bracket
   </div>
   <div id="results" class="bracket-results bracket-results-left">
     <div id="results-spacer"></div>
-    <?php print theme('bracket_result', array('node' => $node, 'result_index' => 1 'orientation' => 'left')) ?>
+    <?php print theme('bracket_result', array('node' => $node, 'result_index' => 1, 'orientation' => 'left')) ?>
   </div>
   <?php print theme('bracket_images', array('node' => $node)) ?>
 </div>

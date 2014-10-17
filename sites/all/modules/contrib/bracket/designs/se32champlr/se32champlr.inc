@@ -228,12 +228,20 @@ function se32champlr_image($node) {
 /**
  * Produce a pdf document for the requested bracket object
  *
- * @param $b
- *   the bracket object
+ * @param $node
+ *   the bracket node object
  * @return
  *   the pdf document
  */
 function se32champlr_pdf($node) {
+
+  // produce and return pdf as a string
+  $pdf = new PDF('P', 'in', 'letter');
+  se32champlr_pdf_page($node, $pdf);
+  return $pdf->output('', 'S');
+}
+
+function se32champlr_pdf_page($node, &$pdf) {
 
   global $_bracket_pdf_font_name;
   global $_bracket_pdf_font_xlarge;
@@ -243,8 +251,8 @@ function se32champlr_pdf($node) {
   global $_bracket_pdf_font_xsmall;
 
   // setup pdf
-  $pdf = new PDF('L', 'in', 'letter');
   $pdf->setAutoPageBreak(FALSE);
+  $pdf->addPage('L');
   $iwidth = 11.0;
   $iheight = 8.5;
 
@@ -269,9 +277,6 @@ function se32champlr_pdf($node) {
   $_bracket_pdf_font_norm = 8;
   $_bracket_pdf_font_small = 7;
   $pdf->setFont($_bracket_pdf_font_name, '', $_bracket_pdf_font_norm);
-
-  // start pdf
-  $pdf->addPage();
 
   // round 1
   $right = 11.0 - $left;
@@ -338,7 +343,7 @@ function se32champlr_pdf($node) {
   $pdf->cell(0.25, 0.125, $match->score[1], 0, 0, 'R');
   if ($match->home[1]) {
     $pdf->setXY($l+$width-0.125, $t+0.0625);
-    $pdf->cell(0.125, $h, 'H');
+    $pdf->cell(0.125, 0.125, 'H');
   }
   $t += $hh / 3;
   $r -= $width;
@@ -433,7 +438,4 @@ function se32champlr_pdf($node) {
       $pdf->cell($width, 0.125, $node->round[5]->comment, 0, 0, 'C', 1);
     }
   }
-
-  // return pdf as a string
-  return $pdf->output('', 'S');
 }

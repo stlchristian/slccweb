@@ -32,8 +32,6 @@ if (module_exists('views')) {
   module_load_include('inc', 'bracket', 'bracket_views');
 }
 
-define('BRACKET_CACHE', 'bracket_cache');
-
 //=========================================================================
 // drupal hooks
 //=========================================================================
@@ -133,16 +131,6 @@ function bracket_menu() {
     'page callback' => 'bracket_settings',
     'access callback' => 'user_access',
     'access arguments' => array('administer site configuration'),
-    'type' => MENU_NORMAL_ITEM,
-  );
-
-  // bracket listing.
-  $items['admin/content/bracket'] = array(
-    'title' => 'Brackets',
-    'page callback' => 'bracket_admin_content',
-    'access callback' => 'user_access',
-    'access arguments' => array('administer content'),
-    'description' => 'View and edit all the brackets on your site.',
     'type' => MENU_NORMAL_ITEM,
   );
 
@@ -306,9 +294,6 @@ function bracket_theme() {
     'bracket_view' => array(
       'variables' => array('node' => NULL, 'view_mode' => NULL),
     ),
-    'bracket_admin_content' => array(
-      'variables' => array('nodes' => NULL),
-    ),
     'bracket_route_edit_form' => array(
       'render element' => 'form',
     ),
@@ -387,18 +372,6 @@ function bracket_settings_form() {
     '#value' => t('Update All Bracket Displays'),
   );
 
-  $form['general'][BRACKET_CACHE] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Cache Bracket Images'),
-    '#default_value' => variable_get(BRACKET_CACHE, FALSE),
-    '#description' => t('Cache bracket images and pdfs - may improve performance during peak loads.  Unlike the Drupal cache, brackets are cached for all users, except for those who have bracket update access.')
-  );
-    
-  $form['general']['purge_cache_now'] = array(
-    '#type' => 'submit',
-    '#value' => t('Purge Bracket Cache Now'),
-  );
-  
   $form['general']['upload'] = array(
     '#type' => 'checkbox',
     '#title' => t('Allow Image Uploads'),
@@ -440,14 +413,6 @@ function bracket_settings_form_validate($form_id, &$form_state) {
 
 function bracket_settings_form_submit($form_id, &$form_state) {
 
-  if ($form_state['values']['op'] == $form_state['values']['purge_cache_now']) {
-    bracket_clear_cache_all();
-    $msg = 'Bracket cache was purged.';
-    watchdog('bracket', $msg);
-    drupal_set_message($msg, 'info');
-    return;
-  }
-  
   if ($form_state['values']['op'] == $form_state['values']['update_bracket_display']) {
     update_all_bracket_displays();
     $msg = 'Bracket display options were updated.';
@@ -456,16 +421,7 @@ function bracket_settings_form_submit($form_id, &$form_state) {
     return;
   }
 
-  // clear bracket cache and drupal cache if setting changes
-  $current = variable_get(BRACKET_CACHE, FALSE);
-  $new = $form_state['values'][BRACKET_CACHE];
-  if ($current != $new) {
-    bracket_clear_cache_all();
-    cache_clear_all();
-  }
-  
   variable_set('bracket_default_display', $form_state['values']['display']);
-  variable_set(BRACKET_CACHE, $new);
   variable_set('bracket_image_upload', $form_state['values']['upload']);
   variable_set('bracket_image_upload_path', $form_state['values']['upload_path']);
 
@@ -728,7 +684,7 @@ function bracket_form($node) {
 
     // only allow delete, if file exists in the upload directory
     if (!bracket_path_is_url($node->logopath) && $upl) {
-      if (file_check_location($node->logopath, $upl)) {  
+      if (file_exists($node->logopath)) {  
         $form['bracket']['logo']['delete_logo'] = array(
           '#type' => 'checkbox',
           '#title' => t('Delete Logo'),
@@ -770,7 +726,7 @@ function bracket_form($node) {
 
     // only allow delete, if file exists in the upload directory
     if (!bracket_path_is_url($node->sponsorlogopath) && $upl) {
-      if (file_check_location($node->sponsorlogopath, $upl)) {  
+      if (file_exists($node->sponsorlogopath)) {  
         $form['bracket']['sponsorlogo']['delete_sponsorlogo'] = array(
           '#type' => 'checkbox',
           '#title' => t('Delete Sponsor Logo'),
@@ -1043,16 +999,38 @@ function bracket_form_process_image($upload_field, $path_field, $delete_field, &
     drupal_set_message(t('Image saved - ' . $file->uri . '.'));
   }
   // if user wants to delete the image
-  if (array_key_exists($delete_field, $form_state['values'])) {
+  if (array_key_exists($delete_field, $form_state['values']) && $form_state['values'][$delete_field]) {
     // only delete if file is in the upload directory
     $path = $form_state['values'][$path_field];
     if ($path) {
-      if (file_check_location($path, $dir)) {  
-        // delete the file
-        file_delete($path);
-        // clear the value for the node
-        $form_state['values'][$path_field] = '';
-        drupal_set_message('Logo image deleted.');
+      $fid = db_query('SELECT fid FROM {file_managed} WHERE uri = :uri', array(':uri' => $path))->fetchField();
+      if (!empty($fid)) {
+        $file_object = file_load($fid);
+        if ($file_object) {  
+          // delete the managed file
+          if (file_delete($file_object)) {
+            // clear the value for the node
+            $form_state['values'][$path_field] = '';
+            drupal_set_message('Logo image deleted.');
+          }
+          else {
+            drupal_set_message('Failed to delete managed image - ' . $path, 'error');
+          }
+        } 
+        else {
+          drupal_set_message('Failed to load managed image - ' . $path, 'error');
+        }
+      }
+      else {
+        // delete the unmanaged file
+        if (file_unmanaged_delete($path)) {
+          // clear the value for the node
+          $form_state['values'][$path_field] = '';
+          drupal_set_message('Logo image deleted.');
+        }
+        else {
+          drupal_set_message('Failed to delete image file - ' . $path, 'error');
+        }
       }
     }
   }
@@ -1087,13 +1065,7 @@ function bracket_update($node) {
 
   bracket_db_update($node);
 
-  // delete bracket images from cache
-  if (variable_get(BRACKET_CACHE, FALSE)) {
-    bracket_clear_cache($node);
-  }
-  else {
-    cache_clear_all();
-  }
+  cache_clear_all();
 }
 
 /**
@@ -1103,13 +1075,7 @@ function bracket_delete($node, $log = TRUE) {
 
   bracket_db_delete($node);
 
-  // delete bracket images from cache
-  if (variable_get(BRACKET_CACHE, FALSE)) {
-    bracket_clear_cache($node);
-  }
-  else {
-    cache_clear_all();
-  }
+  cache_clear_all();
 }
 
 //=========================================================================
@@ -1333,11 +1299,20 @@ function bracket_export_form($form, $form_state, $node) {
   );
 
   $form['options']['opt'] = array(
-      '#type' => 'radios',
-      '#options' => array('bracket' => t('Complete Bracket'), 'results' => t('Bracket Results Only')),
-      '#required' => TRUE,
-      '#weight' => 1,
-    );
+    '#title' => t('Output'),
+    '#type' => 'radios',
+    '#options' => array('bracket' => t('Complete Bracket'), 'results' => t('Bracket Results Only')),
+    '#required' => TRUE,
+    '#weight' => 1,
+  );
+
+  $form['options']['format'] = array(
+    '#title' => t('Format'),
+    '#type' => 'radios',
+    '#options' => array('xml' => t('XML'), 'txt' => t('Text (Results Only)')),
+    '#required' => TRUE,
+    '#weight' => 2,
+  );
 
   $form['clear'] = array(
     '#type' => 'submit',
@@ -1355,21 +1330,67 @@ function bracket_export_form_submit($form_id, &$form_state) {
   // load the node
   $node = node_load($form_state['values']['nid']);
 
-  // generate the xml
-  $output = bracket_xml_export($node, $form_state['values']['opt']);
-
   // make a file name from title
   $fname = preg_replace('/[^0-9a-z\.\_\-]/i', '_', $node->title);
-
+  
+  if ($form_state['values']['format'] == 'xml') {
+    // generate the xml
+    $fname .= '.xml';
+    $output = bracket_xml_export($node, $form_state['values']['opt']);
+  }
+  else {
+    $fname .= '.txt';
+    $output = bracket_text_export($node, $form_state['values']['opt']);
+  }
+  
   // prepare to download
   drupal_add_http_header('Content-Type',  'text/plain');
   drupal_add_http_header('Content-Length', strlen($output));
-  drupal_add_http_header('Content-Disposition', 'attachment; filename="' . $fname . '.xml"');
+  drupal_add_http_header('Content-Disposition', 'attachment; filename="' . $fname . '"');
 
   // send the output
   echo $output;
 
   exit();
+}
+
+function bracket_text_export($node, $opt) {
+
+  $output = check_plain($node->title) . "\n\n";
+
+  if ($opt == 'bracket') {
+    for ($i=1; $i<=count($node->round); $i++) {
+      $r = $node->round[$i];
+      $output .= check_plain($r->name) . "\n";
+
+      for ($j=1; $j<=count($r->match); $j++) {
+        $m = $r->match[$j];
+        if ($m->win[1] || $m->win[2]) {
+          $winner = 1;
+          $loser = 2;
+          if ($m->win[2]) {
+            $winner = 2;
+            $loser = 1;
+          }
+          $output .= check_plain($m->cname[$winner]) . ' ';
+          $output .= check_plain($m->score[$winner]) . ', ';
+          $output .= check_plain($m->cname[$loser]) . ' ';
+          $output .= check_plain($m->score[$loser]);
+          $output .= "\n";
+        }
+      }
+      $output .= "\n";
+    }
+  }
+  
+  $output .= "Results\n";
+  for ($i=1; $i<=count($node->result); $i++) {
+    $s = $node->result[$i];
+    $output .= $i . ". ";
+    $output .= $s->cname . "\n";
+  }
+
+  return $output;
 }
 
 //=========================================================================
@@ -1458,48 +1479,6 @@ function bracket_import_form_submit($form_id, &$form_state) {
   }
 }
 
-/**
- * Display bracket list for admin/content/bracket
- */
-function bracket_admin_content() {
-  
-  $nodes = db_select('node', 'n')
-    ->fields('n')
-    ->condition('n.type', 'bracket', '=')
-    ->execute()
-    ->fetchAllAssoc('nid');
-
-  return theme('bracket_admin_content', array('nodes' => $nodes));
-}
-
-
-/**
- * Theme the list of brackets
- */
-function theme_bracket_admin_content($variables) {
-
-  $nodes = $variables['nodes'];
-
-  $header = array(
-    t('Title'),
-    array('data' => t('Operations'), 'colspan' => '5')
-  );
-
-  $rows = array();
-  foreach ($nodes as $node) {
-    $rows[] = array(
-      l($node->title, 'node/'. $node->nid),
-      node_access('update', $node) ? l(t('Edit'), 'node/'. $node->nid .'/edit') : '',
-      node_access('update', $node) ? l(t('Clone'), 'node/'. $node->nid .'/clone') : '',
-      node_access('update', $node) ? l(t('Clear'), 'node/'. $node->nid .'/clear') : '',
-      node_access('update', $node) ? l(t('Export'), 'node/'. $node->nid .'/export') : '',
-      node_access('update', $node) ? l(t('Import'), 'node/'. $node->nid .'/import') : '',
-    );
-  }
-
-  return theme('table', array('header' => $header, 'rows' => $rows));
-}
-
 //=========================================================================
 // bracket interface functions
 //=========================================================================
@@ -1531,40 +1510,17 @@ function bracket_create(&$node) {
  */
 function bracket_image($node) {
 
-  global $user;
-
-  // if internal caching is on
-  if (variable_get(BRACKET_CACHE, FALSE)) {
-    // tell Drupal not to cache this url
-    bracket_disable_page_cache();
-  }
-
-  // form cache key
-  $key = 'bracket/' . $node->nid . '/image';
-
-  // don't retrieve from cache for update users
   $img = FALSE;
-  if (bracket_node_access('update', $node, $user) == NODE_ACCESS_DENY) {
-    // try to fetch from cache
-    $img = bracket_fetch_from_cache($key);
-  }
   
-  // if image not cached, generate image
-  if (!$img) {
+  // design image function
+  $function = $node->design . '_image';
+  if (function_exists($function)) {
 
-    // design image function
-    $function = $node->design . '_image';
-    if (function_exists($function)) {
-
-      // go generate image 
-      $args = array($node);
-      $img = call_user_func_array($function, $args);
-      
-      // save in cache
-      bracket_save_in_cache($key, $img);
-    }
+    // go generate image 
+    $args = array($node);
+    $img = call_user_func_array($function, $args);
   }
- 
+
   // send image
   drupal_add_http_header('Content-Type', 'image/png');
   echo $img;
@@ -1578,40 +1534,22 @@ function bracket_image($node) {
  */
 function bracket_pdf($node) {
 
-  global $user;
-
-  // if internal caching is on
-  if (variable_get(BRACKET_CACHE, FALSE)) {
-    // tell Drupal not to cache this url
-    bracket_disable_page_cache();
-  }
-
-  // form cache key
-  $key = 'bracket/' . $node->nid . '/pdf';
-
-  // don't retrieve from cache for update users
-  $img = FALSE;
-  if (bracket_node_access('update', $node, $user) == NODE_ACCESS_DENY) {
-    // try to fetch from cache
-    $img = bracket_fetch_from_cache($key);
+  $stream = FALSE;
+  // design pdf function
+  $function = $node->design . '_pdf';
+  if (function_exists($function)) {
+    // go generate pdf
+    $args = array($node);
+    $stream = call_user_func_array($function, $args);
   }
   
-  // if pdf not cached, generate pdf
-  if (!$img) {
-
-    // design pdf function
-    $function = $node->design . '_pdf';
-    if (function_exists($function)) {
-
-      // go generate pdf
-      $args = array($node);
-      $img = call_user_func_array($function, $args);
-
-      // save in cache
-      bracket_save_in_cache($key, $img);
-    }
+  if ($stream) {
+    bracket_pdf_download($stream, $node->title . '.pdf');
   }
-  
+}
+
+function bracket_pdf_download($stream, $fname) {
+
   // force PDF download
   drupal_add_http_header('Cache-Control', 'must-revalidate, post-check=0, pre-check=0');
 
@@ -1622,75 +1560,10 @@ function bracket_pdf($node) {
     drupal_add_http_header('Content-Type', 'application/octet-stream');
   }
     
-  // make a file name from title
-  $fname = preg_replace('/[^0-9a-z\.\_\-]/i', '_', $node->title);
-
   // send PDF
-  drupal_add_http_header('Content-Disposition', 'attachment; filename="' . $fname .'.pdf"');
-  drupal_add_http_header('Content-Length',  strlen($img));
-  echo $img;
-}
-
-/**
- * Fetch bracket image from cache
- *
- * @param $key
- *   the cache key
- */
-function bracket_fetch_from_cache($key) {
-
-  $img = FALSE;
-  
-  // retrieve from cache if so configured
-  if (variable_get(BRACKET_CACHE, FALSE)) {
-    $cache = cache_get($key, 'cache');
-    if (is_object($cache) && ($cache->data)) {
-      $img = $cache->data;
-    }
-  }
-  
-  return $img;
-}
-
-/**
- * Save bracket image in cache
- *
- * @param $key
- *   the cache key
- * @param $img
- *   the image to cache
- */
-function bracket_save_in_cache($key, $img) {
-
-  // save in cache if enabled
-  if (variable_get(BRACKET_CACHE, FALSE)) {
-    // save in cache
-    cache_set($key, $img, 'cache', CACHE_PERMANENT);
-  }
-}
-
-/**
- * Clear bracket node images from cache
- *
- * @param $node
- *   the node containing the bracket
- */
-function bracket_clear_cache($node) {
-
-  // form cache key
-  $key = 'bracket/' . $node->nid;
-    
-  // clear bracket node from the cache
-  cache_clear_all($key, 'cache', TRUE);
-}
-
-/**
- * Clear all bracket node images from cache
- */
-function bracket_clear_cache_all() {
-
-  // clear all bracket images from the cache
-  cache_clear_all('bracket', 'cache', TRUE);
+  drupal_add_http_header('Content-Disposition', 'attachment; filename="' . preg_replace('/[^0-9a-z\.\_\-]/i', '_', $fname) . '"');
+  drupal_add_http_header('Content-Length',  strlen($stream));
+  echo $stream;
 }
 
 /**
@@ -1771,18 +1644,3 @@ function bracket_path_is_url($path) {
   return preg_match("/^https?:\/\//", $path);
 }
 
-/**
- * disable the Drupal page cache (taken from webform module)
- *
- */
-function bracket_disable_page_cache() {
-
-  // Drupal 7 method.
-  if (function_exists('drupal_page_is_cacheable')) {
-    drupal_page_is_cacheable(FALSE);
-  }
-  // Drupal 6 hack to disable page cache.
-  else {
-    $GLOBALS['conf']['cache'] = FALSE;
-  }
-}

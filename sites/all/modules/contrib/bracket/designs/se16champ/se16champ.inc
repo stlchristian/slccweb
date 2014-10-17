@@ -149,16 +149,16 @@ function se16champ_image($node) {
   bracket_image_imagetextwordwrap($img, $_bracket_image_font_small, $iwidth / 2 - (400 / 2), 60, 400, $node->comments, $_bracket_image_fg_color, 'C');
 
   // bracket footnote
-  bracket_image_imagetextwordwrap($img, $_bracket_image_font_small, $left, $iheight-$h, $iwidth-($left*2), $node->footer, $_bracket_image_fg_color, 'C');
+  bracket_image_imagetextwordwrap($img, $_bracket_image_font_small, $left, $iheight-($h * 3), $iwidth-($left*2), $node->footer, $_bracket_image_fg_color, 'C');
 
   // bracket logo
   if ($node->logopath != '') {
-    bracket_image_insert_image($img, $node->logopath, $iwidth-200, 80, 200);
+    bracket_image_insert_image($img, $node->logopath, $iwidth-200, 50, 200);
   }
 
   // sponsor logo
   if ($node->sponsorlogopath != '') {
-    bracket_image_insert_image($img, $node->sponsorlogopath, $iwidth/2, $iheight-75, 75, TRUE);
+    bracket_image_insert_image($img, $node->sponsorlogopath, $iwidth - 100, 230, 75, TRUE);
   }
 
   // bracket bar
@@ -185,12 +185,20 @@ function se16champ_image($node) {
 /**
  * Produce a pdf document for the requested bracket object
  *
- * @param $b
- *   the bracket object
+ * @param $node
+ *   the bracket node object
  * @return
  *   the pdf document
  */
 function se16champ_pdf($node) {
+
+  // produce and return pdf as a string
+  $pdf = new PDF('P', 'in', 'letter');
+  se16champ_pdf_page($node, $pdf);
+  return $pdf->output('', 'S');
+}
+
+function se16champ_pdf_page($node, &$pdf) {
 
   global $_bracket_pdf_font_name;
   global $_bracket_pdf_font_xlarge;
@@ -200,8 +208,8 @@ function se16champ_pdf($node) {
   global $_bracket_pdf_font_xsmall;
 
   // setup pdf
-  $pdf = new PDF('P', 'in', 'letter');
   $pdf->setAutoPageBreak(FALSE);
+  $pdf->addPage('P');
   $iwidth = 8.5;
   $iheight = 11.0;
 
@@ -226,9 +234,6 @@ function se16champ_pdf($node) {
   $_bracket_pdf_font_norm = 8;
   $_bracket_pdf_font_small = 7;
   $pdf->setFont($_bracket_pdf_font_name, '', $_bracket_pdf_font_norm);
-
-  // start pdf
-  $pdf->addPage();
 
   // round 1
   bracket_pdf_drawbracketset($pdf, $node, $left, $top, $width, $height, $spacing, 1, 1, 4, 'L');
@@ -309,12 +314,12 @@ function se16champ_pdf($node) {
 
   // bracket logo
   if ($node->logopath != '') {
-    bracket_pdf_insert_image($pdf, $node->logopath, 6.5, 1.75, 2.0);
+    bracket_pdf_insert_image($pdf, $node->logopath, 6.0, 1.0, 2.0);
   }
 
   // sponsor logo
   if ($node->sponsorlogopath != '') {
-    bracket_pdf_insert_image($pdf, $node->sponsorlogopath, 4.25, 9.5, 0.75);
+    bracket_pdf_insert_image($pdf, $node->sponsorlogopath, 6.5, 2.5, 0.75);
   }
 
   // bracket bar
@@ -327,7 +332,4 @@ function se16champ_pdf($node) {
       $pdf->cell($width, 0.125, $node->round[$i]->comment, 0, 0, 'C', TRUE);
     }
   }
-
-  // return pdf as a string
-  return $pdf->output('', 'S');
 }

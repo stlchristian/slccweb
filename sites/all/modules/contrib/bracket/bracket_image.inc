@@ -555,7 +555,11 @@ function bracket_image_imagetextwordwrap($img, $fontsize, $x, $y, $w, $text, $co
  */
 function bracket_image_insert_image($img, $imgpath, $x, $y, $w = 0, $center = FALSE) {
 
-  $path = bracket_logo_url($imgpath);
+  // use a real path if possible
+  $path = drupal_realpath($imgpath);
+  if (!$path) {
+    $path = bracket_logo_url($imgpath);
+  }
   $size = getimagesize($path);
   if ($size) {
     $ftype = strrchr($path, '.');
@@ -619,7 +623,7 @@ function bracket_image_imagedashedline($img, $x1, $y1, $x2, $y2, $color) {
 }
 
 /**
- * Draw a dashed line on the image
+ * Output an image stream
  *
  * @param $img
  *   the image handle
@@ -628,14 +632,12 @@ function bracket_image_imagedashedline($img, $x1, $y1, $x2, $y2, $color) {
  */
 function bracket_image_output_png($img) {
 
-  // output image to a temp file
-  $tmp = tempnam(file_directory_temp(), 'bkt');
-  imagepng($img, $tmp);
-  // get file contents into a string
-  $png = file_get_contents($tmp);
-  unlink($tmp);
-  // return output
-  return $png;
+  ob_start();
+  imagepng($img);
+  $image_data = ob_get_contents();
+  ob_end_clean();
+  
+  return $image_data;
 }
 
 /**
@@ -668,7 +670,7 @@ function bracket_image_draw_result($img, $lr, $top, $width, $result, $orient='L'
     $lrx = $lr - $width;
   }
 
-  imageline($img, $lrx, $top, $lrx+$width, $top, $bracket_image_fg_color);
+  imageline($img, $lrx, $top, $lrx+$width, $top, $_bracket_image_fg_color);
   bracket_image_imagetextalign($img, $_bracket_image_font_norm, $lrx, $top-5, $width, $result->cname, $_bracket_image_fg_color, $orient);
   bracket_image_imagetextalign($img, $_bracket_image_font_norm, $lrx, $top+10, $width, $result->comment, $_bracket_image_fg_color, $orient);
 

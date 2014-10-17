@@ -37,8 +37,6 @@ function Image($file,$x=null,$y=null,$w=0,$h=0,$type='',$link='', $isMask=false,
       $type=substr($file,$pos+1);
     }
     $type=strtolower($type);
-    $mqr=get_magic_quotes_runtime();
-    set_magic_quotes_runtime(0);
     if($type=='jpg' || $type=='jpeg')
       $info=$this->_parsejpg($file);
     elseif($type=='png'){
@@ -53,7 +51,6 @@ function Image($file,$x=null,$y=null,$w=0,$h=0,$type='',$link='', $isMask=false,
         $this->Error('Unsupported image type: '.$type);
       $info=$this->$mtd($file);
     }
-    set_magic_quotes_runtime($mqr);
     
     if ($isMask){
       $info['cs']="DeviceGray"; // try to force grayscale (instead of indexed)

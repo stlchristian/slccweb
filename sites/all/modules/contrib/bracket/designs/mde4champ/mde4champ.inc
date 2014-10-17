@@ -219,12 +219,20 @@ function mde4champ_image($node) {
 /**
  * Produce a pdf document for the requested bracket object
  *
- * @param $b
- *   the bracket object
+ * @param $node
+ *   the bracket node object
  * @return
  *   the pdf document
  */
 function mde4champ_pdf($node) {
+
+  // produce and return pdf as a string
+  $pdf = new PDF('P', 'in', 'letter');
+  mde4champ_pdf_page($node, $pdf);
+  return $pdf->output('', 'S');
+}
+
+function mde4champ_pdf_page($node, &$pdf) {
 
   global $_bracket_pdf_font_name;
   global $_bracket_pdf_font_xlarge;
@@ -234,8 +242,8 @@ function mde4champ_pdf($node) {
   global $_bracket_pdf_font_xsmall;
 
   // setup pdf
-  $pdf = new PDF('P', 'in', 'letter');
   $pdf->setAutoPageBreak(FALSE);
+  $pdf->addPage('P');
   $iwidth = 8.5;
   $iheight = 11.0;
 
@@ -260,9 +268,6 @@ function mde4champ_pdf($node) {
   $_bracket_pdf_font_small = 9.0;
   $_bracket_pdf_font_xsmall = 8.0;
   $pdf->setFont($_bracket_pdf_font_name, '', $_bracket_pdf_font_norm);
-
-  // start pdf
-  $pdf->addPage();
 
   // winner rounds
   for ($r=1; $r<=bracket_round_last_winner_round($node); $r++) {
@@ -393,8 +398,5 @@ function mde4champ_pdf($node) {
   if ($node->sponsorlogopath != '') {
     bracket_pdf_insert_image($pdf, $node->sponsorlogopath, $iwidth / 2, 10.0, 0.75, TRUE);
   }
-
-  // return pdf as a string
-  return $pdf->output('', 'S');
 }
 

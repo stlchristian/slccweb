@@ -200,12 +200,20 @@ function ff2champ_image($node) {
 /**
  * Produce a pdf document for the requested bracket object
  *
- * @param $b
- *   the bracket object
+ * @param $node
+ *   the bracket node object
  * @return
  *   the pdf document
  */
 function ff2champ_pdf($node) {
+
+  // produce and return pdf as a string
+  $pdf = new PDF('P', 'in', 'letter');
+  ff2champ_pdf_page($node, $pdf);
+  return $pdf->output('', 'S');
+}
+
+function ff2champ_pdf_page($node, &$pdf) {
 
   global $_bracket_pdf_font_name;
   global $_bracket_pdf_font_xlarge;
@@ -215,8 +223,8 @@ function ff2champ_pdf($node) {
   global $_bracket_pdf_font_xsmall;
 
   // setup pdf
-  $pdf = new PDF('P', 'in', 'letter');
   $pdf->setAutoPageBreak(FALSE);
+  $pdf->addPage('P');
   $iwidth = 8.5;
   $iheight = 11.0;
 
@@ -241,9 +249,6 @@ function ff2champ_pdf($node) {
   $_bracket_pdf_font_norm = 8;
   $_bracket_pdf_font_small = 7;
   $pdf->setFont($_bracket_pdf_font_name, '', $_bracket_pdf_font_norm);
-
-  // start pdf
-  $pdf->addPage();
 
   // bracket 1
   $l = $left;
@@ -360,7 +365,4 @@ function ff2champ_pdf($node) {
   if ($node->sponsorlogopath != '') {
     bracket_pdf_insert_image($pdf, $node->sponsorlogopath, 4.25, 9.5, 0.75, TRUE);
   }
-
-  // return pdf as a string
-  return $pdf->output('', 'S');
 }

@@ -191,12 +191,20 @@ function se32po2lr_image($node) {
 /**
  * Produce a pdf document for the requested bracket object
  *
- * @param $b
- *   the bracket object
+ * @param $node
+ *   the bracket node object
  * @return
  *   the pdf document
  */
 function se32po2lr_pdf($node) {
+
+  // produce and return pdf as a string
+  $pdf = new PDF('P', 'in', 'letter');
+  se32po2lr_pdf_page($node, $pdf);
+  return $pdf->output('', 'S');
+}
+
+function se32po2lr_pdf_page($node, &$pdf) {
 
   global $_bracket_pdf_font_name;
   global $_bracket_pdf_font_xlarge;
@@ -206,8 +214,8 @@ function se32po2lr_pdf($node) {
   global $_bracket_pdf_font_xsmall;
 
   // setup pdf
-  $pdf = new PDF('L', 'in', 'letter');
   $pdf->setAutoPageBreak(FALSE);
+  $pdf->addPage('L');
   $iwidth = 11.0;
   $iheight = 8.5;
 
@@ -232,9 +240,6 @@ function se32po2lr_pdf($node) {
   $_bracket_pdf_font_norm = 8;
   $_bracket_pdf_font_small = 7;
   $pdf->setFont($_bracket_pdf_font_name, '', $_bracket_pdf_font_norm);
-
-  // start pdf
-  $pdf->addPage();
 
   // round 1
   $right = 11.0 - $left;
@@ -263,9 +268,9 @@ function se32po2lr_pdf($node) {
   $pdf->setFont($_bracket_pdf_font_name, '', $_bracket_pdf_font_norm);
   $pdf->line($l, $t, $l+$width, $t);
   $pdf->setXY($l, $t-0.125);
-  $pdf->cell($w, 0.125, $node->result[1]->cname, 0, 0, 'L');
+  $pdf->cell($width, 0.125, $node->result[1]->cname, 0, 0, 'L');
   $pdf->setXY($l, $t);
-  $pdf->cell($w, 0.125, $node->result[1]->comment, 0, 0, 'L');
+  $pdf->cell($width, 0.125, $node->result[1]->comment, 0, 0, 'L');
   $pdf->line($r, $t, $r-$width, $t);
   $pdf->setXY($r-$width, $t-0.125);
   $pdf->cell($width, 0.125, $node->result[5]->cname, 0, 0, 'R');
@@ -273,9 +278,9 @@ function se32po2lr_pdf($node) {
   $pdf->cell($width, 0.125, $node->result[5]->comment, 0, 0, 'R');
   $pdf->line($l, $t+$tb, $l+$width, $t+$tb);
   $pdf->setXY($l, $t+$tb-0.125);
-  $pdf->cell($w, 0.125, $node->result[3]->cname, 0, 0, 'L');
+  $pdf->cell($width, 0.125, $node->result[3]->cname, 0, 0, 'L');
   $pdf->setXY($l, $t+$tb);
-  $pdf->cell($w, 0.125, $node->result[3]->comment, 0, 0, 'L');
+  $pdf->cell($width, 0.125, $node->result[3]->comment, 0, 0, 'L');
   $pdf->line($r, $t+$tb, $r-$width, $t+$tb);
   $pdf->setXY($r-$width, $t+$tb-0.125);
   $pdf->cell($width, 0.125, $node->result[7]->cname, 0, 0, 'R');
@@ -284,9 +289,9 @@ function se32po2lr_pdf($node) {
   $t += $hh;
   $pdf->line($l, $t, $l+$width, $t);
   $pdf->setXY($l, $t-0.125);
-  $pdf->cell($w, 0.125, $node->result[2]->cname, 0, 0, 'L');
+  $pdf->cell($width, 0.125, $node->result[2]->cname, 0, 0, 'L');
   $pdf->setXY($l, $t);
-  $pdf->cell($w, 0.125, $node->result[2]->comment, 0, 0, 'L');
+  $pdf->cell($width, 0.125, $node->result[2]->comment, 0, 0, 'L');
   $pdf->line($r, $t, $r-$width, $t);
   $pdf->setXY($r-$width, $t-0.125);
   $pdf->cell($width, 0.125, $node->result[6]->cname, 0, 0, 'R');
@@ -294,9 +299,9 @@ function se32po2lr_pdf($node) {
   $pdf->cell($width, 0.125, $node->result[6]->comment, 0, 0, 'R');
   $pdf->line($l, $t+$tb, $l+$width, $t+$tb);
   $pdf->setXY($l, $t+$tb-0.125);
-  $pdf->cell($w, 0.125, $node->result[4]->cname, 0, 0, 'L');
+  $pdf->cell($width, 0.125, $node->result[4]->cname, 0, 0, 'L');
   $pdf->setXY($l, $t+$tb);
-  $pdf->cell($w, 0.125, $node->result[4]->comment, 0, 0, 'L');
+  $pdf->cell($width, 0.125, $node->result[4]->comment, 0, 0, 'L');
   $pdf->line($r, $t+$tb, $r-$width, $t+$tb);
   $pdf->setXY($r-$width, $t+$tb-0.125);
   $pdf->cell($width, 0.125, $node->result[8]->cname, 0, 0, 'R');
@@ -325,7 +330,7 @@ function se32po2lr_pdf($node) {
 
   // bracket logo
   if ($node->logopath != '') {
-    bracket_pdf_insert_image($pdf, $node->logopath, 5.5, 1.00, 1.75, TRUE);
+    bracket_pdf_insert_image($pdf, $node->logopath, 5.5, 1.5, 1.75, TRUE);
   }
 
   // sponsor logo
@@ -347,7 +352,4 @@ function se32po2lr_pdf($node) {
       $pdf->cell($width, 0.125, $node->round[$i]->comment, 0, 0, 'C');
     }
   }
-
-  // return pdf as a string
-  return $pdf->output('', 'S');
 }

@@ -157,12 +157,20 @@ function se8po1_image($node) {
 /**
  * Produce a pdf document for the requested bracket object
  *
- * @param $b
- *   the bracket object
+ * @param $node
+ *   the bracket node object
  * @return
  *   the pdf document
  */
 function se8po1_pdf($node) {
+
+  // produce and return pdf as a string
+  $pdf = new PDF('P', 'in', 'letter');
+  se8po1_pdf_page($node, $pdf);
+  return $pdf->output('', 'S');
+}
+
+function se8po1_pdf_page($node, &$pdf) {
 
   global $_bracket_pdf_font_name;
   global $_bracket_pdf_font_xlarge;
@@ -172,8 +180,8 @@ function se8po1_pdf($node) {
   global $_bracket_pdf_font_xsmall;
 
   // setup pdf
-  $pdf = new PDF('P', 'in', 'letter');
   $pdf->setAutoPageBreak(FALSE);
+  $pdf->addPage('P');
   $iwidth = 8.5;
   $iheight = 11.0;
 
@@ -199,9 +207,6 @@ function se8po1_pdf($node) {
   $_bracket_pdf_font_small = 7;
   $pdf->setFont($_bracket_pdf_font_name, '', $_bracket_pdf_font_norm);
 
-  // start pdf
-  $pdf->addPage();
-
   // round 1
   bracket_pdf_drawbracketset($pdf, $node, $left, $top, $width, $height, $spacing, 1, 1, 2, 'L');
   bracket_pdf_drawbracketset($pdf, $node, $left, $top + $tb, $width, $height, $spacing, 1, 3, 4, 'L');
@@ -212,25 +217,25 @@ function se8po1_pdf($node) {
   $pdf->setFont($_bracket_pdf_font_name, '', $_bracket_pdf_font_norm);
   $pdf->line($l, $t, $l+$width, $t);
   $pdf->setXY($l, $t-0.125);
-  $pdf->cell($w, 0.125, $node->result[1]->cname, 0, 0, 'L');
+  $pdf->cell($width, 0.125, $node->result[1]->cname, 0, 0, 'L');
   $pdf->setXY($l, $t);
-  $pdf->cell($w, 0.125, $node->result[1]->comment, 0, 0, 'L');
+  $pdf->cell($width, 0.125, $node->result[1]->comment, 0, 0, 'L');
   $pdf->line($l, $t+$tb, $l+$width, $t+$tb);
   $pdf->setXY($l, $t+$tb-0.125);
-  $pdf->cell($w, 0.125, $node->result[3]->cname, 0, 0, 'L');
+  $pdf->cell($width, 0.125, $node->result[3]->cname, 0, 0, 'L');
   $pdf->setXY($l, $t+$tb);
-  $pdf->cell($w, 0.125, $node->result[3]->comment, 0, 0, 'L');
+  $pdf->cell($width, 0.125, $node->result[3]->comment, 0, 0, 'L');
   $t += $spacing;
   $pdf->line($l, $t, $l+$width, $t);
   $pdf->setXY($l, $t-0.125);
-  $pdf->cell($w, 0.125, $node->result[2]->cname, 0, 0, 'L');
+  $pdf->cell($width, 0.125, $node->result[2]->cname, 0, 0, 'L');
   $pdf->setXY($l, $t);
-  $pdf->cell($w, 0.125, $node->result[2]->comment, 0, 0, 'L');
+  $pdf->cell($width, 0.125, $node->result[2]->comment, 0, 0, 'L');
   $pdf->line($l, $t+$tb, $l+$width, $t+$tb);
   $pdf->setXY($l, $t+$tb-0.125);
-  $pdf->cell($w, 0.125, $node->result[4]->cname, 0, 0, 'L');
+  $pdf->cell($width, 0.125, $node->result[4]->cname, 0, 0, 'L');
   $pdf->setXY($l, $t+$tb);
-  $pdf->cell($w, 0.125, $node->result[4]->comment, 0, 0, 'L');
+  $pdf->cell($width, 0.125, $node->result[4]->comment, 0, 0, 'L');
 
   // bracket title
   $pdf->setFont($_bracket_pdf_font_name, 'BI', $_bracket_pdf_font_xlarge);
@@ -272,7 +277,4 @@ function se8po1_pdf($node) {
       $pdf->cell($width, 0.125, $node->round[$i]->comment, 0, 0, 'C', TRUE);
     }
   }
-
-  // return pdf as a string
-  return $pdf->output('', 'S');
 }
