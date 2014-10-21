@@ -319,10 +319,10 @@ function bracket_image_drawcell($img, $lr, $top, $width, $height, $match, $orien
 
   // draw top competitor
   bracket_image_imagetextalign($img, $_bracket_image_font_norm, $lrx, $over, $width, $match->cname[1], $_bracket_image_fg_color, $orient);
-  bracket_image_imagetextalign($img, $_bracket_image_font_small, $lrx, $under, $width, $match->comp_comment[1], $_bracket_image_fg_color, $orient);
+  //bracket_image_imagetextalign($img, $_bracket_image_font_small, $lrx, $under, $width, $match->comp_comment[1], $_bracket_image_fg_color, $orient);
 
   // draw top competitor score
-  if ($orient == 'L') {
+  /*if ($orient == 'L') {
     bracket_image_imagetextalign($img, $_bracket_image_font_small, $lr + $width - ($w * 2) - 1, $over, $w*2, $match->score[1], $_bracket_image_fg_color, 'R');
     if ($match->home[1]) {
       bracket_image_imagetextalign($img, $_bracket_image_font_small, $lr + $width - $w - 1, $under, $w, 'H', $_bracket_image_fg_color, 'R');
@@ -333,7 +333,7 @@ function bracket_image_drawcell($img, $lr, $top, $width, $height, $match, $orien
     if ($match->home[1]) {
       bracket_image_imagetextalign($img, $_bracket_image_font_small, $lrx + 2, $under, $w, 'H', $_bracket_image_fg_color, 'L');
     }
-  }
+  }*/
 
   // draw bracket cell comments
   if ($comments && ($match->comment[1] != '' || $match->comment[2] != '')) {
@@ -384,10 +384,10 @@ function bracket_image_drawcell($img, $lr, $top, $width, $height, $match, $orien
 
   // draw bottom competitor
   bracket_image_imagetextalign($img, $_bracket_image_font_norm, $lrx, $over, $width, $match->cname[2], $_bracket_image_fg_color, $orient);
-  bracket_image_imagetextalign($img, $_bracket_image_font_small, $lrx, $under, $width, $match->comp_comment[2], $_bracket_image_fg_color, $orient);
+  //bracket_image_imagetextalign($img, $_bracket_image_font_small, $lrx, $under, $width, $match->comp_comment[2], $_bracket_image_fg_color, $orient);
 
   // draw bottom competitor score
-  if ($orient == 'L') {
+  /*if ($orient == 'L') {
     bracket_image_imagetextalign($img, $_bracket_image_font_small, $lr + $width - ($w * 2) - 1, $over, $w*2, $match->score[2], $_bracket_image_fg_color, 'R');
     if ($match->home[2]) {
         bracket_image_imagetextalign($img, $_bracket_image_font_small, $lr + $width - $w - 1, $under, $w, 'H', $_bracket_image_fg_color, 'R');
@@ -398,7 +398,7 @@ function bracket_image_drawcell($img, $lr, $top, $width, $height, $match, $orien
     if ($match->home[2]) {
       bracket_image_imagetextalign($img, $_bracket_image_font_small, $lrx + 2, $under, $w, 'H', $_bracket_image_fg_color, 'L');
     }
-  }
+  }*/
 }
 
 /**
