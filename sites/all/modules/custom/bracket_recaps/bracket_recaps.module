@@ -7,20 +7,6 @@
 
 /**
  * Implements hook_help().
- *
- * Through hook_help(), a module can make documentation available to the user
- * for the module as a whole or for specific paths. Where the help appears
- * depends on the $path specified.
- *
- * In the first example below, the help text will appear on the simple page
- * defined in hook_menu below in the region designated for help text.
- *
- * In the second example, the text will be available through the module page as
- * a link beside the module or on the admin help page (admin/help) in the list
- * of help topics using the name of the module. To specify help in the admin
- * section use the module name in the path as in the second case below.
- *
- * @see hook_help()
  */
 function bracket_recaps_help($path, $arg) {
   switch ($path) {
@@ -36,11 +22,6 @@ function bracket_recaps_help($path, $arg) {
 
 /**
  * Implements hook_permission().
- *
- * Since the access to our new custom pages will be granted based on
- * special permissions, we need to define what those permissions are here.
- * This ensures that they are available to enable on the user role
- * administration pages.
  */
 function bracket_recaps_permission() {
   return array(
@@ -48,44 +29,11 @@ function bracket_recaps_permission() {
       'title' => t('Access bracket recaps'),
       'description' => t('Allow users to access bracket recaps'),
     ),
-    'access arguments page' => array(
-      'title' => t('Access page with arguments'),
-      'description' => t('Allow users to access page with arguments'),
-    ),
   );
 }
 
 /**
  * Implements hook_menu().
- *
- * Because hook_menu() registers URL paths for items defined by the function, it
- * is necessary for modules that create pages. Each item can also specify a
- * callback function for a given URL. The menu items returned here provide this
- * information to the menu system.
- *
- * We will define some menus, and their paths will be interpreted as follows:
- *
- * If the user accesses http://example.com/?q=examples/page_example/simple,
- * the menu system will first look for a menu item with that path. In this case
- * it will find a match, and execute page_example_simple().
- *
- * If the user accesses http://example.com/?q=examples/page_example/arguments,
- * the menu system will find no explicit match, and will fall back to the
- * closest match, 'examples/page_example', executing page_example_description().
- *
- * If the user accesses
- * http://example.com/?q=examples/page_example/arguments/1/2, the menu
- * system will first look for examples/page_example/arguments/1/2. Not finding
- * a match, it will look for examples/page_example/arguments/1/%. Again not
- * finding a match, it will look for examples/page_example/arguments/%/2.
- * Yet again not finding a match, it will look for
- * examples/page_example/arguments/%/%. This time it finds a match, and so will
- * execute page_example_arguments(1, 2). Since the parameters are passed to
- * the function after the match, the function can do additional checking or
- * make use of them before executing the callback function.
- *
- * @see hook_menu()
- * @see menu_example
  */
 function bracket_recaps_menu() {
 
@@ -108,6 +56,7 @@ function bracket_recaps_menu() {
  * Our menu maps this function to the path 'athletics/mens-soccer/tournament/recaps'.
  */
 function bracket_recaps_simple() {
+  // Text for our table's header row
   $table_header = array(
     'Date',
     'Time',
@@ -116,22 +65,36 @@ function bracket_recaps_simple() {
     'Goal Scorers',
   );
   
+  // Load the bracket that you want here. We'll change this to a config
+  // setting sometime soon.
   $bracket = bracket_api_load_bracket(621);
+  // This needs to exist so that we can look into the last row, and it
+  // won't throw any errors at us.
   $rows = array();
   
+  // Get each round in the bracket
   foreach (element_children($bracket->round) as $rid) {
+    // Get each match in the round
     foreach (element_children($bracket->round[$rid]->match) as $mid) {
+      // Make sure that two competitors already exist for the match
+      // Otherwise, we'll not show this match in the table.
       if (!empty($bracket->round[$rid]->match[$mid]->cname[1]) &&
           !empty($bracket->round[$rid]->match[$mid]->cname[2]) ) {
+        // Get each competitor in the match
         foreach (element_children($bracket->round[$rid]->match[$mid]->compid) as $cid) {
+          // Save the previous row to compare against
           $prev_row = end($rows);
           reset($rows);
           
           $rows[] = array(
+            // We don't want date/time to be the same row-after-row
+            // This will display the date/time once for each match
             'Date' => ($prev_row['Date'] === t($bracket->round[$rid]->match[$mid]->comment[1])) ? null : t($bracket->round[$rid]->match[$mid]->comment[1]),
             'Time' => ($prev_row['Time'] === t($bracket->round[$rid]->match[$mid]->comment[2])) ? null : t($bracket->round[$rid]->match[$mid]->comment[2]),
             'Team' => t($bracket->round[$rid]->match[$mid]->cname[$cid]),
             'Score' => t($bracket->round[$rid]->match[$mid]->score[$cid]),
+            // We're keeping the goal scorers within the competitor
+            // comment. So, we grab that here.
             'Goal Scorers' => t($bracket->round[$rid]->match[$mid]->comp_comment[$cid]),
           );
         }
@@ -139,6 +102,7 @@ function bracket_recaps_simple() {
     }
   }
   
+  // Render out the array as a table.
   $render_array['bracket_recaps_simple'] = array(
     '#theme' => 'table',
     '#header' => $table_header,
