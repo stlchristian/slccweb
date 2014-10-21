@@ -10,6 +10,9 @@
 drupal_add_css(drupal_get_path('module', 'bracket') . '/designs/ccb8champ/bracket-ccb8champ.css', array('preprocess' => FALSE));
 ?>
 
+<div class="bracket-print-link">
+  <?php echo l(t('Click here for game recaps'), 'athletics/mens-soccer/tournament/recaps'); ?>
+</div>
 <div class="bracket-block">
   <?php if ($node->subtitle) { ?>
   <div class="bracket-subtitle"><?php print filter_xss_admin($node->subtitle) ?></div>
