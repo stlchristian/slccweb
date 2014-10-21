@@ -124,9 +124,14 @@ function bracket_recaps_simple() {
       if (!empty($bracket->round[$rid]->match[$mid]->cname[1]) &&
           !empty($bracket->round[$rid]->match[$mid]->cname[2]) ) {
         foreach (element_children($bracket->round[$rid]->match[$mid]->compid) as $cid) {
+          $prev_date = end($rows)['Date'];
+          reset($rows);
+          $prev_time = end($rows)['Time'];
+          reset($rows);
+          
           $rows[] = array(
-            'Date' => (end($rows)['Date'] === t($bracket->round[$rid]->match[$mid]->comment[1])) ? null : t($bracket->round[$rid]->match[$mid]->comment[1]),
-            'Time' => (end($rows)['Time'] === t($bracket->round[$rid]->match[$mid]->comment[2])) ? null : t($bracket->round[$rid]->match[$mid]->comment[2]),
+            'Date' => ($prev_date === t($bracket->round[$rid]->match[$mid]->comment[1])) ? null : t($bracket->round[$rid]->match[$mid]->comment[1]),
+            'Time' => ($prev_time === t($bracket->round[$rid]->match[$mid]->comment[2])) ? null : t($bracket->round[$rid]->match[$mid]->comment[2]),
             'Team' => t($bracket->round[$rid]->match[$mid]->cname[$cid]),
             'Score' => t($bracket->round[$rid]->match[$mid]->score[$cid]),
             'Goal Scorers' => t($bracket->round[$rid]->match[$mid]->comp_comment[$cid]),
