@@ -65,6 +65,13 @@ li a.active {
   background: #205f93;
 }
 
+a.responsive-menu-button,
+a.responsive-menu-button:hover,
+a.responsive-menu-button:active,
+a.responsive-menu-button:focus {
+  color: #dcdfdf;
+}
+
 /* Page Title */
 #main-title-outer {
   background: url('../../../../../sites/default/files/field/image/brick-bg-title-inner.jpg') top center no-repeat;
