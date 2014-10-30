@@ -7,7 +7,7 @@
     src: url('fonts/OptimusPrinceps/optimusprinceps.eot?#iefix') format('embedded-opentype'),
          url('fonts/OptimusPrinceps/optimusprinceps.woff') format('woff'),
          url('fonts/OptimusPrinceps/optimusprinceps.ttf') format('truetype'),
-         url('fonts/OptimusPrinceps/optimusprinceps.svg#optimusprincepsregular') format('svg');
+         url('fonts/OptimusPrinceps/optimusprinceps.svg.gz#optimusprincepsregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
