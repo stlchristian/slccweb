@@ -57,7 +57,9 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
   // Development Site
   if ($_SERVER['PANTHEON_ENVIRONMENT'] === 'dev') {
     // Redirect to dev.slcc.co.
-    if ($_SERVER['HTTP_HOST'] != 'https://dev-stlchristian.gotpantheon.com') {
+    if ($_SERVER['HTTP_HOST'] != 'dev-stlchristian.gotpantheon.com' ||
+        !isset($_SERVER['HTTP_X_SSL']) ||
+        $_SERVER['HTTP_X_SSL'] != 'ON')) {
       header('HTTP/1.0 301 Moved Permanently');
       header('Location: https://dev-stlchristian.gotpantheon.com'
         . $_SERVER['REQUEST_URI']);
@@ -71,7 +73,9 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
   // Test Site
   elseif ($_SERVER['PANTHEON_ENVIRONMENT'] === 'test') {
     // Redirect to test.slcc.co.
-    if ($_SERVER['HTTP_HOST'] != 'https://test-stlchristian.gotpantheon.com') {
+    if ($_SERVER['HTTP_HOST'] != 'test-stlchristian.gotpantheon.com' ||
+        !isset($_SERVER['HTTP_X_SSL']) ||
+        $_SERVER['HTTP_X_SSL'] != 'ON')) {
       header('HTTP/1.0 301 Moved Permanently');
       header('Location: https://test-stlchristian.gotpantheon.com'
         . $_SERVER['REQUEST_URI']);
