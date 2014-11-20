@@ -46,42 +46,42 @@ if (defined('PANTHEON_ENVIRONMENT')) {
 
 // Environment-Specific Configurations.
 if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
+  // Redirect /autodiscover/autodiscover.xml to autodiscover.stlchristian.edu
+  if ($_SERVER['REQUEST_URI'] == '/autodiscover/autodiscover.xml' ||
+      $_SERVER['REQUEST_URI'] == '/Autodiscover/Autodiscover.xml') {
+        header('HTTP/1.0 301 Moved Permanently');
+        header('Location: http://autodiscover.stlchristian.edu' . $_SERVER['REQUEST_URI']);
+        exit();
+	}
+  
   // Development Site
   if ($_SERVER['PANTHEON_ENVIRONMENT'] === 'dev') {
     // Redirect to dev.slcc.co.
-    if ($_SERVER['HTTP_HOST'] == 'dev-stlchristian.gotpantheon.com') {
+    if ($_SERVER['HTTP_HOST'] != 'https://dev-stlchristian.gotpantheon.com') {
       header('HTTP/1.0 301 Moved Permanently');
-      header('Location: http://dev.slcc.co' . $_SERVER['REQUEST_URI']);
+      header('Location: https://dev-stlchristian.gotpantheon.com'
+        . $_SERVER['REQUEST_URI']);
       exit();
     }
     // Google Analytics.
     $conf['googleanalytics_account'] = 'UA-33834428-5';
 	// Redirect /autodiscover/autodiscover.xml to autodiscover.stlchristian.edu
-	if ($_SERVER['REQUEST_URI'] == '/autodiscover/autodiscover.xml' ||
-	    $_SERVER['REQUEST_URI'] == '/Autodiscover/Autodiscover.xml') {
-	  header('HTTP/1.0 301 Moved Permanently');
-	  header('Location: http://autodiscover.stlchristian.edu' . $_SERVER['REQUEST_URI']);
-	  exit();
-	}
   }
+  
   // Test Site
   elseif ($_SERVER['PANTHEON_ENVIRONMENT'] === 'test') {
     // Redirect to test.slcc.co.
-    if ($_SERVER['HTTP_HOST'] == 'test-stlchristian.gotpantheon.com') {
+    if ($_SERVER['HTTP_HOST'] != 'https://test-stlchristian.gotpantheon.com') {
       header('HTTP/1.0 301 Moved Permanently');
-      header('Location: http://test.slcc.co' . $_SERVER['REQUEST_URI']);
+      header('Location: https://test-stlchristian.gotpantheon.com'
+        . $_SERVER['REQUEST_URI']);
       exit();
     }
+    
     // Google Analytics.
     $conf['googleanalytics_account'] = 'UA-33834428-6';
-	// Redirect /autodiscover/autodiscover.xml to autodiscover.stlchristian.edu
-	if ($_SERVER['REQUEST_URI'] == '/autodiscover/autodiscover.xml' ||
-	    $_SERVER['REQUEST_URI'] == '/Autodiscover/Autodiscover.xml') {
-	  header('HTTP/1.0 301 Moved Permanently');
-	  header('Location: http://autodiscover.stlchristian.edu' . $_SERVER['REQUEST_URI']);
-	  exit();
-	}
   }
+  
   // Live Site
   elseif ($_SERVER['PANTHEON_ENVIRONMENT'] === 'live') {
     // Redirect to stlchristian.edu, HTTPS
@@ -92,14 +92,9 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
       header('Location: https://stlchristian.edu'. $_SERVER['REQUEST_URI']); 
       exit();
     }
+    
     // Google Analytics.
     $conf['googleanalytics_account'] = 'UA-33834428-4';
-	// Redirect /autodiscover/autodiscover.xml to autodiscover.stlchristian.edu
-	if ($_SERVER['REQUEST_URI'] == '/autodiscover/autodiscover.xml') {
-	  header('HTTP/1.0 301 Moved Permanently');
-	  header('Location: http://autodiscover.stlchristian.edu/autodiscover/autodiscover.xml');
-	  exit();
-	}
   }
 }
 
