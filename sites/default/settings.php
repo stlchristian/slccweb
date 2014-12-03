@@ -1,5 +1,19 @@
 <?php
 
+// URL Redirects
+if ($_SERVER['REQUEST_URI'] == '/academics/degree-programs/traditional') {
+  header('HTTP/1.0 301 Moved Permanently');
+  header('Location: /academics/degree-programs/traditional-degrees'); exit();
+}
+if ($_SERVER['REQUEST_URI'] == '/academics/degree-programs/evening') {
+  header('HTTP/1.0 301 Moved Permanently');
+  header('Location: /academics/degree-programs/evening-degrees'); exit();
+}
+if ($_SERVER['REQUEST_URI'] == '/academics/degree-programs/online') {
+  header('HTTP/1.0 301 Moved Permanently');
+  header('Location: /academics/degree-programs/online-degrees'); exit();
+}
+
 // All Pantheon Environments.
 if (defined('PANTHEON_ENVIRONMENT')) {
   // Use Redis for caching.

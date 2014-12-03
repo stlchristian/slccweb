@@ -96,10 +96,10 @@ function degree_program_views_default_views() {
   $handler->display->display_options['fields']['name']['relationship'] = 'term_node_tid';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['text'] = '[name] Degrees';
   $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['path'] = 'academics/degree-programs/[name]';
+  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Title */
@@ -112,7 +112,7 @@ function degree_program_views_default_views() {
   $handler->display->display_options['arguments']['name']['field'] = 'name';
   $handler->display->display_options['arguments']['name']['relationship'] = 'term_node_tid';
   $handler->display->display_options['arguments']['name']['title_enable'] = TRUE;
-  $handler->display->display_options['arguments']['name']['title'] = '%1 Degree Programs';
+  $handler->display->display_options['arguments']['name']['title'] = '%1';
   $handler->display->display_options['arguments']['name']['breadcrumb_enable'] = TRUE;
   $handler->display->display_options['arguments']['name']['breadcrumb'] = '%1';
   $handler->display->display_options['arguments']['name']['default_argument_type'] = 'fixed';
@@ -220,7 +220,6 @@ drupal_set_breadcrumb($crumbs);
     t('<i class="fa-li fa fa-angle-right"></i>[title]'),
     t('[name] Degrees'),
     t('All'),
-    t('%1 Degree Programs'),
     t('%1'),
     t('more'),
     t('Items per page'),
