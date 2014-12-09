@@ -82,7 +82,8 @@ function academic_syllabi_list() {
   $traditional_list = academic_syllabi_construct_list('traditional');
   $evening_list = academic_syllabi_construct_list('evening');
   
-  $output = '<div class="syllabi-list-container">' . $traditional_list . '</div>';
+  $output = '<p class="typo-icon icon-doc"><span class="icon">&nbsp;</span>The forms below are provided as PDF files. You can download and print them by using <a class="vt-p" href="http://get.adobe.com/reader/" rel="nofollow" target="_blank">Adobe Reader</a>, <a class="vt-p" href="http://www.foxitsoftware.com/Secure_PDF_Reader/" rel="nofollow" target="_blank">Foxit Reader</a>, or another PDF reader.</p>';
+  $output .= '<div class="syllabi-list-container">' . $traditional_list . '</div>';
   $output .= '<div class="syllabi-list-container">' . $evening_list . '</div>';
   
   return $output;
