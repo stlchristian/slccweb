@@ -1,0 +1,4 @@
+name = Academic Syllabi
+description = A simple module that displays the contents of the syllabi directory to users
+core = 7.x
+files[] = academic_syllabi.test

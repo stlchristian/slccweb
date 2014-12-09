@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * @file
+ * Module file for academic_syllabi_module.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function academic_syllabi_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#academic_syllabi':
+      // Help text for the admin section, using the module name in the path.
+      return t("This module iterates through the syllabi directory, listing
+                the file names as links for each item found.");
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function academic_syllabi_permission() {
+  return array(
+    'access syllabi page' => array(
+      'title' => t('Access syllabi page'),
+      'description' => t('Allow users to access the syllabi page'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function academic_syllabi_menu() {
+  $items['academics/syllabi2'] = array(
+    'title' => 'Course Syllabi',
+    'page callback' => 'academic_syllabi_list',
+    'access arguments' => array('access syllabi page'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Constructs page which lists all the PDF files in the specified directory
+ * as links to those PDF files.
+ */
+function academic_syllabi_list() {
+  $items = file_scan_directory('sites/default/files/syllabi', '/pdf$/');
+  $output .= '<ul class="fa-ul">';
+  
+  foreach (element_children($items) as $item) {
+    $course_name = str_replace("_", " ", $items[$item]->filename);
+    $course_name = preg_replace('/\.pdf$/', '', $course_name);
+    
+    $output .= '<li><i class="fa fa-li fa-angle-right"></i>';
+    $output .= '<a target="_blank" href="/' . $items[$item]->uri . '">';
+    $output .= $course_name . '</a></li>';
+  }
+  $output .= '</ul>';
+  
+  return $output;
+}
