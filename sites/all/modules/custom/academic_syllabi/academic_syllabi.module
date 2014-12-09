@@ -47,9 +47,10 @@ function academic_syllabi_menu() {
  * Constructs a listing of links
  */
 function academic_syllabi_construct_list($program) {
-    $syllabi = file_scan_directory("sites/default/files/syllabi/$program/", '/pdf$/');
+  $syllabi = file_scan_directory("sites/default/files/syllabi/$program/", '/pdf$/');
+  asort($syllabi);
   
-  $title = t("$program Course Syllabi");
+  $title = t(ucfirst($program) . " Course Syllabi");
   $type = 'ul';
   $attributes = array(
     'id' => "$program-syllabi-list",
@@ -81,7 +82,8 @@ function academic_syllabi_list() {
   $traditional_list = academic_syllabi_construct_list('traditional');
   $evening_list = academic_syllabi_construct_list('evening');
   
-  $output = $traditional_list . $evening_list;
+  $output = '<div class="syllabi-list-container">' . $traditional_list . '</div>';
+  $output .= '<div class="syllabi-list-container">' . $evening_list . '</div>';
   
   return $output;
 }

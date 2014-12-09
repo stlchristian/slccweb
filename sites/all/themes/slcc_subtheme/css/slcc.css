@@ -788,6 +788,11 @@ div#social-sharing-buttons {
 }
 
 /* Class Syllabi Listing */
+div.syllabi-list-container {
+  width: 50%;
+  float:left;
+}
+
 ul#traditional-syllabi-list li,
 ul#evening-syllabi-list li,
 ul#traditional-syllabi-list li a,
