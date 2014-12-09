@@ -44,22 +44,44 @@ function academic_syllabi_menu() {
 }
 
 /**
+ * Constructs a listing of links
+ */
+function academic_syllabi_construct_list($program) {
+    $syllabi = file_scan_directory("sites/default/files/syllabi/$program/", '/pdf$/');
+  
+  $title = t("$program Course Syllabi");
+  $type = 'ul';
+  $attributes = array(
+    'id' => "$program-syllabi-list",
+    'class' => 'fa-ul',
+  );
+  $items = array();
+  
+  foreach (element_children($syllabi) as $syllabus) {
+    $course_name = str_replace("_", " ", $syllabi[$syllabus]->filename);
+    $course_name = preg_replace('/\.pdf$/', '', $course_name);
+    $uri = $syllabi[$syllabus]->uri;
+    $data = '<i class="fa-li fa fa-angle-right"></i>' . l($course_name, $uri);
+    
+    $items[] = array(
+      'data' => $data,
+    );
+  }
+  
+  $themed_list = theme_item_list(array('items' => $items, 'title' => $title, 'type' => $type, 'attributes' => $attributes));
+  return $themed_list;
+}
+
+/**
  * Constructs page which lists all the PDF files in the specified directory
  * as links to those PDF files.
  */
 function academic_syllabi_list() {
-  $items = file_scan_directory('sites/default/files/syllabi', '/pdf$/');
-  $output .= '<ul class="fa-ul">';
+
+  $traditional_list = academic_syllabi_construct_list('traditional');
+  $evening_list = academic_syllabi_construct_list('evening');
   
-  foreach (element_children($items) as $item) {
-    $course_name = str_replace("_", " ", $items[$item]->filename);
-    $course_name = preg_replace('/\.pdf$/', '', $course_name);
-    
-    $output .= '<li><i class="fa fa-li fa-angle-right"></i>';
-    $output .= '<a target="_blank" href="/' . $items[$item]->uri . '">';
-    $output .= $course_name . '</a></li>';
-  }
-  $output .= '</ul>';
+  $output = $traditional_list . $evening_list;
   
   return $output;
 }

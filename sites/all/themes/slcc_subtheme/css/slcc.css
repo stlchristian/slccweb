@@ -786,3 +786,12 @@ div.social-icons a:hover i {
 div#social-sharing-buttons {
   float: right;
 }
+
+/* Class Syllabi Listing */
+ul#traditional-syllabi-list li,
+ul#evening-syllabi-list li,
+ul#traditional-syllabi-list li a,
+ul#evening-syllabi-list li a {
+  background: none;
+  padding: 0;
+}
