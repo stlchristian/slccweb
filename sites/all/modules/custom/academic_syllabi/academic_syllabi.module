@@ -60,6 +60,7 @@ function academic_syllabi_construct_list($program) {
   
   foreach (element_children($syllabi) as $syllabus) {
     $course_name = str_replace("_", " ", $syllabi[$syllabus]->filename);
+    $course_name = str_replace("-", " - ", $course_name);
     $course_name = preg_replace('/\.pdf$/', '', $course_name);
     $uri = $syllabi[$syllabus]->uri;
     $data = '<i class="fa-li fa fa-angle-right"></i>' .
