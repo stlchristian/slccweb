@@ -33,7 +33,7 @@ function academic_syllabi_permission() {
  * Implements hook_menu().
  */
 function academic_syllabi_menu() {
-  $items['academics/syllabi2'] = array(
+  $items['academics/course-syllabi'] = array(
     'title' => 'Course Syllabi',
     'page callback' => 'academic_syllabi_list',
     'access arguments' => array('access syllabi page'),
