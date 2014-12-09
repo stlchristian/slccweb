@@ -47,9 +47,12 @@ function academic_syllabi_menu() {
  * Constructs a listing of links
  */
 function academic_syllabi_construct_list($program) {
+  // Find all the *.PDF files in the given program directory, sort the array
+  // TODO: break this path out into a configuration setting
   $syllabi = file_scan_directory("sites/default/files/syllabi/$program/", '/pdf$/');
   asort($syllabi);
   
+  // Get some variables ready to construct the list
   $title = t(ucfirst($program) . " Course Syllabi");
   $type = 'ul';
   $attributes = array(
@@ -59,9 +62,11 @@ function academic_syllabi_construct_list($program) {
   $items = array();
   
   foreach (element_children($syllabi) as $syllabus) {
+    // Get the filename in a nicely readable format
     $course_name = str_replace("_", " ", $syllabi[$syllabus]->filename);
     $course_name = str_replace("-", " - ", $course_name);
     $course_name = preg_replace('/\.pdf$/', '', $course_name);
+    // Store the link for use in the list
     $uri = $syllabi[$syllabus]->uri;
     $data = '<i class="fa-li fa fa-angle-right"></i>' .
             l($course_name, $uri, array('attributes' => array('target' => '_blank')));
@@ -71,6 +76,7 @@ function academic_syllabi_construct_list($program) {
     );
   }
   
+  // Return the themed list, using all the data we've collected
   $themed_list = theme_item_list(array('items' => $items, 'title' => $title, 'type' => $type, 'attributes' => $attributes));
   return $themed_list;
 }
@@ -80,13 +86,18 @@ function academic_syllabi_construct_list($program) {
  * as links to those PDF files.
  */
 function academic_syllabi_list() {
-
+  // Get the lists for the necessary sub-directories
   $traditional_list = academic_syllabi_construct_list('traditional');
   $evening_list = academic_syllabi_construct_list('evening');
   
+  // Start the output with our notification box about the PDF-formatted files
   $output = '<p class="typo-icon icon-doc"><span class="icon">&nbsp;</span>The forms below are provided as PDF files. You can download and print them by using <a class="vt-p" href="http://get.adobe.com/reader/" rel="nofollow" target="_blank">Adobe Reader</a>, <a class="vt-p" href="http://www.foxitsoftware.com/Secure_PDF_Reader/" rel="nofollow" target="_blank">Foxit Reader</a>, or another PDF reader.</p>';
+  // Wrap these two lists in a container dive because that will allow us
+  // to place the lists side-by-side, which looks a lot nicer than a mile-
+  // long page with nothing but links.
   $output .= '<div class="syllabi-list-container">' . $traditional_list . '</div>';
   $output .= '<div class="syllabi-list-container">' . $evening_list . '</div>';
   
+  // Finally, return the output.
   return $output;
 }
