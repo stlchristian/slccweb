@@ -79,9 +79,12 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
         . $_SERVER['REQUEST_URI']);
       exit();
     }
+    
     // Google Analytics.
     $conf['googleanalytics_account'] = 'UA-33834428-5';
-	// Redirect /autodiscover/autodiscover.xml to autodiscover.stlchristian.edu
+    
+    // CloudFront CDN url
+    $conf['cdn_basic_mapping'] = 'https://d362i6qokoscg1.cloudfront.net';
   }
   
   // Test Site
@@ -98,6 +101,9 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
     
     // Google Analytics.
     $conf['googleanalytics_account'] = 'UA-33834428-6';
+    
+    // CloudFront CDN url
+    $conf['cdn_basic_mapping'] = 'https://daddhu661edzl.cloudfront.net';
   }
   
   // Live Site
@@ -113,6 +119,9 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
     
     // Google Analytics.
     $conf['googleanalytics_account'] = 'UA-33834428-4';
+    
+    // CloudFront CDN url
+    $conf['cdn_basic_mapping'] = 'https://d32d42c37l4v4f.cloudfront.net';
   }
 }
 
