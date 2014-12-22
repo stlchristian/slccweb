@@ -161,6 +161,15 @@ function calendar_entry_views_default_views() {
     0 => '100',
   );
   $handler->display->display_options['filters']['field_calendar_tid']['vocabulary'] = 'calendar';
+  /* Filter criterion: Field: Semester (field_semester) */
+  $handler->display->display_options['filters']['field_semester_tid']['id'] = 'field_semester_tid';
+  $handler->display->display_options['filters']['field_semester_tid']['table'] = 'field_data_field_semester';
+  $handler->display->display_options['filters']['field_semester_tid']['field'] = 'field_semester_tid';
+  $handler->display->display_options['filters']['field_semester_tid']['value'] = array(
+    104 => '104',
+  );
+  $handler->display->display_options['filters']['field_semester_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_semester_tid']['vocabulary'] = 'semester';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -211,6 +220,15 @@ function calendar_entry_views_default_views() {
     0 => '102',
   );
   $handler->display->display_options['filters']['field_school_year_tid']['vocabulary'] = 'school_year';
+  /* Filter criterion: Field: Semester (field_semester) */
+  $handler->display->display_options['filters']['field_semester_tid']['id'] = 'field_semester_tid';
+  $handler->display->display_options['filters']['field_semester_tid']['table'] = 'field_data_field_semester';
+  $handler->display->display_options['filters']['field_semester_tid']['field'] = 'field_semester_tid';
+  $handler->display->display_options['filters']['field_semester_tid']['value'] = array(
+    104 => '104',
+  );
+  $handler->display->display_options['filters']['field_semester_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_semester_tid']['vocabulary'] = 'semester';
   $handler->display->display_options['path'] = 'student-life/calendar';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'All-School Calendar';
