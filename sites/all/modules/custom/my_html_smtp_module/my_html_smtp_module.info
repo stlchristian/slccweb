@@ -1,0 +1,4 @@
+name = HTML SMTP Module
+description = My custom module to make the Mail System module work on Pantheon
+core = 7.x
+files[] = includes/MimeMailSystem__SmtpMailSystem.mail.inc
