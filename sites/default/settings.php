@@ -155,6 +155,10 @@ if (!defined('PANTHEON_ENVIRONMENT')) {
   $conf['file_temporary_path'] = '/tmp';
 }
 
+// jQuery Update Version and CDN
+$conf['jquery_update_jquery_version'] = 1.8;
+$conf['jquery_update_jquery_cdn'] = 'google';
+
 /**
  * @file
  * Drupal site-specific configuration file.
