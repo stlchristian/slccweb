@@ -51,7 +51,7 @@ function class_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'class_section',
   );
   $terms[] = array(
-    'name' => 'Traditional',
+    'name' => 'Traditional Degrees',
     'description' => '',
     'format' => 'filtered_html',
     'weight' => 0,
@@ -70,7 +70,7 @@ function class_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'academic_divisions',
   );
   $terms[] = array(
-    'name' => 'Evening',
+    'name' => 'Evening Degrees',
     'description' => '',
     'format' => 'filtered_html',
     'weight' => 1,
