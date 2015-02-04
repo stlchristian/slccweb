@@ -27,7 +27,7 @@ function ministry_opportunity_user_default_permissions() {
     'name' => 'delete any ministry_opportunity content',
     'roles' => array(
       'administrator' => 'administrator',
-      'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -71,6 +71,7 @@ function ministry_opportunity_user_default_permissions() {
     'name' => 'publish any ministry_opportunity content',
     'roles' => array(
       'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
     ),
     'module' => 'publishcontent',
   );
@@ -94,6 +95,7 @@ function ministry_opportunity_user_default_permissions() {
     'name' => 'unpublish any ministry_opportunity content',
     'roles' => array(
       'development contributor' => 'development contributor',
+      'development editor' => 'development editor',
     ),
     'module' => 'publishcontent',
   );
