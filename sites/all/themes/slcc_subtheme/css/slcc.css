@@ -757,6 +757,12 @@ table.grad-rates tr {
   margin-left: 10px;
 }
 
+.page-node-675 .node-degree-program .group-degree-information .field-name-field-what-you-study,
+.page-node-677 .node-degree-program .group-degree-information .field-name-field-what-you-study,
+.page-node-678 .node-degree-program .group-degree-information .field-name-field-what-you-study {
+  width: 100%;
+}
+
 .node-degree-program .group-degree-information .field-name-field-career-opportunities,
 .node-degree-program .group-degree-information .field-name-field-what-you-study {
   float: left;
