@@ -67,7 +67,7 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
         header('Location: http://autodiscover.stlchristian.edu' . $_SERVER['REQUEST_URI']);
         exit();
 	}
-  
+
   // Development Site
   if ($_SERVER['PANTHEON_ENVIRONMENT'] === 'dev') {
     // Redirect to dev.slcc.co.
@@ -79,14 +79,14 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
         . $_SERVER['REQUEST_URI']);
       exit();
     }
-    
     // Google Analytics.
     $conf['googleanalytics_account'] = 'UA-33834428-5';
-    
     // CloudFront CDN url
     $conf['cdn_basic_mapping'] = 'https://d362i6qokoscg1.cloudfront.net';
+    // Disable submitting our sitemap to search engines
+    $conf['xmlsitemap_engines_engines'] = array();
   }
-  
+
   // Test Site
   elseif ($_SERVER['PANTHEON_ENVIRONMENT'] === 'test') {
     // Redirect to test.slcc.co.
@@ -98,14 +98,14 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
         . $_SERVER['REQUEST_URI']);
       exit();
     }
-    
     // Google Analytics.
     $conf['googleanalytics_account'] = 'UA-33834428-6';
-    
     // CloudFront CDN url
     $conf['cdn_basic_mapping'] = 'https://daddhu661edzl.cloudfront.net';
+    // Disable submitting our sitemap to search engines
+    $conf['xmlsitemap_engines_engines'] = array();
   }
-  
+
   // Live Site
   elseif ($_SERVER['PANTHEON_ENVIRONMENT'] === 'live') {
     // Redirect to stlchristian.edu, HTTPS
@@ -116,10 +116,8 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
       header('Location: https://stlchristian.edu'. $_SERVER['REQUEST_URI']); 
       exit();
     }
-    
     // Google Analytics.
     $conf['googleanalytics_account'] = 'UA-33834428-4';
-    
     // CloudFront CDN url
     $conf['cdn_basic_mapping'] = 'https://d32d42c37l4v4f.cloudfront.net';
   }
@@ -153,6 +151,8 @@ if (!defined('PANTHEON_ENVIRONMENT')) {
   $conf['preprocess_js'] = 0;
   // Temporary directory
   $conf['file_temporary_path'] = '/tmp';
+  // Disable submitting our sitemap to search engines
+  $conf['xmlsitemap_engines_engines'] = array();
 }
 
 // jQuery Update Version and CDN
