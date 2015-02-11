@@ -91,7 +91,16 @@ function academic_syllabi_list() {
   $evening_list = academic_syllabi_construct_list('evening');
   
   // Start the output with our notification box about the PDF-formatted files
-  $output = '<p class="typo-icon icon-doc"><span class="icon">&nbsp;</span>The forms below are provided as PDF files. You can download and print them by using <a class="vt-p" href="http://get.adobe.com/reader/" rel="nofollow" target="_blank">Adobe Reader</a>, <a class="vt-p" href="http://www.foxitsoftware.com/Secure_PDF_Reader/" rel="nofollow" target="_blank">Foxit Reader</a>, or another PDF reader.</p>';
+  $output = '<p class="typo-box box-information"><strong>Virtual Bookstore</strong>:
+             Textbook information for current classes is available at <strong>
+             <a target="_blank"
+             href="http://slcc.co/bookstore">slcc.co/bookstore</a></strong>.</p>
+             <p class="typo-icon icon-doc"><span class="icon">&nbsp;</span>
+             The forms below are provided as PDF files. You can download and
+             print them by using <a class="vt-p" href="http://get.adobe.com/reader/"
+             rel="nofollow" target="_blank">Adobe Reader</a>, <a class="vt-p"
+             href="http://www.foxitsoftware.com/Secure_PDF_Reader/" rel="nofollow"
+             target="_blank">Foxit Reader</a>, or another PDF reader.</p>';
   // Wrap these two lists in a container dive because that will allow us
   // to place the lists side-by-side, which looks a lot nicer than a mile-
   // long page with nothing but links.
