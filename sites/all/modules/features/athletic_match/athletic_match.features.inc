@@ -34,5 +34,6 @@ function athletic_match_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

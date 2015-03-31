@@ -43,6 +43,17 @@ function class_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'class_section',
   );
   $terms[] = array(
+    'name' => 'Online Degrees',
+    'description' => '',
+    'format' => 'filtered_html',
+    'weight' => 2,
+    'uuid' => '75323b37-ea9d-4ee9-a506-edf3b2b1ad14',
+    'vocabulary_machine_name' => 'academic_program',
+    'path' => array(
+      'pathauto' => 1,
+    ),
+  );
+  $terms[] = array(
     'name' => 'C',
     'description' => '',
     'format' => 'filtered_html',
@@ -70,6 +81,17 @@ function class_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'academic_divisions',
   );
   $terms[] = array(
+    'name' => 'Alternate Programs',
+    'description' => '',
+    'format' => 'filtered_html',
+    'weight' => 3,
+    'uuid' => 'd6342fec-270e-4a43-8ada-9b1be0ebd8b5',
+    'vocabulary_machine_name' => 'academic_program',
+    'path' => array(
+      'pathauto' => 1,
+    ),
+  );
+  $terms[] = array(
     'name' => 'Evening Degrees',
     'description' => '',
     'format' => 'filtered_html',
@@ -87,28 +109,6 @@ function class_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => 'fdeeb7de-3beb-4e2a-b3dc-942b8c66f478',
     'vocabulary_machine_name' => 'class_section',
-  );
-  $terms[] = array(
-    'name' => 'Online Degrees',
-    'description' => '',
-    'format' => 'filtered_html',
-    'weight' => 2,
-    'uuid' => '75323b37-ea9d-4ee9-a506-edf3b2b1ad14',
-    'vocabulary_machine_name' => 'academic_program',
-    'path' => array(
-      'pathauto' => 1,
-    ),
-  );
-  $terms[] = array(
-    'name' => 'Alternate Programs',
-    'description' => '',
-    'format' => 'filtered_html',
-    'weight' => 3,
-    'uuid' => 'd6342fec-270e-4a43-8ada-9b1be0ebd8b5',
-    'vocabulary_machine_name' => 'academic_program',
-    'path' => array(
-      'pathauto' => 1,
-    ),
   );
   return $terms;
 }
