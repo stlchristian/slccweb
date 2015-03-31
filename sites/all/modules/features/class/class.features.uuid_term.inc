@@ -81,7 +81,7 @@ function class_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'academic_divisions',
   );
   $terms[] = array(
-    'name' => 'Alternate Programs',
+    'name' => 'Alternative Programs',
     'description' => '',
     'format' => 'filtered_html',
     'weight' => 3,
