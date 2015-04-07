@@ -13,6 +13,10 @@ if ($_SERVER['REQUEST_URI'] == '/academics/degree-programs/online') {
   header('HTTP/1.0 301 Moved Permanently');
   header('Location: /academics/degree-programs/online-degrees'); exit();
 }
+if ($_SERVER['REQUEST_URI'] == '/academics/degree-programs/alternate-programs') {
+  header('HTTP/1.0 301 Moved Permanently');
+  header('Location: /academics/degree-programs/alternative-programs'); exit();
+}
 
 // All Pantheon Environments.
 if (defined('PANTHEON_ENVIRONMENT')) {
