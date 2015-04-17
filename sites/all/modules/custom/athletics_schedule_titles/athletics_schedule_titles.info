@@ -1,0 +1,4 @@
+name = Athletics Schedule Titles
+description = A simple module that changes the title on the schedule views so we can put the dang apostraphe in there
+core = 7.x
+dependencies[] = views
