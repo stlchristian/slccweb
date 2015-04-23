@@ -26,3 +26,11 @@ function athletics_schedule_titles_views_pre_render( &$view ) {
         }
     }
 }
+
+function athletics_schedule_titles_views_post_render( &$view, &$output, &$cache ) {
+    if ( $view->name == 'athletics_calendar' && $view->current_display == 'page' ) {
+        //~ echo "<!--";
+        print_r($cache);
+        //~ echo "-->";
+    }
+}
