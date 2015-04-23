@@ -53,7 +53,7 @@ function academic_syllabi_construct_list($program) {
   asort($syllabi);
   
   // Get some variables ready to construct the list
-  $title = t(ucfirst($program) . " Course Syllabi");
+  $title = "Spring 2015 " . t(ucfirst($program) . " Course Syllabi");
   $type = 'ul';
   $attributes = array(
     'id' => "$program-syllabi-list",
