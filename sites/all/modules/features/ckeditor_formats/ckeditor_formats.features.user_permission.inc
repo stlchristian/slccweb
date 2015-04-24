@@ -57,14 +57,5 @@ function ckeditor_formats_user_default_permissions() {
     'module' => 'filter',
   );
 
-  // Exported permission: 'use text format php_code'.
-  $permissions['use text format php_code'] = array(
-    'name' => 'use text format php_code',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'filter',
-  );
-
   return $permissions;
 }
