@@ -323,25 +323,6 @@ function chapel_service_views_default_views() {
 
 <em>Use the boxes below to search chapel messages for speakers, Scripture, or title. To listen to a sermon, use the player embedded in the table below. To download a sermon, right-click the "Download" link and select "Save link as..."</em>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area_1']['id'] = 'area_1';
-  $handler->display->display_options['header']['area_1']['table'] = 'views';
-  $handler->display->display_options['header']['area_1']['field'] = 'area';
-  $handler->display->display_options['header']['area_1']['content'] = '<?php
-$context = \'%1\';
-$crumbs = array();
-$crumbs[] = l(t(\'Home\'), \'<front>\');
-$crumbs[] = l(t(\'Student Life\'), \'student-life\');
-if (!empty($context)) {
-$crumbs[] = l(t(\'Chapel Messages\'), \'student-life/chapel-messages\');
-$crumbs[] = $context;
-} else {
-$crumbs[] = t(\'Chapel Messages\');
-}
-drupal_set_breadcrumb($crumbs);
-?>';
-  $handler->display->display_options['header']['area_1']['format'] = 'php_code';
-  $handler->display->display_options['header']['area_1']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Taxonomy terms on node */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
@@ -590,19 +571,6 @@ drupal_set_breadcrumb($crumbs);
     t('Title'),
     t('Audio'),
     t('Page'),
-    t('<?php
-$context = \'%1\';
-$crumbs = array();
-$crumbs[] = l(t(\'Home\'), \'<front>\');
-$crumbs[] = l(t(\'Student Life\'), \'student-life\');
-if (!empty($context)) {
-$crumbs[] = l(t(\'Chapel Messages\'), \'student-life/chapel-messages\');
-$crumbs[] = $context;
-} else {
-$crumbs[] = t(\'Chapel Messages\');
-}
-drupal_set_breadcrumb($crumbs);
-?>'),
     t('term'),
     t('All'),
     t('%1 | Chapel Messages'),

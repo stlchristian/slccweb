@@ -31,7 +31,7 @@ function chapel_service_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => 1,
         'theme' => 'slcc_subtheme',
-        'weight' => -36,
+        'weight' => -34,
       ),
     ),
     'title' => '',
