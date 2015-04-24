@@ -169,26 +169,6 @@ function degree_program_views_default_views() {
 <p>Our <strong>alternative programs</strong> function as low-cost alternatives to receiving a degree. Our certificates are designed for non-degree seeking students who desire to learn biblical knowledge and Christian leadership at a fraction of the cost.</p>
 <p>Whatever your educational goals or learning style, we have something to offer you! Click on one of the degree programs below to learn more.</p>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area_1']['id'] = 'area_1';
-  $handler->display->display_options['header']['area_1']['table'] = 'views';
-  $handler->display->display_options['header']['area_1']['field'] = 'area';
-  $handler->display->display_options['header']['area_1']['label'] = 'breadcrumbs';
-  $handler->display->display_options['header']['area_1']['content'] = '<?php
-$context = \'%1\';
-$crumbs = array();
-$crumbs[] = l(t(\'Home\'), \'<front>\');
-$crumbs[] = l(t(\'Academics\'), \'academics\');
-if (!empty($context)) {
-$crumbs[] = l(t(\'Degree Programs\'), \'academics/degree-programs\');
-$crumbs[] = $context;
-} else {
-$crumbs[] = t(\'Degree Programs\');
-}
-drupal_set_breadcrumb($crumbs);
-?>';
-  $handler->display->display_options['header']['area_1']['format'] = 'php_code';
-  $handler->display->display_options['header']['area_1']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -239,21 +219,8 @@ drupal_set_breadcrumb($crumbs);
 <p>Our <strong>traditional degree programs</strong> have classes which meet during the daytime, and are geared toward students looking for the "traditional" college experience.</p>
 <p>Our <strong>evening degree programs</strong> make it easy for you to take advantage of learning from a professor in-person while allowing you to continue meeting your family and work needs.</p>
 <p>Our <strong>online degree programs</strong> are ideal for distance learners and those who are looking to work at a more individualized pace.</p>
+<p>Our <strong>alternative programs</strong> function as low-cost alternatives to receiving a degree. Our certificates are designed for non-degree seeking students who desire to learn biblical knowledge and Christian leadership at a fraction of the cost.</p>
 <p>Whatever your educational goals or learning style, we have something to offer you! Click on one of the degree programs below to learn more.</p>'),
-    t('breadcrumbs'),
-    t('<?php
-$context = \'%1\';
-$crumbs = array();
-$crumbs[] = l(t(\'Home\'), \'<front>\');
-$crumbs[] = l(t(\'Academics\'), \'academics\');
-if (!empty($context)) {
-$crumbs[] = l(t(\'Degree Programs\'), \'academics/degree-programs\');
-$crumbs[] = $context;
-} else {
-$crumbs[] = t(\'Degree Programs\');
-}
-drupal_set_breadcrumb($crumbs);
-?>'),
   );
   $export['all_courses'] = $view;
 

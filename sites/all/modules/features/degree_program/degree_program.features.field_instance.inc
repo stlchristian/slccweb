@@ -90,7 +90,8 @@ function degree_program_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-degree_program-field_contact_for_further_inform'
+  // Exported field_instance:
+  // 'node-degree_program-field_contact_for_further_inform'
   $field_instances['node-degree_program-field_contact_for_further_inform'] = array(
     'bundle' => 'degree_program',
     'default_value' => NULL,
@@ -324,7 +325,8 @@ function degree_program_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-degree_program-field_objectives_for_graduates'
+  // Exported field_instance:
+  // 'node-degree_program-field_objectives_for_graduates'
   $field_instances['node-degree_program-field_objectives_for_graduates'] = array(
     'bundle' => 'degree_program',
     'default_value' => NULL,
@@ -367,7 +369,8 @@ function degree_program_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-degree_program-field_suggested_course_sequence'
+  // Exported field_instance:
+  // 'node-degree_program-field_suggested_course_sequence'
   $field_instances['node-degree_program-field_suggested_course_sequence'] = array(
     'bundle' => 'degree_program',
     'default_value' => NULL,
