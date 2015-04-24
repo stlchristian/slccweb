@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Module file for chapel_service_breadcrumbs.
+ */
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function chapel_service_breadcrumbs_views_pre_render( &$view ) {
+  if ( $view->name == 'chapel_sermons' && $view->current_display == 'page' ) {
+    if ( !empty($view->build_info['substitutions']) ) {
+      $context = $view->build_info['substitutions']['%1'];
+    }
+    $crumbs = array();
+    
+    $crumbs[] = l(t('Home'), '<front>');
+    $crumbs[] = l(t('Student Life'), 'student-life');
+    if (isset($context)) {
+      $crumbs[] = l(t('Chapel Messages'), 'student-life/chapel-messages');
+      $crumbs[] = $context;
+    } else {
+      $crumbs[] = t('Chapel Messages');
+    }
+    drupal_set_breadcrumb($crumbs);
+  }
+}
