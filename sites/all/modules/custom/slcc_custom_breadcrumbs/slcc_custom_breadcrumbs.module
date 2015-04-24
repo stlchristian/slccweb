@@ -2,13 +2,13 @@
 
 /**
  * @file
- * Module file for chapel_service_breadcrumbs.
+ * Module file for slcc_custom_breadcrumbs.
  */
 
 /**
  * Implements hook_views_post_render().
  */
-function chapel_service_breadcrumbs_views_post_render( &$view, &$output, &$cache ) {
+function slcc_custom_breadcrumbs_views_post_render( &$view, &$output, &$cache ) {
   if ( $view->name == 'chapel_sermons' && $view->current_display == 'page' ) {
     if ( !empty($view->build_info['substitutions']) ) {
       $context = $view->build_info['substitutions']['%1'];

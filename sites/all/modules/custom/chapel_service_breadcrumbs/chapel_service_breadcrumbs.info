@@ -1,4 +1,0 @@
-name = Chapel Service Breadcrumbs
-description = A simple module that modifies the breadcrumbs on the chapel service pages
-core = 7.x
-dependencies[] = views

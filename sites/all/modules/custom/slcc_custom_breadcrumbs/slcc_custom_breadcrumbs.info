@@ -1,0 +1,4 @@
+name = SLCC Custom Breadcrumbs
+description = A simple module that modifies the breadcrumbs on various views and pages
+core = 7.x
+dependencies[] = views
