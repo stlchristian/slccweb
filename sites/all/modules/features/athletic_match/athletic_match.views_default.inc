@@ -93,10 +93,6 @@ function athletic_match_views_default_views() {
   $handler->display->display_options['arguments']['field_sport_tid']['table'] = 'field_data_field_sport';
   $handler->display->display_options['arguments']['field_sport_tid']['field'] = 'field_sport_tid';
   $handler->display->display_options['arguments']['field_sport_tid']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['field_sport_tid']['title_enable'] = TRUE;
-  $handler->display->display_options['arguments']['field_sport_tid']['title'] = '%1 Schedule';
-  $handler->display->display_options['arguments']['field_sport_tid']['breadcrumb_enable'] = TRUE;
-  $handler->display->display_options['arguments']['field_sport_tid']['breadcrumb'] = '%1 Schedule';
   $handler->display->display_options['arguments']['field_sport_tid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['field_sport_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_sport_tid']['summary']['format'] = 'default_summary';
@@ -122,6 +118,7 @@ function athletic_match_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'athletic_match' => 'athletic_match',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -141,7 +138,6 @@ function athletic_match_views_default_views() {
     t('TBA'),
     t('Time'),
     t('All'),
-    t('%1 Schedule'),
     t('Page'),
   );
   $export['athletics_calendar'] = $view;
