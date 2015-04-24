@@ -6,31 +6,23 @@
  */
 
 /**
- * Implements hook_views_pre_render().
+ * Implements hook_views_pre_view().
  */
-function athletics_schedule_titles_views_pre_render( &$view ) {
-    // I couldn't figure out a way to add the apostrophe within views ui,
-    // so I'm making this module do the work for me.
-    // The added benefit of using hook_views_pre_render() is that the
-    // view will still take full advantage of our caching.
-    if ( $view->name == 'athletics_calendar' && $view->current_display == 'page' ) {
-        switch ( $view->build_info['substitutions']['!1'] ) {
-            case 'mens-basketball':
-                $view->build_info['substitutions']['%1'] = "Men's Basketball"; break;
-            case 'mens-soccer':
-                $view->build_info['substitutions']['%1'] = "Men's Soccer"; break;
-            case 'womens-basketball':
-                $view->build_info['substitutions']['%1'] = "Women's Basketball"; break;
-            case 'womens-volleyball':
-                $view->build_info['substitutions']['%1'] = "Women's Volleyball"; break;
-        }
+function athletic_match_views_pre_view(&$view, &$display_id, &$args) {
+  if ( $view->name == 'athletics_calendar' && $display_id == 'page' ) {
+    switch ( $args[0] ) {
+      case 'mens-basketball':
+        $view->display_handler->default_display->options['title'] = "Men's Basketball Schedule";
+        break;
+      case 'mens-soccer':
+        $view->display_handler->default_display->options['title'] = "Men's Soccer Schedule";
+        break;
+      case 'womens-basketball':
+        $view->display_handler->default_display->options['title'] = "Women's Basketball Schedule";
+        break;
+      case 'womens-volleyball':
+        $view->display_handler->default_display->options['title'] = "Women's Volleyball Schedule";
+        break;
     }
-}
-
-function athletics_schedule_titles_views_post_render( &$view, &$output, &$cache ) {
-    if ( $view->name == 'athletics_calendar' && $view->current_display == 'page' ) {
-        //~ echo "<!--";
-        print_r($cache);
-        //~ echo "-->";
-    }
+  }
 }
