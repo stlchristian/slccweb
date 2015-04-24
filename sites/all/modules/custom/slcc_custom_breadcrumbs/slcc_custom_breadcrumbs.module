@@ -9,6 +9,7 @@
  * Implements hook_views_post_render().
  */
 function slcc_custom_breadcrumbs_views_post_render( &$view, &$output, &$cache ) {
+  // Chapel messages breadcrumbs
   if ( $view->name == 'chapel_sermons' && $view->current_display == 'page' ) {
     if ( !empty($view->build_info['substitutions']) ) {
       $context = $view->build_info['substitutions']['%1'];
@@ -21,6 +22,23 @@ function slcc_custom_breadcrumbs_views_post_render( &$view, &$output, &$cache ) 
       $crumbs[] = $context;
     } else {
       $crumbs[] = t('Chapel Messages');
+    }
+    drupal_set_breadcrumb($crumbs);
+  }
+
+  // Degree programs breadcrumbs
+  if ( $view->name == 'all_courses' && $view->current_display == 'page_with_page_title_1') {
+    if ( !empty($view->build_info['substitutions']) ) {
+      $context = $view->build_info['substitutions']['%1'];
+    }
+    $crumbs = array();
+    $crumbs[] = l(t('Home'), '<front>');
+    $crumbs[] = l(t('Academics'), 'academics');
+    if (isset($context)) {
+      $crumbs[] = l(t('Degree Programs'), 'academics/degree-programs');
+      $crumbs[] = $context;
+    } else {
+      $crumbs[] = t('Degree Programs');
     }
     drupal_set_breadcrumb($crumbs);
   }
