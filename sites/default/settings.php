@@ -91,7 +91,7 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
     $conf['xmlsitemap_engines_engines'] = array();
     // Disable NodeSquirrel Offsite backups
     $conf['nodesquirrel_secret_key'] = '';
-    $conf['nodesquirrel_schedule_enabled'] = 0;
+    $conf['nodesquirrel_schedule_enabled'] = 0
   }
 
   // Test Site
@@ -113,7 +113,7 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
     $conf['xmlsitemap_engines_engines'] = array();
     // Disable NodeSquirrel Offsite backups
     $conf['nodesquirrel_secret_key'] = '';
-    $conf['nodesquirrel_schedule_enabled'] = 0;
+    $conf['nodesquirrel_schedule_enabled'] = 0
   }
 
   // Live Site
