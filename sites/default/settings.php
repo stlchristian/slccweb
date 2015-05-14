@@ -89,6 +89,9 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
     $conf['cdn_basic_mapping'] = 'https://d362i6qokoscg1.cloudfront.net';
     // Disable submitting our sitemap to search engines
     $conf['xmlsitemap_engines_engines'] = array();
+    // Disable NodeSquirrel Offsite backups
+    $conf['nodesquirrel_secret_key'] = '';
+    $conf['nodesquirrel_schedule_enabled'] = 0
   }
 
   // Test Site
@@ -108,6 +111,9 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
     $conf['cdn_basic_mapping'] = 'https://daddhu661edzl.cloudfront.net';
     // Disable submitting our sitemap to search engines
     $conf['xmlsitemap_engines_engines'] = array();
+    // Disable NodeSquirrel Offsite backups
+    $conf['nodesquirrel_secret_key'] = '';
+    $conf['nodesquirrel_schedule_enabled'] = 0
   }
 
   // Live Site
@@ -157,6 +163,9 @@ if (!defined('PANTHEON_ENVIRONMENT')) {
   $conf['file_temporary_path'] = '/tmp';
   // Disable submitting our sitemap to search engines
   $conf['xmlsitemap_engines_engines'] = array();
+  // Disable NodeSquirrel Offsite backups
+  $conf['nodesquirrel_secret_key'] = '';
+  $conf['nodesquirrel_schedule_enabled'] = 0;
 }
 
 // jQuery Update Version and CDN
