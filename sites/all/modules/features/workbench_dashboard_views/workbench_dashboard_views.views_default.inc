@@ -27,7 +27,11 @@ function workbench_dashboard_views_views_default_views() {
   $handler->display->display_options['use_more_text'] = 'view all';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'use workbench_moderation my drafts tab';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '300';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '300';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -230,7 +234,7 @@ function workbench_dashboard_views_views_default_views() {
   $handler->display->display_options['filters']['state']['expose']['identifier'] = 'state';
   $handler->display->display_options['filters']['state']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['state']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Workbench Moderation: Current */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['current']['id'] = 'current';
   $handler->display->display_options['filters']['current']['table'] = 'workbench_moderation_node_history';
   $handler->display->display_options['filters']['current']['field'] = 'current';
@@ -253,10 +257,11 @@ function workbench_dashboard_views_views_default_views() {
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Workbench Moderation: Current */
-  $handler->display->display_options['filters']['current']['id'] = 'current';
-  $handler->display->display_options['filters']['current']['table'] = 'workbench_moderation_node_history';
-  $handler->display->display_options['filters']['current']['field'] = 'current';
-  $handler->display->display_options['filters']['current']['value'] = '1';
+  $handler->display->display_options['filters']['is_current']['id'] = 'is_current';
+  $handler->display->display_options['filters']['is_current']['table'] = 'workbench_moderation_node_history';
+  $handler->display->display_options['filters']['is_current']['field'] = 'is_current';
+  $handler->display->display_options['filters']['is_current']['value'] = '1';
+  $handler->display->display_options['filters']['is_current']['group'] = 1;
   /* Filter criterion: Workbench Moderation: State */
   $handler->display->display_options['filters']['state']['id'] = 'state';
   $handler->display->display_options['filters']['state']['table'] = 'workbench_moderation_node_history';
@@ -265,6 +270,7 @@ function workbench_dashboard_views_views_default_views() {
     'content_review' => 'content_review',
     'style_review' => 'style_review',
   );
+  $handler->display->display_options['filters']['state']['group'] = 1;
   $handler->display->display_options['filters']['state']['expose']['label'] = 'Workbench Moderation: State';
   $handler->display->display_options['filters']['state']['expose']['operator'] = 'state_op';
   $handler->display->display_options['filters']['state']['expose']['identifier'] = 'state';
@@ -274,6 +280,7 @@ function workbench_dashboard_views_views_default_views() {
   $handler->display->display_options['filters']['title']['field'] = 'title';
   $handler->display->display_options['filters']['title']['relationship'] = 'nid';
   $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
@@ -285,6 +292,7 @@ function workbench_dashboard_views_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['relationship'] = 'nid';
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['filters']['type']['exposed'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
@@ -300,6 +308,7 @@ function workbench_dashboard_views_views_default_views() {
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'ministry_opportunity' => 'ministry_opportunity',
   );
+  $handler->display->display_options['filters']['type_1']['group'] = 1;
   $handler->display->display_options['path'] = 'admin/workbench/needs-review';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Needs review';
@@ -327,11 +336,11 @@ function workbench_dashboard_views_views_default_views() {
   $handler->display->display_options['filters']['uid_current']['value'] = '1';
   $handler->display->display_options['filters']['uid_current']['group'] = 1;
   /* Filter criterion: Workbench Moderation: Current */
-  $handler->display->display_options['filters']['current']['id'] = 'current';
-  $handler->display->display_options['filters']['current']['table'] = 'workbench_moderation_node_history';
-  $handler->display->display_options['filters']['current']['field'] = 'current';
-  $handler->display->display_options['filters']['current']['value'] = '1';
-  $handler->display->display_options['filters']['current']['group'] = 1;
+  $handler->display->display_options['filters']['is_current']['id'] = 'is_current';
+  $handler->display->display_options['filters']['is_current']['table'] = 'workbench_moderation_node_history';
+  $handler->display->display_options['filters']['is_current']['field'] = 'is_current';
+  $handler->display->display_options['filters']['is_current']['value'] = '1';
+  $handler->display->display_options['filters']['is_current']['group'] = 1;
   /* Filter criterion: Workbench Moderation: State */
   $handler->display->display_options['filters']['state_1']['id'] = 'state_1';
   $handler->display->display_options['filters']['state_1']['table'] = 'workbench_moderation_node_history';
@@ -341,6 +350,16 @@ function workbench_dashboard_views_views_default_views() {
     'published' => 'published',
   );
   $handler->display->display_options['filters']['state_1']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['relationship'] = 'nid';
+  $handler->display->display_options['filters']['type_1']['operator'] = 'not in';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'ministry_opportunity' => 'ministry_opportunity',
+  );
+  $handler->display->display_options['filters']['type_1']['group'] = 1;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
