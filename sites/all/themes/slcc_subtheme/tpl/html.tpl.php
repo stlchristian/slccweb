@@ -64,9 +64,9 @@
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
     <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-TileColor" content="#0c426f">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#0c426f">
     <?php print $head; ?>
     <title><?php print $head_title; ?></title>
     <?php print $styles; ?>
