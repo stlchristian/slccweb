@@ -42,6 +42,9 @@ if (defined('PANTHEON_ENVIRONMENT')) {
     $conf['preprocess_css'] = 0;
     // Aggregate JavaScript files in Drupal - off.
     $conf['preprocess_js'] = 0;
+    // Views Cache Bully settings for uncached views
+    $conf['views_cache_bully_results_lifespan'] = -1;
+    $conf['views_cache_bully_output_lifespan'] = -1;
   }
   // Drupal caching in test and live environments.
   else {
@@ -55,6 +58,10 @@ if (defined('PANTHEON_ENVIRONMENT')) {
     $conf['preprocess_css'] = 1;
     // Aggregate JavaScript files in Drupal - on.
     $conf['preprocess_js'] = 1;
+    // Views Cache Bully settings for uncached views
+    // 5 minutes should be sufficient, since these are mostly admin views
+    $conf['views_cache_bully_results_lifespan'] = 300;
+    $conf['views_cache_bully_output_lifespan'] = 300;
   }
   // Minimum cache lifetime - always none.
   $conf['cache_lifetime'] = 0;
@@ -157,6 +164,9 @@ if (!defined('PANTHEON_ENVIRONMENT')) {
   $conf['file_temporary_path'] = '/tmp';
   // Disable submitting our sitemap to search engines
   $conf['xmlsitemap_engines_engines'] = array();
+  // Views Cache Bully settings for uncached views
+  $conf['views_cache_bully_results_lifespan'] = -1;
+  $conf['views_cache_bully_output_lifespan'] = -1;
 }
 
 // jQuery Update Version and CDN
