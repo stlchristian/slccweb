@@ -29,6 +29,7 @@ function ministry_opportunity_field_group_info() {
       3 => 'field_city',
       4 => 'field_pay_type',
       5 => 'field_state',
+      6 => 'field_zip_code',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -58,7 +59,7 @@ function ministry_opportunity_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Contact Information',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'field_contact',
       1 => 'field_contact_email',
