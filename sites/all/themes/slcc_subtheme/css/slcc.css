@@ -145,7 +145,7 @@ a.responsive-menu-button:focus {
   text-align: left;
   width: 23%;
   padding: 0 0 0 20px;
-  margin: 0 0 0 20px;  
+  margin: 0 0 0 20px;
 }
 
 /* events on their own page */
@@ -173,7 +173,7 @@ a.responsive-menu-button:focus {
 .node-type-campus-event .group-event-time,
 .view-campus-event .group-event-time {
   float: left;
-  width: 19%;  
+  width: 19%;
 }
 
 .node-type-campus-event .field-name-body,
@@ -219,7 +219,7 @@ a.responsive-menu-button:focus {
   width: 100%;
 }
 
-.node-type-ministry-opportunity .views-row .article { 
+.node-type-ministry-opportunity .views-row .article {
   margin: 0;
   padding: 0;
 }
@@ -233,9 +233,11 @@ a.responsive-menu-button:focus {
 }
 
 .node-type-ministry-opportunity .group-church-information {
+  border-left: 1px dotted #CCCCCC;
   float: left;
-  width: 19%;
+  width: 45%;
   font-size: 1.167em;
+  padding: 0 0 0 20px;
 }
 
 .node-type-ministry-opportunity .group-church-information .field-name-field-church-name,
@@ -260,24 +262,30 @@ a.responsive-menu-button:focus {
   margin-bottom: 0px;
 }
 
-.node-type-ministry-opportunity .group-church-information .field-name-field-pay-type {
-  margin: 10px 0px 10px 0px;
+.node-type-ministry-opportunity .group-church-information .field-name-field-pay-type,
+.node-type-ministry-opportunity .group-church-information .field-name-field-church-website,
+.node-type-ministry-opportunity .group-contact-information .field-name-field-contact-email {
+  margin: 10px 0px 0px 0px;
 }
-
 
 .node-type-ministry-opportunity .field-name-body {
   float: left;
   position: relative;
-  width: 52%;
+  width: 100%;
+  padding: 0 0 0 20px;
+  margin-top: 20px;
+}
+
+.node-type-ministry-opportunity .field-name-body h3 {
+  margin-bottom: 10px;
 }
 
 .node-type-ministry-opportunity .group-contact-information {
   border-left: 1px dotted #CCCCCC;
-  float: right;
+  float: left;
   text-align: left;
-  width: 23%;
+  width: 50%;
   padding: 0 0 0 20px;
-  margin: 0 0 0 20px;
 }
 
 .node-type-ministry-opportunity .group-name-contact-information .node-content {
@@ -607,7 +615,7 @@ p.box-download, p.box-sticky, p.box-confirmation, p.box-error, p.box-warning, p.
   line-height: 100%;
   padding: 0 0 0 6px;
   text-transform: uppercase;
-}	
+}
 
 #main-content .view-header {
   padding: 0 0 0 6px;
