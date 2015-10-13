@@ -131,6 +131,8 @@ function workbench_email_uninstall() {
   variable_del('workbench_email_queue_mail');
   drupal_load('module', 'workbench_email');
   workbench_email_get_queue()->deleteQueue();
+  db_drop_table('workbench_email_transitions');
+  db_drop_table('workbench_emails');
 }
 
 /**
