@@ -29,7 +29,7 @@ if (defined('PANTHEON_ENVIRONMENT')) {
   $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
   // Use Redis for Drupal locks (semaphore).
   $conf['lock_inc'] = 'sites/all/modules/contrib/redis/redis.lock.inc';
-  
+
   // Drupal caching in development environments.
   if (!in_array(PANTHEON_ENVIRONMENT, array('test', 'live'))) {
     // Anonymous caching.
@@ -86,7 +86,7 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
         !isset($_SERVER['HTTP_X_SSL']) ||
         $_SERVER['HTTP_X_SSL'] != 'ON') {
       header('HTTP/1.0 301 Moved Permanently');
-      header('Location: https://dev-stlchristian.gotpantheon.com'
+      header('Location: https://dev-stlchristian.pantheonsite.io'
         . $_SERVER['REQUEST_URI']);
       exit();
     }
@@ -105,7 +105,7 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
         !isset($_SERVER['HTTP_X_SSL']) ||
         $_SERVER['HTTP_X_SSL'] != 'ON') {
       header('HTTP/1.0 301 Moved Permanently');
-      header('Location: https://test-stlchristian.gotpantheon.com'
+      header('Location: https://test-stlchristian.pantheonsite.io'
         . $_SERVER['REQUEST_URI']);
       exit();
     }
@@ -123,8 +123,8 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
     if ($_SERVER['HTTP_HOST'] != 'stlchristian.edu' ||
         !isset($_SERVER['HTTP_X_SSL']) ||
         $_SERVER['HTTP_X_SSL'] != 'ON') {
-      header('HTTP/1.0 301 Moved Permanently'); 
-      header('Location: https://stlchristian.edu'. $_SERVER['REQUEST_URI']); 
+      header('HTTP/1.0 301 Moved Permanently');
+      header('Location: https://stlchristian.edu'. $_SERVER['REQUEST_URI']);
       exit();
     }
     // Google Analytics.
@@ -136,13 +136,13 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
 
 if (!defined('PANTHEON_ENVIRONMENT')) {
   $databases = array (
-    'default' => 
+    'default' =>
     array (
-      'default' => 
+      'default' =>
       array (
-        'database' => 'DATABASE',
-        'username' => 'USERNAME',
-        'password' => 'PASSWORD',
+        'database' => 'stlchristian_edu',
+        'username' => 'root',
+        'password' => '4Uk38n8kin',
         'host' => 'localhost',
         'port' => '',
         'driver' => 'mysql',
