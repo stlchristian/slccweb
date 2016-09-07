@@ -17,6 +17,10 @@ if ($_SERVER['REQUEST_URI'] == '/academics/degree-programs/alternate-programs') 
   header('HTTP/1.0 301 Moved Permanently');
   header('Location: /academics/degree-programs/alternative-programs'); exit();
 }
+if ($_SERVER['REQUEST_URI'] == '/wp-login.php') {
+  header('HTTP/1.0 301 Moved Permanently');
+  header('Location: /'); exit();
+}
 
 // All Pantheon Environments.
 if (defined('PANTHEON_ENVIRONMENT')) {
