@@ -81,14 +81,15 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
 
   // Development Site
   if ($_SERVER['PANTHEON_ENVIRONMENT'] === 'dev') {
-    // Redirect to dev.slcc.co.
-    if ($_SERVER['HTTP_HOST'] != 'dev-stlchristian.gotpantheon.com' ||
-        !isset($_SERVER['HTTP_X_SSL']) ||
-        $_SERVER['HTTP_X_SSL'] != 'ON') {
-      header('HTTP/1.0 301 Moved Permanently');
-      header('Location: https://dev-stlchristian.pantheonsite.io'
-        . $_SERVER['REQUEST_URI']);
-      exit();
+    // Require HTTPS.
+    // Check if Drupal is running via command line
+    if ( ($_SERVER['HTTPS'] === 'OFF') && (php_sapi_name() != "cli")) {
+      if (!isset($_SERVER['HTTP_X_SSL']) ||
+      (isset($_SERVER['HTTP_X_SSL']) && $_SERVER['HTTP_X_SSL'] != 'ON')) {
+        header('HTTP/1.0 301 Moved Permanently');
+        header('Location: https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+        exit();
+      }
     }
     // Google Analytics.
     $conf['googleanalytics_account'] = 'UA-33834428-5';
