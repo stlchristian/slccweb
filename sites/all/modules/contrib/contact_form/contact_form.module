@@ -1,0 +1,424 @@
+<?php
+
+/**
+ * @file
+ * Code for the contact_form feature.
+ */
+include_once 'contact_form.features.inc';
+
+
+
+function contact_form_token_info() {
+  $type = array(
+    'name' => t('Widgets'),
+    'description' => t('Tokens related to widgets.'),
+    'needs_data' => 'node'
+  );
+
+  // Core tokens for nodes.
+  $contact['name'] = array(
+    'name' => t("Contact Name"),
+    'description' => t("The name of the submitter."),
+  );
+  $contact['option'] = array(
+    'name' => t("Selected option"),
+    'description' => t("The option selected by the user."),
+  );
+
+  $contact['message'] = array(
+    'name' => t("Message"),
+    'description' => t("The email message"),
+  );
+
+  $contact['telephone'] = array(
+    'name' => t("Telephone"),
+    'description' => t("The telephone number of the submittter"),
+  );
+
+  $contact['email'] = array(
+    'name' => t("Email"),
+    'description' => t("The email address of the submittter"),
+  );
+
+  return array(
+    'types' => array('contact' => $type),
+    'tokens' => array('contact' => $contact),
+  );
+}
+
+
+
+function contact_form_tokens($type, $tokens, array $data = array(), array $options = array()) {
+
+  $replacements = array();
+
+  if ($type == 'contact' && !empty($data['node'])) {
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'name':
+
+          $replacements[$original] = $data['node']->title;
+          break;
+        case 'option':
+          // load the options
+          $term = taxonomy_term_load($data['node']->field_enquiry_options['und'][0]['tid']);
+          $replacements[$original] = $term->name;
+          break;
+        case 'message':
+          $replacements[$original] = $data['node']->body['und'][0]['value'];
+          break;
+        case 'telephone':
+          $replacements[$original] = $data['node']->field_enquiry_telephone['und'][0]['value'];
+          break;
+        case 'email':
+          $replacements[$original] = $data['node']->field_enquiry_email_address['und'][0]['email'];
+          break;
+      }
+    }
+
+  }
+
+   return $replacements;
+
+}
+
+
+/**
+ * Implements hook_theme_registry_alter()
+ *
+ * Add this modules path to the theme registry.
+**/
+function contact_form_theme_registry_alter(&$theme_registry) {
+  $mod_path = drupal_get_path('module', 'contact_form');
+  $theme_registry_copy = $theme_registry;       // munge on a copy
+  _theme_process_registry($theme_registry_copy, 'phptemplate', 'theme_engine', 'pow', $mod_path);
+  $theme_registry += array_diff_key($theme_registry_copy, $theme_registry);
+  $hooks = array('node');
+  foreach ($hooks as $h) {
+    _contact_form_insert_after_first_element($theme_registry[$h]['theme paths'], $mod_path);
+  }
+}
+
+/**
+ * Helper function for re-ordering arrays (needed by theme_registry_alter)
+*/
+function _contact_form_insert_after_first_element(&$a, $element) {
+  if(is_array($a)) {
+    $first_element = array_shift($a);
+    array_unshift($a, $first_element, $element);
+  }
+}
+
+
+/**
+ * Implements hook_enable()
+ */
+function contact_form_enable() {
+
+
+  // Create the enquiry subjects vocaublary if it doesnt exist.
+  if (!taxonomy_vocabulary_machine_name_load('enquiry_subjects')) {
+    $vocabulary = array(
+      'name' => t("Enquiry Subjects"), // Human readable name.
+      'machine_name' => 'enquiry_subjects' // Machine name.
+    );
+
+    // Save the defined vocabulary.
+    taxonomy_vocabulary_save($vocabulary);
+  }
+}
+
+/**
+ * Implements hook_form_alter()
+ *
+ * Overide the enquiry form's submit button text
+ *
+ */
+function contact_form_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id = 'enquiry_node_form') {
+
+  }
+}
+
+/**
+ * Implements hook_block_info().
+ *
+ * @return array
+ */
+function contact_form_block_info() {
+
+  $blocks['contact_form'] = array(
+    'info' => t('Contact Form'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * @param string $delta
+ * @return array
+ */
+function contact_form_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'contact_form':
+      $block['subject'] = NULL;
+      $block['content'] = _contact_form_contact_form();
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Generate the content for the contact form.
+ *
+ * @global object $user
+ * @return array
+ */
+function _contact_form_contact_form() {
+  global $user;
+  if (!function_exists('node_form')) {
+    module_load_include('inc', 'node', 'node.pages');
+  }
+
+  // Construct an empty node object to pass to drupal_get_form.
+  $node = (object) array(
+        'uid' => $user->uid,
+        'name' => (isset($user->name) ? $user->name : ''),
+        'type' => 'enquiry',
+        'language' => LANGUAGE_NONE,
+  );
+
+
+
+  return drupal_get_form('enquiry_node_form', $node);
+}
+
+/**
+ * Implements hook_block_configure().
+ *
+ * @param string $delta
+ * @return array
+ */
+function contact_form_block_configure($delta = '') {
+  $form = array();
+  $form['contact_form'] = array();
+  return $form;
+}
+
+/**
+ * Implements hook_permission().
+ *
+ * @return array
+ */
+function contact_form_permission() {
+  return array(
+    'administer enquiry settings' => array(
+      'title' => t('Administer Enquiry Settings'),
+      'description' => t('Perform administration tasks for the enquiry feature.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ *
+ * @return string
+ */
+function contact_form_menu() {
+
+  $items = array();
+
+  $items['admin/config/enquiries/settings'] = array(
+    'title' => 'Enquiry Settings',
+    'description' => 'Enquiries',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('contact_form_admin'),
+    'access arguments' => array('administer enquiry settings'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Callback function to provide the enquiry settings form.
+ *
+ * @return type
+ */
+function contact_form_admin() {
+  $form = array();
+
+  $form['contact_form_emails'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Destination Email Address'),
+    '#default_value' => variable_get('contact_form_emails', ''),
+    '#size' => 60,
+    '#description' => t("Enter a comma separated list of email addresses"),
+    '#required' => TRUE,
+  );
+
+  $form['contact_form_subject'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Email Subject'),
+    '#default_value' => variable_get('contact_form_subject', ''),
+    '#description' => t("Enter the email body content."),
+    '#required' => TRUE,
+  );
+
+  $form['contact_form_content'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Email Content'),
+    '#default_value' => variable_get('contact_form_content', ''),
+    '#description' => t("Enter the email body content. Available tokens are [contact:name], [contact:option], [contact:message], [contact:telephone], [contact:email]"),
+    '#required' => TRUE,
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_node_insert().
+ * @param type $node
+ */
+function contact_form_node_insert($node) {
+
+  if ($node->type == 'enquiry') {
+    // load up the list of email addresses...
+    $emails_raw = variable_get('contact_form_emails');
+    $emails = explode(',', $emails_raw);
+    $emails = array_map("trim", $emails);
+
+    // send the node through the email function.
+    $params['node'] = $node;
+
+    foreach ($emails as $key => $email) {
+      drupal_mail('contact_form', 'enquiry', $email, language_default(), $params);
+    }
+
+    // get the current term
+   $term =  taxonomy_term_load($node->field_enquiry_options['und'][0]['tid']);
+
+   if ($term ) {
+      foreach ($term->field_enquiry_subject_email['und'] as $key => $value) {
+       drupal_mail('contact_form', 'enquiry', $value['email'], language_default(), $params);
+      }
+   }
+
+  }
+}
+
+
+/**
+ * Implements hook_mail().
+ *
+ * @param type $key
+ * @param type $message
+ * @param type $params
+ */
+function contact_form_mail($key, &$message, $params) {
+
+  switch ($key) {
+    case 'enquiry':
+
+      $langcode = $message['language']->language;
+
+      // Load up the email body content
+      $enquiry_option = taxonomy_term_load($params['node']->field_enquiry_options[LANGUAGE_NONE][0]['tid']);
+
+      // Get the email address value
+      if ( isset($params['node']->field_enquiry_email_address[LANGUAGE_NONE]) &&
+        isset($params['node']->field_enquiry_email_address[LANGUAGE_NONE][0]) ) {
+        $email = $params['node']->field_enquiry_email_address[LANGUAGE_NONE][0]['email'];
+      }
+      else {
+        $email = '-';
+      }
+
+      // Get the telephone number value
+      if (
+        isset($params['node']->field_enquiry_telephone[LANGUAGE_NONE]) &&
+        isset($params['node']->field_enquiry_telephone[LANGUAGE_NONE][0]) ) {
+        $telephone = $params['node']->field_enquiry_telephone[LANGUAGE_NONE][0]['value'];
+      }
+      else {
+        $telephone = '-';
+      }
+
+      $email_content = variable_get('contact_form_content');
+
+
+      $email_content = token_replace(variable_get('contact_form_content'), array('node' => $params['node']));
+
+      $email_subject = token_replace(variable_get('contact_form_subject'), array('node' => $params['node']));
+
+
+
+      $message['subject'] = $email_subject;
+      $message['body'][] = $email_content;
+      break;
+  }
+}
+
+/**
+ * Implements hook_menu_get_item_alter().
+ */
+function contact_form_menu_get_item_alter(&$router_item, $path, $original_map) {
+  // If loading a node.
+  if ($router_item['path'] == 'node/%') {
+    $nid = arg(1);
+    // If node exists.
+    if ($node = node_load($nid)) {
+      if ($node->type == 'enquiry') {
+         $router_item['load_functions'] = serialize(array(1 => 'contact_form_force_404'));
+      }
+    }
+  }
+   if ($router_item['path'] == 'taxonomy/term/%') {
+    $tid = arg(2);
+    // If node exists.
+    if ($term = taxonomy_term_load($tid)) {
+      if ($term->vocabulary_machine_name  == 'enquiry_subjects') {
+         $router_item['load_functions'] = serialize(array(1 => 'contact_form_force_404'));
+      }
+    }
+  }
+
+
+
+}
+
+/**
+ * Callback returns FALSE to simulate not being able to load the argument to node/%.
+ */
+function contact_form_force_404($node, $cid = NULL) {
+  return FALSE;
+}
+
+/**
+*
+*/
+function contact_form_query_alter(QueryAlterableInterface $query) {
+  if ($query->hasTag('node_access') && $query->hasTag('pager')) {
+      $tables = $query->getTables();
+      foreach ($tables as $table) {
+        if ($table['table'] == 'search_index') {
+          $query->condition('n.type', array('enquiry'), 'NOT IN');
+        }
+      }
+  }
+}
+
+
+function contact_form_form_taxonomy_form_term_alter(&$form, &$form_state) {
+
+  if ($form['#vocabulary']->machine_name == enquiry_subjects) {
+      $form['description']['#access'] = FALSE;
+         $form['name']['#description'] = 'Enter the name of this department that will appear in the contact form\'s dropdown list.';
+  }
+
+}

@@ -1,0 +1,46 @@
+name = Contact Form
+core = 7.x
+package = Features
+php = 5.2.4
+dependencies[] = better_formats
+dependencies[] = email
+dependencies[] = features
+dependencies[] = node_save_redirect
+dependencies[] = strongarm
+dependencies[] = taxonomy
+dependencies[] = views
+features[ctools][] = strongarm:strongarm:1
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:1
+features[field][] = node-enquiry-body
+features[field][] = node-enquiry-field_enquiry_email_address
+features[field][] = node-enquiry-field_enquiry_options
+features[field][] = node-enquiry-field_enquiry_telephone
+features[field][] = taxonomy_term-enquiry_subjects-field_enquiry_subject_email
+features[node][] = enquiry
+features[taxonomy][] = enquiry_subjects
+features[variable][] = additional_settings__active_tab_enquiry
+features[variable][] = comment_anonymous_enquiry
+features[variable][] = comment_default_mode_enquiry
+features[variable][] = comment_default_per_page_enquiry
+features[variable][] = comment_enquiry
+features[variable][] = comment_form_location_enquiry
+features[variable][] = comment_preview_enquiry
+features[variable][] = comment_subject_field_enquiry
+features[variable][] = contact_form_content
+features[variable][] = contact_form_emails
+features[variable][] = contact_form_subject
+features[variable][] = menu_options_enquiry
+features[variable][] = menu_parent_enquiry
+features[variable][] = node_options_enquiry
+features[variable][] = node_preview_enquiry
+features[variable][] = node_save_redirect_enquiry
+features[variable][] = node_submitted_enquiry
+features[views_view][] = enquiries
+
+; Information added by drupal.org packaging script on 2013-10-29
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "contact_form"
+datestamp = "1383050292"
+
